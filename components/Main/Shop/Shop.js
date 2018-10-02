@@ -1,35 +1,105 @@
 import React, { Component } from 'react';
-import {
-    View,
-    Text,
-    TouchableOpacity
-} from 'react-native';
+import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
 
-import { Icon, Button, Container, Header, Content, Left } from 'native-base';
+import { Icon } from 'react-native-elements'
 
+import Home from './Home/Home';
+import Cart from './Cart/Cart';
+import Contact from './Contact/Contact';
+import Search from './Search/Search';
+
+import { Button, Container, Header, Content, Left, Body } from 'native-base';
+import { createBottomTabNavigator } from 'react-navigation'
+
+
+const { height, width } = Dimensions.get('window');
 export default class Shop extends Component {
     render() {
         return (
-            <Container>
-                <Header>
-                    <Left>
-                        <TouchableOpacity
-                            onPress={() => this.props.navigation.openDrawer()}
-                        >
-                            <Text>
-                                Menu
-                        </Text>
-                        </TouchableOpacity>
-                    </Left>
-                </Header>
-                <Content contentContainerStyle={{
-                    flex: 1
-                }}>
-                    <Text>
-                        Shop Component
-                    </Text>
-                </Content>
-            </Container>
+            <View style={{ flex: 1 }}>
+                <View style={
+                    {
+                        height: height / 8,
+                        alignContent: 'flex-start',
+                        justifyContent: 'flex-start',
+                        flexDirection: 'row'
+                    }}>
+                    <Icon
+                        name="menu"
+                        size={35}
+                        onPress={() => this.props.navigation.openDrawer()}
+                    />
+                </View>
+                <BottomTabNavigator />
+            </View>
+
+            // <Container>
+            //     <Header>
+            //         <Left style={{ flex: 1, flexDirection: 'row' }}>
+            //             <Icon
+            //                 name="menu"
+            //                 size={35}
+            //                 onPress={() => this.props.navigation.openDrawer()}
+            //             />
+            //         </Left>
+            //     </Header>
+            //     <BottomTabNavigator />
+
+            // </Container>
         )
     }
+}
+
+const BottomTabNavigator = createBottomTabNavigator(
+    {
+        HOME: {
+            screen: Home,
+            navigationOptions: () => ({
+                title: 'HOME',
+                tabBarIcon: ({ focused, tintColor }) => (
+                    <Icon name="home" size={35} color={tintColor} />
+                )
+            })
+        },
+        CART: {
+            screen: Cart,
+            navigationOptions: () => ({
+                title: 'CART',
+                tabBarIcon: ({ focused, tintColor }) => (
+                    <Icon name="shopping-cart" size={35} color={tintColor} />
+                )
+            })
+        },
+        SEARCH: {
+            screen: Search,
+            navigationOptions: () => ({
+                title: 'SEARCH',
+                tabBarIcon: ({ focused, tintColor }) => (
+                    <Icon name="search" size={35} color={tintColor} />
+                )
+            })
+        },
+        CONTACT: {
+            screen: Contact,
+            navigationOptions: () => ({
+                title: 'CONTACT',
+                tabBarIcon: ({ focused, tintColor }) => (
+                    <Icon name="contacts" size={35} color={tintColor} />
+                )
+            })
+        }
+    }, {
+        initialRouteName: 'HOME'
+    }
+)
+
+const TabRoutes = {
+    HOME: { screen: Home },
+    CART: { screen: Cart },
+    SEARCH: { screen: Search },
+    CONTACT: { screen: Contact }
+}
+
+const TabConfig = {
+
 }

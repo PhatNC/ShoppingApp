@@ -5,29 +5,61 @@ import {
     StatusBar,
 } from 'react-native';
 
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 import Authentication from './Authentication/Authentication';
 import ChangeInfo from './ChangeInfo/ChangeInfo';
 import OrderHistory from './OrderHistory/OrderHistory';
 import Main from './Main/Main';
 
+
 StatusBar.setHidden(true);
 
 export default class AppContent extends Component {
     render() {
         return (
-            <AppNavigator />
+            <AppContentStackNavigator />
         )
     }
 }
 
-const AppNavigator = StackNavigator({
-    MAIN: { screen: Main },
-    AUTHENICATION: { screen: Authentication },
-    CHANGE_INFO: { screen: ChangeInfo },
-    ORDER_HISTORY: { screen: OrderHistory }
-}, {
+const AppContentStackNavigator = createStackNavigator(
+    {
+        MAIN: {
+            screen: Main,
+            navigationOptions: ({ navigation }) => ({
+                title: 'MAIN',
+                headerTitleStyle: { color: 'white' },
+                headerStyle: { backgroundColor: 'blue' }
+            })
+        },
+        AUTHENICATION: {
+            screen: Authentication,
+            navigationOptions: ({ navigation }) => ({
+                title: 'AUTHENICATION',
+                headerTitleStyle: { color: 'white' },
+                headerStyle: { backgroundColor: 'blue' }
+            })
+        },
+        CHANGE_INFO: {
+            screen: ChangeInfo,
+            navigationOptions: ({ navigation }) => ({
+                title: 'CHANGE INFO',
+                headerTitleStyle: { color: 'white' },
+                headerStyle: { backgroundColor: 'blue' }
+            })
+        },
+        ORDER_HISTORY: {
+            screen: OrderHistory,
+            navigationOptions: ({ navigation }) => ({
+                title: 'ORDER HISTORY',
+                headerTitleStyle: { color: 'white' },
+                headerStyle: { backgroundColor: 'blue' }
+            })
+        }
+    },
+    {
+        initialRouteName: 'MAIN',
         headerMode: 'none'
     }
 )
