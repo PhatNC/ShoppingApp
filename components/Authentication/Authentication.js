@@ -9,7 +9,7 @@ export default class Authentication extends Component {
         return (
             <View style={{ flex: 1, backgroundColor: 'blue' }}>
                 <Text>Authentication Component</Text>
-                <TouchableOpacity onPress={() => { this.props.navigation.goBack() }}>
+                <TouchableOpacity onPress={() => { this.props.navigation.pop() }}>
                     <Text>Go back to Main</Text>
                 </TouchableOpacity>
             </View>
