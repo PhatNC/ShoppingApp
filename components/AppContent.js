@@ -26,36 +26,16 @@ export default class AppContent extends Component {
 const AppContentStackNavigator = createStackNavigator(
     {
         MAIN: {
-            screen: Main,
-            navigationOptions: ({ navigation }) => ({
-                title: 'MAIN',
-                headerTitleStyle: { color: 'white' },
-                headerStyle: { backgroundColor: 'blue' }
-            })
+            screen: props => <Main navigation={props.navigation} />,
         },
-        AUTHENICATION: {
-            screen: Authentication,
-            navigationOptions: ({ navigation }) => ({
-                title: 'AUTHENICATION',
-                headerTitleStyle: { color: 'white' },
-                headerStyle: { backgroundColor: 'blue' }
-            })
+        AUTHENTICATION: {
+            screen: props => <Authentication navigation={props.navigation} />
         },
         CHANGE_INFO: {
-            screen: ChangeInfo,
-            navigationOptions: ({ navigation }) => ({
-                title: 'CHANGE INFO',
-                headerTitleStyle: { color: 'white' },
-                headerStyle: { backgroundColor: 'blue' }
-            })
+            screen: props => <ChangeInfo navigation={props.navigation} />
         },
         ORDER_HISTORY: {
-            screen: OrderHistory,
-            navigationOptions: ({ navigation }) => ({
-                title: 'ORDER HISTORY',
-                headerTitleStyle: { color: 'white' },
-                headerStyle: { backgroundColor: 'blue' }
-            })
+            screen: props => <OrderHistory navigation={props.navigation} />
         }
     },
     {

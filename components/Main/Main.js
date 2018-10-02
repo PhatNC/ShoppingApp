@@ -44,7 +44,9 @@ export default class Main extends Component {
 }
 
 const MainNavigator = DrawerNavigator({
-    SHOP: { screen: Shop }
+    SHOP: {
+        screen: props => <Shop navigation={props.navigation} />
+    }
 }, {
         initialRouteName: 'SHOP',
         contentComponent: props => <MenuControl navigation={props.navigation} />
@@ -53,9 +55,11 @@ const MainNavigator = DrawerNavigator({
 )
 
 class MenuControl extends Component {
+    constructor(props) {
+        super(props);
+    }
     gotoAuthenication() {
-        const { navigation } = this.props;
-        navigation.push('AUTHENICATION');
+        this.props.navigation.push('AUTHENTICATION');
     }
 
     gotoChangeInfo() {
