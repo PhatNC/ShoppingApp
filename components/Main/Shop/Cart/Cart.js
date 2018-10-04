@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-
-
-import { Icon, Button, Container, Header, Content, Left } from 'native-base';
+import { View, Text } from 'react-native';
 
 export default class Cart extends Component {
     render() {
         return (
-            <Container style={{ backgroundColor: '#607D8B' }}>
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text>
                     Cart Component
                 </Text>
-            </Container>
+            </View>
         )
     }
 }

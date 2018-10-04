@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
-
-import { Icon } from 'react-native-elements'
+import { Icon } from 'react-native-elements';
+import { createBottomTabNavigator } from 'react-navigation';
 
 import Home from './Home/Home';
 import Cart from './Cart/Cart';
 import Contact from './Contact/Contact';
 import Search from './Search/Search';
 
-import { Button, Container, Header, Content, Left, Body } from 'native-base';
-import { createBottomTabNavigator } from 'react-navigation'
-
-
 const { height, width } = Dimensions.get('window');
+
 export default class Shop extends Component {
     render() {
         return (
@@ -32,66 +29,52 @@ export default class Shop extends Component {
                 </View>
                 <BottomTabNavigator />
             </View>
-
-            // <Container>
-            //     <Header>
-            //         <Left style={{ flex: 1, flexDirection: 'row' }}>
-            //             <Icon
-            //                 name="menu"
-            //                 size={35}
-            //                 onPress={() => this.props.navigation.openDrawer()}
-            //             />
-            //         </Left>
-            //     </Header>
-            //     <BottomTabNavigator />
-
-            // </Container>
         )
     }
 }
 
-const BottomTabNavigator = createBottomTabNavigator(
-    {
-        HOME: {
-            screen: Home,
-            navigationOptions: () => ({
-                title: 'HOME',
-                tabBarIcon: ({ focused, tintColor }) => (
-                    <Icon name="home" size={35} color={tintColor} />
-                )
-            })
-        },
-        CART: {
-            screen: Cart,
-            navigationOptions: () => ({
-                title: 'CART',
-                tabBarIcon: ({ focused, tintColor }) => (
-                    <Icon name="shopping-cart" size={35} color={tintColor} />
-                )
-            })
-        },
-        SEARCH: {
-            screen: Search,
-            navigationOptions: () => ({
-                title: 'SEARCH',
-                tabBarIcon: ({ focused, tintColor }) => (
-                    <Icon name="search" size={35} color={tintColor} />
-                )
-            })
-        },
-        CONTACT: {
-            screen: Contact,
-            navigationOptions: () => ({
-                title: 'CONTACT',
-                tabBarIcon: ({ focused, tintColor }) => (
-                    <Icon name="contacts" size={35} color={tintColor} />
-                )
-            })
-        }
-    }, {
-        initialRouteName: 'HOME'
-    }
-)
+// const BottomTabNavigator = createBottomTabNavigator(
+//     {
+//         HOME: {
+//             screen: Home,
+//             navigationOptions: () => ({
+//                 title: 'HOME',
+//                 tabBarIcon: ({ focused, tintColor }) => (
+//                     <Icon name="home" size={35} color={tintColor} />
+//                 )
+//             })
+//         },
+//         CART: {
+//             screen: Cart,
+//             navigationOptions: () => ({
+//                 title: 'CART',
+//                 tabBarIcon: ({ focused, tintColor }) => (
+//                     <Icon name="shopping-cart" size={35} color={tintColor} />
+//                 )
+//             })
+//         },
+//         SEARCH: {
+//             screen: Search,
+//             navigationOptions: () => ({
+//                 title: 'SEARCH',
+//                 tabBarIcon: ({ focused, tintColor }) => (
+//                     <Icon name="search" size={35} color={tintColor} />
+//                 )
+//             })
+//         },
+//         CONTACT: {
+//             screen: Contact,
+//             navigationOptions: () => ({
+//                 title: 'CONTACT',
+//                 tabBarIcon: ({ focused, tintColor }) => (
+//                     <Icon name="contacts" size={35} color={tintColor} />
+//                 )
+//             })
+//         }
+//     }, {
+//         initialRouteName: 'HOME'
+//     }
+// )
 
 const TabRoutes = {
     HOME: { screen: Home },

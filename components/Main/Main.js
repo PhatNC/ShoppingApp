@@ -1,6 +1,4 @@
-import React, {
-    Component
-} from 'react';
+import React, { Component } from 'react';
 import {
     View,
     Text,
@@ -10,15 +8,14 @@ import {
     ScrollView,
 
 } from 'react-native';
-import Menu from './Menu';
-import Shop from './Shop/Shop';
 
 import {
     DrawerNavigator,
     DrawerItems,
     SafeAreaView,
-} from 'react-navigation'
-import { Icon, Button, Container, Header, Content, Left, Body } from 'native-base';
+} from 'react-navigation';
+import Shop from './Shop/Shop';
+import {NavigationActions} from 'react-navigation';
 
 export default class Main extends Component {
     // gotoAuthenication() {
@@ -43,14 +40,15 @@ export default class Main extends Component {
     }
 }
 
-const MainNavigator = DrawerNavigator({
-    SHOP: {
-        screen: props => <Shop navigation={props.navigation} />
-    }
-}, {
+const MainNavigator = DrawerNavigator(
+    {
+        SHOP: {
+            screen: props => <Shop navigation={props.navigation} />
+        }
+    },
+    {
         initialRouteName: 'SHOP',
         contentComponent: props => <MenuControl navigation={props.navigation} />
-
     }
 )
 
@@ -58,33 +56,46 @@ class MenuControl extends Component {
     constructor(props) {
         super(props);
     }
-    gotoAuthenication() {
-        this.props.navigation.push('AUTHENTICATION');
-    }
+    // gotoAuthenication() {
+    //     this.props.navigation.push('AUTHENTICATION');
+    // }
+    //
+    // gotoChangeInfo() {
+    //     const { navigation } = this.props;
+    //     navigation.push('CHANGE_INFO');
+    // }
+    //
+    // gotoOrderHistory() {
+    //     const { navigation } = this.props;
+    //     navigation.push('ORDER_HISTORY');
+    // }
 
-    gotoChangeInfo() {
-        const { navigation } = this.props;
-        navigation.push('CHANGE_INFO');
-    }
-
-    gotoOrderHistory() {
-        const { navigation } = this.props;
-        navigation.push('ORDER_HISTORY');
+    navigateToScreen = (route) => () => {
+        const navigateAction = NavigationActions.navigate({
+            routeName: route
+        });
+        this.props.navigation.dispatch(navigateAction);
     }
 
     render() {
         const { navigation } = this.props;
         return (
-            <View>
-                <TouchableOpacity onPress={() => this.gotoAuthenication()}>
-                    <Text>Go to Authenication</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.gotoChangeInfo()}>
-                    <Text>Go to Change Info</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.gotoOrderHistory()}>
-                    <Text>Go to Order History</Text>
-                </TouchableOpacity>
+            <View style={{paddingTop: 20, flex: 1}}>
+                <View style={{backgroundColor: 'lightgrey'}}>
+                    <Text style={{padding: 10}} onPress={this.navigateToScreen('AUTHENTICATION')}>
+                        Go to Authenication
+                    </Text>
+                </View>
+                <View style={{backgroundColor: 'lightgrey'}}>
+                    <Text style={{padding: 10}} onPress={this.navigateToScreen('CHANGE_INFO')}>
+                        Go to Change Info
+                    </Text>
+                </View>
+                <View style={{backgroundColor: 'lightgrey'}}>
+                    <Text style={{padding: 10}} onPress={this.navigateToScreen('ORDER_HISTORY')}>
+                        Go to Order History
+                    </Text>
+                </View>
             </View>
             //<MenuNavigator />
         )

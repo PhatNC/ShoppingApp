@@ -4,6 +4,7 @@ import {
     Text,
     TouchableOpacity,
 } from 'react-native';
+
 export default class Authentication extends Component {
     render() {
         return (

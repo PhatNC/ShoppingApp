@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-
-
-import { Icon, Button, Container, Header, Content, Left } from 'native-base';
+import { View, Text } from 'react-native';
 
 export default class Home extends Component {
     render() {
         return (
-            <Container style={{ backgroundColor: '#FFC107' }}>
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text>
                     Home Component
                 </Text>
-            </Container>
+            </View>
         )
     }
 }
