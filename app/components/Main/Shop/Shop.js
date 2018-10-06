@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 import { Icon } from 'react-native-elements'
 
@@ -7,45 +7,23 @@ import Home from './Home/Home';
 import Cart from './Cart/Cart';
 import Contact from './Contact/Contact';
 import Search from './Search/Search';
+import TopBar from './TopBar'
 
-import { Button, Container, Header, Content, Left, Body } from 'native-base';
+import { Button, Container, Content, Left, Body } from 'native-base';
 import { createBottomTabNavigator } from 'react-navigation'
 
-
-const { height, width } = Dimensions.get('window');
 export default class Shop extends Component {
+    openMenu() {
+        const {navigation} = this.props;
+        navigation.openDrawer();
+    }
+
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <View style={
-                    {
-                        height: height / 8,
-                        alignContent: 'flex-start',
-                        justifyContent: 'flex-start',
-                        flexDirection: 'row'
-                    }}>
-                    <Icon
-                        name="menu"
-                        size={35}
-                        onPress={() => this.props.navigation.openDrawer()}
-                    />
-                </View>
+                <TopBar onOpen={() => this.openMenu()} />
                 <BottomTabNavigator />
             </View>
-
-            // <Container>
-            //     <Header>
-            //         <Left style={{ flex: 1, flexDirection: 'row' }}>
-            //             <Icon
-            //                 name="menu"
-            //                 size={35}
-            //                 onPress={() => this.props.navigation.openDrawer()}
-            //             />
-            //         </Left>
-            //     </Header>
-            //     <BottomTabNavigator />
-
-            // </Container>
         )
     }
 }
