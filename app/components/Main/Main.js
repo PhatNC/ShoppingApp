@@ -21,22 +21,7 @@ import {
 import { Icon, Button, Container, Header, Content, Left, Body } from 'native-base';
 
 export default class Main extends Component {
-    // gotoAuthenication() {
-    //     const { navigation } = this.props;
-    //     navigation.push('AUTHENICATION');
-    // }
-
-    // gotoChangeInfo() {
-    //     const { navigation } = this.props;
-    //     navigation.push('CHANGE_INFO');
-    // }
-
-    // gotoOrderHistory() {
-    //     const { navigation } = this.props;
-    //     navigation.push('ORDER_HISTORY');
-    // }
-
-    render() {
+      render() {
         return (
             <MainNavigator />
         )

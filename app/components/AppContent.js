@@ -22,7 +22,6 @@ StatusBar.setHidden(true);
 export default class AppContent extends Component {
     render() {
         return (
-            // <AppContentStackNavigator />
             <ApplicationNavigator />
         )
     }
@@ -83,19 +82,32 @@ const ApplicationNavigator = DrawerNavigator({
 
 class MenuControl extends Component {
     render() {
+        const { containerStyle, imageStyle, profileStyle, profileTextStyle } = styles;
         return (
-            <Container>
-                <Header>
-                    {/* <Image
-                        style={styles.drawerImage}
-                        source={require('E:\Giao Tiep Nguoi May\2018.10.04\ShoppingApp\components\Main\user.jpg')}
-                    /> */}
-                    <Text>Profile Image Here</Text> 
-                </Header>
-                <Body>
-                    <DrawerItems {...this.props} />
-                </Body>
-            </Container>
+            <View style={containerStyle} >
+                <View style={profileStyle}>
+                    <Image
+                        style={imageStyle}
+                        source={
+                            require('../media/img/cat.png')
+                        }
+                    />
+                    <Text style={profileTextStyle}>Profile Name</Text>
+                </View>
+                <DrawerItems {...this.props} />
+            </View>
+            // <Container>
+            //     <Header>
+            //         {/* <Image
+            //             style={styles.drawerImage}
+            //             source={require('E:\Giao Tiep Nguoi May\2018.10.04\ShoppingApp\components\Main\user.jpg')}
+            //         /> */}
+            //         <Text>Profile Image Here</Text>
+            //     </Header>
+            //     <Body>
+            //         <DrawerItems {...this.props} />
+            //     </Body>
+            // </Container>
         )
     }
 }
@@ -111,4 +123,23 @@ var styles = StyleSheet.create({
         width: 100,
         borderRadius: 75,
     }
+})
+
+const styles = StyleSheet.create({
+    containerStyle: {
+        justifyContent: 'space-between',
+        alignContent: 'space-around',
+        padding: 10
+    },
+    imageStyle: { height: 200, width: 200, borderRadius: 200 },
+    profileStyle: {
+        justifyContent: 'space-between',
+        alignContent: 'space-around',
+        alignItems: 'center'
+    },
+    profileTextStyle: {
+        fontFamily: 'Century',
+        fontSize: 20,
+    },
+    itemStyle: {}
 })

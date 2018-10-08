@@ -19,7 +19,7 @@ export default class TopBar extends Component {
                             }
                         />
                     </TouchableOpacity>
-                    <Text style={titleStyle}>Wearing a Dress</Text>
+                    <Text style={titleStyle}>Shopping App</Text>
                     <Image
                         style={iconStyle}
                         source={

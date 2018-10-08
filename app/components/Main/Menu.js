@@ -36,35 +36,6 @@ export default class Menu extends Component {
                     <Text>Go to Order History</Text>
                 </TouchableOpacity>
             </View>
-            //<MenuNavigator />
         )
     }
 }
-
-/* class MenuControl extends Component {
-    render() {
-        return (
-            <View>
-                <Text>Menu Component</Text>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('AUTHENICATION')}>
-                    <Text>Go to Authenication</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text>Go to Change Innfo</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text>Go to Order History</Text>
-                </TouchableOpacity>
-            </View>
-        )
-    }
-} */
-/* 
-const MenuNavigator = StackNavigator({
-    MENU_CONTROL: { screen: MenuControl },
-    AUTHENICATION: { screen: Authentication },
-    CHANGE_INFO: { screen: ChangeInfo },
-    ORDER_HISTORY: { screen: OrderHistory }
-}, {
-        headerMode: 'none'
-    }) */
