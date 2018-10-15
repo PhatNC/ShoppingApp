@@ -138,7 +138,6 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     profileTextStyle: {
-        fontFamily: 'Century',
         fontSize: 20,
     },
     itemStyle: {}
