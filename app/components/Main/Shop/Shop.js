@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Platform } from 'react-native';
 
 import { Icon } from 'react-native-elements'
 
@@ -9,12 +9,11 @@ import Contact from './Contact/Contact';
 import Search from './Search/Search';
 import TopBar from './TopBar'
 
-import { Button, Container, Content, Left, Body } from 'native-base';
-import { createBottomTabNavigator } from 'react-navigation'
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
 
 export default class Shop extends Component {
     openMenu() {
-        const {navigation} = this.props;
+        const { navigation } = this.props;
         navigation.openDrawer();
     }
 
@@ -22,20 +21,23 @@ export default class Shop extends Component {
         return (
             <View style={{ flex: 1 }}>
                 <TopBar onOpen={() => this.openMenu()} />
-                <BottomTabNavigator />
+                <BottomMaterialTabNavigation />
             </View>
         )
     }
 }
 
-const BottomTabNavigator = createBottomTabNavigator(
+const BottomMaterialTabNavigation = createMaterialBottomTabNavigator(
     {
         HOME: {
             screen: Home,
             navigationOptions: () => ({
-                title: 'HOME',
+                //title: 'HOME',
                 tabBarIcon: ({ focused, tintColor }) => (
-                    <Icon name="home" size={35} color={tintColor} />
+                    <Icon
+                        name="home"
+                        size={20} color={tintColor}
+                    />
                 )
             })
         },
@@ -44,7 +46,10 @@ const BottomTabNavigator = createBottomTabNavigator(
             navigationOptions: () => ({
                 title: 'CART',
                 tabBarIcon: ({ focused, tintColor }) => (
-                    <Icon name="shopping-cart" size={35} color={tintColor} />
+                    <Icon
+                        name="shopping-cart"
+                        size={20} color={tintColor}
+                    />
                 )
             })
         },
@@ -53,7 +58,10 @@ const BottomTabNavigator = createBottomTabNavigator(
             navigationOptions: () => ({
                 title: 'SEARCH',
                 tabBarIcon: ({ focused, tintColor }) => (
-                    <Icon name="search" size={35} color={tintColor} />
+                    <Icon
+                        name="search"
+                        size={20} color={tintColor}
+                    />
                 )
             })
         },
@@ -62,22 +70,20 @@ const BottomTabNavigator = createBottomTabNavigator(
             navigationOptions: () => ({
                 title: 'CONTACT',
                 tabBarIcon: ({ focused, tintColor }) => (
-                    <Icon name="contacts" size={35} color={tintColor} />
+                    <Icon
+                        name="contacts"
+                        size={20} color={tintColor}
+                    />
                 )
             })
+        },
+    },
+    {
+        initialRouteName: 'HOME',
+        activeColor: '#f0edf6',
+        inactiveColor: '#3e2465',
+        barStyle: {
+            backgroundColor: '#694fad'
         }
-    }, {
-        initialRouteName: 'HOME'
     }
 )
-
-const TabRoutes = {
-    HOME: { screen: Home },
-    CART: { screen: Cart },
-    SEARCH: { screen: Search },
-    CONTACT: { screen: Contact }
-}
-
-const TabConfig = {
-
-}

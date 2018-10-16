@@ -67,43 +67,6 @@ class MenuControl extends Component {
                     <Text>Go to Order History</Text>
                 </TouchableOpacity>
             </View>
-            //<MenuNavigator />
         )
     }
 }
-
-/* const CustomDrawerContentComponent = (props) => (
-    <ScrollView>
-        <SafeAreaView style={styles.container} forceInset={{ top: 'always', horizontal: 'never' }}>
-            <DrawerItems {...props} />
-        </SafeAreaView>
-    </ScrollView>
-); */
-
-/* const CustomDrawerContentComponent = (props) => (
-    <Container>
-        <Header>
-            <Body>
-                <Image
-                    style={styles.drawerImage}
-                    source={{ uri: "https://www.flaticon.com/authors/smashicons" }}
-                />
-            </Body>
-        </Header>
-        <DrawerItems {...props} />
-    </Container >
-) */
-/* 
-var styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    drawerImage: {
-        height: 100,
-        width: 100,
-        borderRadius: 75,
-    }
-})
- */

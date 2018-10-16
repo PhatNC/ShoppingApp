@@ -7,7 +7,7 @@ import {
     StyleSheet,
 } from 'react-native';
 
-import { createStackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
+import { createStackNavigator, DrawerNavigator, DrawerItems , createDrawerNavigator} from 'react-navigation';
 
 import Authentication from './Authentication/Authentication';
 import ChangeInfo from './ChangeInfo/ChangeInfo';
@@ -68,7 +68,7 @@ const AppContentStackNavigator = createStackNavigator(
     }
 )
 
-const ApplicationNavigator = DrawerNavigator({
+const ApplicationNavigator = createDrawerNavigator({
     SHOP: { screen: Shop },
     AUTHENICATION: { screen: Authentication },
     CHANGE_INFO: { screen: ChangeInfo },
@@ -82,7 +82,13 @@ const ApplicationNavigator = DrawerNavigator({
 
 class MenuControl extends Component {
     render() {
-        const { containerStyle, imageStyle, profileStyle, profileTextStyle } = styles;
+        const {
+            containerStyle,
+            imageStyle,
+            profileStyle,
+            profileTextStyle,
+            itemStyle,
+        } = styles;
         return (
             <View style={containerStyle} >
                 <View style={profileStyle}>
@@ -92,22 +98,12 @@ class MenuControl extends Component {
                             require('../media/img/cat.png')
                         }
                     />
-                    <Text style={profileTextStyle}>Profile Name</Text>
+                    <Text style={profileTextStyle}>Shin Seijuro</Text>
                 </View>
-                <DrawerItems {...this.props} />
+                <View>
+                    <DrawerItems style={itemStyle} {...this.props} />
+                </View>
             </View>
-            // <Container>
-            //     <Header>
-            //         {/* <Image
-            //             style={styles.drawerImage}
-            //             source={require('E:\Giao Tiep Nguoi May\2018.10.04\ShoppingApp\components\Main\user.jpg')}
-            //         /> */}
-            //         <Text>Profile Image Here</Text>
-            //     </Header>
-            //     <Body>
-            //         <DrawerItems {...this.props} />
-            //     </Body>
-            // </Container>
         )
     }
 }
@@ -129,16 +125,23 @@ const styles = StyleSheet.create({
     containerStyle: {
         justifyContent: 'space-between',
         alignContent: 'space-around',
-        padding: 10
     },
-    imageStyle: { height: 200, width: 200, borderRadius: 200 },
+    imageStyle: {
+        height: 200,
+        width: 200,
+        borderRadius: 100,
+        margin: 10,
+    },
     profileStyle: {
         justifyContent: 'space-between',
         alignContent: 'space-around',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: "#008e76"
     },
     profileTextStyle: {
+        fontFamily: 'Roboto',
         fontSize: 20,
+        color: "#000000"
     },
     itemStyle: {}
 })
