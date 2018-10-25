@@ -23,9 +23,9 @@ export default class Collection extends Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    height: height * 0.3,
+    height: height * 0.38,
     backgroundColor: '#FFF',
-    margin: 10,
+    margin: 5,
     shadowColor: '#2E272B',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.2,

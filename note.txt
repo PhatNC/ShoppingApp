@@ -1,0 +1,3 @@
+Pakages need to install:
+npm install --save react-native-snap-carousel
+npm install react-native-search-bar --save

@@ -136,12 +136,12 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignContent: 'space-around',
         alignItems: 'center',
-        backgroundColor: "#008e76"
+        backgroundColor: "#263238"
     },
     profileTextStyle: {
         fontFamily: 'Roboto',
         fontSize: 20,
-        color: "#000000"
+        color: "#FFF"
     },
     itemStyle: {}
 })

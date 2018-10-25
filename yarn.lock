@@ -5263,6 +5263,20 @@ react-native-screens@^1.0.0-alpha.11:
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.15.tgz#5b5a0041310b46f12048fda1908d52e7290ec18f"
   integrity sha512-S2OM/ieD+Krk+0/Z2Vz2rTUWYud5hJgCRZqXRtqEfMgEcGI4FBopXp7mwXCGbA2PFLjZwZSwLlsZ6RX30WnjRw==
 
+react-native-search-bar@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-search-bar/-/react-native-search-bar-3.4.2.tgz#8606bb1d6b29a26dd5ee86cfae00f7253181736d"
+  integrity sha512-hchI0UBeKzNbPchJ4fXhl+o3fu4a9uQEmtRQrtf1lAqtTU3/WEtSHZ9Dz5Ix/ZalZQtiBcqlDVZTfIk3x7DbVw==
+  dependencies:
+    prop-types "^15.5.10"
+
+react-native-swiper@^1.5.13:
+  version "1.5.13"
+  resolved "https://registry.yarnpkg.com/react-native-swiper/-/react-native-swiper-1.5.13.tgz#fa695cd4ab77b9a9df2d2bfee38ea7274dd07a2e"
+  integrity sha512-byBPx3qz3FvZhk4O8LR8am5SoO/pwm2Sj1OmFuXOOLYEj87+PzQaTr9u7+mgU76Ti2TP1OWnCPTXH6XUXYwxyw==
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-tab-view@^0.0.77:
   version "0.0.77"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.77.tgz#11ceb8e7c23100d07e628dc151b57797524d00d4"

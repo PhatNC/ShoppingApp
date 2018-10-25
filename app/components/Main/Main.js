@@ -21,7 +21,7 @@ import {
 import { Icon, Button, Container, Header, Content, Left, Body } from 'native-base';
 
 export default class Main extends Component {
-      render() {
+    render() {
         return (
             <MainNavigator />
         )
@@ -32,41 +32,7 @@ const MainNavigator = DrawerNavigator({
     SHOP: { screen: Shop }
 }, {
         initialRouteName: 'SHOP',
-        contentComponent: props => <MenuControl navigation={props.navigation} />
+        contentComponent: props => <Menu navigation={props.navigation} />
 
     }
 )
-
-class MenuControl extends Component {
-    gotoAuthenication() {
-        const { navigation } = this.props;
-        navigation.push('AUTHENICATION');
-    }
-
-    gotoChangeInfo() {
-        const { navigation } = this.props;
-        navigation.push('CHANGE_INFO');
-    }
-
-    gotoOrderHistory() {
-        const { navigation } = this.props;
-        navigation.push('ORDER_HISTORY');
-    }
-
-    render() {
-        const { navigation } = this.props;
-        return (
-            <View>
-                <TouchableOpacity onPress={() => this.gotoAuthenication()}>
-                    <Text>Go to Authenication</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.gotoChangeInfo()}>
-                    <Text>Go to Change Info</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.gotoOrderHistory()}>
-                    <Text>Go to Order History</Text>
-                </TouchableOpacity>
-            </View>
-        )
-    }
-}

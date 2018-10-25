@@ -6,21 +6,26 @@ import littleIcon from '../../../../media/temp/little.jpg'
 import maxiIcon from '../../../../media/temp/maxi.jpg'
 import partyIcon from '../../../../media/temp/party.jpg'
 
-const { height } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 
 export default class Category extends Component {
   render() {
-    const { wrapper, textStyle } = styles;
+    const { wrapper, textStyle, imageStyle, titleStyle } = styles;
     return (
       <View style={wrapper}>
         <View style={{ flex: 1, justifyContent: 'center' }}>
-          <Text style={textStyle}>SPRING COLLECTION</Text>
+          <Text style={textStyle}>LIST OF CATEGORY</Text>
         </View >
-        <View style={{ flex: 4 }}>
-          <Swiper >
-            <Image source={littleIcon} style={{ height: '100%', width: '100%' }} />
-            <Image source={maxiIcon} style={{ height: '100%', width: '100%' }} />
-            <Image source={partyIcon} style={{ height: '100%', width: '100%' }} />
+        <View style={{ flex: 4, justifyContent: 'flex-end' }}>
+          <Swiper
+            showsButtons={true}
+            autoplay={true}
+            autoplayTimeout={5}
+          >
+            <Image source={maxiIcon} style={imageStyle} />
+            <Image source={littleIcon} style={imageStyle} />
+            <Image source={partyIcon} style={imageStyle} />
+            <Image source={partyIcon} style={imageStyle} />
           </Swiper>
         </View>
       </View>
@@ -30,9 +35,9 @@ export default class Category extends Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    height: height * 0.3,
+    height: height * 0.38,
     backgroundColor: '#FFF',
-    margin: 10,
+    margin: 5,
     shadowColor: '#2E272B',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.2,
@@ -42,5 +47,14 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 20,
     color: '#AFAEAF'
+  },
+  imageStyle: {
+    height: '100%',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  titleStyle: {
+    fontSize: 15
   }
 })

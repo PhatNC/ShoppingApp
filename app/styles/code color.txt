@@ -1,0 +1,4 @@
+Primary #263238
+Light #4f5b62
+Dark #000a12
+Text #FFF
