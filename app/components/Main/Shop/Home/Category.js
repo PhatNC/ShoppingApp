@@ -6,6 +6,10 @@ import littleIcon from '../../../../media/temp/little.jpg'
 import maxiIcon from '../../../../media/temp/maxi.jpg'
 import partyIcon from '../../../../media/temp/party.jpg'
 
+import cake1 from '../../../../media/temp/cake1.jpg';
+import cake2 from '../../../../media/temp/cake2.jpg';
+import cake3 from '../../../../media/temp/cake3.jpg';
+
 const { height, width } = Dimensions.get('window');
 
 export default class Category extends Component {
@@ -18,14 +22,13 @@ export default class Category extends Component {
         </View >
         <View style={{ flex: 4, justifyContent: 'flex-end' }}>
           <Swiper
-            showsButtons={true}
+            //showsButtons={true}
             autoplay={true}
             autoplayTimeout={5}
           >
-            <Image source={maxiIcon} style={imageStyle} />
-            <Image source={littleIcon} style={imageStyle} />
-            <Image source={partyIcon} style={imageStyle} />
-            <Image source={partyIcon} style={imageStyle} />
+            <Image source={cake1} style={imageStyle} />
+            <Image source={cake2} style={imageStyle} />
+            <Image source={cake3} style={imageStyle} />
           </Swiper>
         </View>
       </View>

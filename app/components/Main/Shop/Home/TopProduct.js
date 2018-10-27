@@ -7,6 +7,12 @@ import sp3 from '../../../../media/temp/sp3.jpeg';
 import sp4 from '../../../../media/temp/sp4.jpeg';
 import sp5 from '../../../../media/temp/sp5.jpeg';
 
+import cake1 from '../../../../media/temp/cake1.jpg';
+import cake2 from '../../../../media/temp/cake2.jpg';
+import cake3 from '../../../../media/temp/cake3.jpg';
+import cake4 from '../../../../media/temp/cake4.jpg';
+import cake5 from '../../../../media/temp/cake5.jpg';
+
 const { height, width } = Dimensions.get('window');
 
 export default class TopProduct extends Component {
@@ -28,26 +34,27 @@ export default class TopProduct extends Component {
           style={body}
         >
           <View style={productContainer}>
-            <Image source={sp1} style={productImage} />
+            <Image source={cake1} style={productImage} />
             <Text style={produceName} >PRODUCT NAME</Text>
             <Text style={producePrice}>PRODUCT COST</Text>
           </View>
           <View style={productContainer}>
-            <Image source={sp2} style={productImage} />
+            <Image source={cake2} style={productImage} />
             <Text style={produceName} >PRODUCT NAME</Text>
             <Text style={producePrice}>PRODUCT COST</Text>
           </View>
           <View style={productContainer}>
-            <Image source={sp2} style={productImage} />
-            <Text style={produceName} >PRODUCT NAME</Text>
-            <Text style={producePrice}>PRODUCT COST</Text>
-          </View><View style={productContainer}>
-            <Image source={sp2} style={productImage} />
+            <Image source={cake3} style={productImage} />
             <Text style={produceName} >PRODUCT NAME</Text>
             <Text style={producePrice}>PRODUCT COST</Text>
           </View>
           <View style={productContainer}>
-            <Image source={sp5} style={productImage} />
+            <Image source={cake4} style={productImage} />
+            <Text style={produceName} >PRODUCT NAME</Text>
+            <Text style={producePrice}>PRODUCT COST</Text>
+          </View>
+          <View style={productContainer}>
+            <Image source={cake5} style={productImage} />
             <Text style={produceName} >PRODUCT NAME</Text>
             <Text style={producePrice}>PRODUCT COST</Text>
           </View>
@@ -57,56 +64,8 @@ export default class TopProduct extends Component {
   }
 }
 
-/* const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#FFF',
-    margin: 5,
-  },
-  titleContainer: {
-    height: 50,
-    backgroundColor: 'red',
-    justifyContent: 'center',
-    paddingLeft: 10,
-    shadowColor: '#2E272B',
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 0.2,
-    marginBottom: 10
-  },
-  titleText: {
-    fontSize: 20,
-    color: '#AFAEAF'
-  },
-  body: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    padding: 5,
-    // backgroundColor: '#DBDBDB'
-  },
-  productContainer: {
-    width: '50%',
-    height: 100,
-    backgroundColor: 'yellow',
-    padding: 5
-  },
-  productImage: {
-    margin: 5,
-    resizeMode: 'stretch'
-  },
-  titleTextStyle: {
-    fontSize: 15
-  },
-  test: {
-    height: '100%',
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    resizeMode: 'contain'
-  }
-})
- */
-const produtWidth = (width - 60) / 2;
-const productImageHeight = (produtWidth / 361) * 452;
+const produceWidth = (width - 60) / 2;
+const productImageHeight = (produceWidth / 361) * 452;
 
 const styles = StyleSheet.create({
   container: {
@@ -132,13 +91,13 @@ const styles = StyleSheet.create({
     paddingBottom: 10
   },
   productContainer: {
-    width: produtWidth,
+    width: produceWidth,
     shadowColor: '#2E272B',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.2
   },
   productImage: {
-    width: produtWidth,
+    width: produceWidth,
     height: productImageHeight
   },
   produceName: {

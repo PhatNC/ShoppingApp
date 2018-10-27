@@ -5,17 +5,18 @@ import {
     StatusBar,
     Image,
     StyleSheet,
+    SafeAreaView,
 } from 'react-native';
 
-import { createStackNavigator, DrawerNavigator, DrawerItems , createDrawerNavigator} from 'react-navigation';
+import { createStackNavigator, DrawerNavigator, DrawerItems, createDrawerNavigator } from 'react-navigation';
+
+import { Avatar } from 'react-native-elements';
 
 import Authentication from './Authentication/Authentication';
 import ChangeInfo from './ChangeInfo/ChangeInfo';
 import OrderHistory from './OrderHistory/OrderHistory';
 import Main from './Main/Main';
 import Shop from './Main/Shop/Shop'
-import { Container, Header, Body } from 'native-base';
-
 
 StatusBar.setHidden(true);
 
@@ -27,47 +28,6 @@ export default class AppContent extends Component {
     }
 }
 
-const AppContentStackNavigator = createStackNavigator(
-    {
-        MAIN: {
-            screen: Main,
-            navigationOptions: ({ navigation }) => ({
-                title: 'MAIN',
-                headerTitleStyle: { color: 'white' },
-                headerStyle: { backgroundColor: 'blue' }
-            })
-        },
-        AUTHENICATION: {
-            screen: Authentication,
-            navigationOptions: ({ navigation }) => ({
-                title: 'AUTHENICATION',
-                headerTitleStyle: { color: 'white' },
-                headerStyle: { backgroundColor: 'blue' }
-            })
-        },
-        CHANGE_INFO: {
-            screen: ChangeInfo,
-            navigationOptions: ({ navigation }) => ({
-                title: 'CHANGE INFO',
-                headerTitleStyle: { color: 'white' },
-                headerStyle: { backgroundColor: 'blue' }
-            })
-        },
-        ORDER_HISTORY: {
-            screen: OrderHistory,
-            navigationOptions: ({ navigation }) => ({
-                title: 'ORDER HISTORY',
-                headerTitleStyle: { color: 'white' },
-                headerStyle: { backgroundColor: 'blue' }
-            })
-        }
-    },
-    {
-        initialRouteName: 'MAIN',
-        headerMode: 'none'
-    }
-)
-
 const ApplicationNavigator = createDrawerNavigator({
     SHOP: { screen: Shop },
     AUTHENICATION: { screen: Authentication },
@@ -75,8 +35,11 @@ const ApplicationNavigator = createDrawerNavigator({
     ORDER_HISTORY: { screen: OrderHistory }
 }, {
         initialRouteName: 'SHOP',
-        contentComponent: props => <MenuControl {...props} />
-
+        contentComponent: props => <MenuControl {...props} />,
+        backBehavior: 'initialRoute',
+        contentOptions: {
+            //activeTintColor: '#FFF',
+        }
     }
 )
 
@@ -84,7 +47,6 @@ class MenuControl extends Component {
     render() {
         const {
             containerStyle,
-            imageStyle,
             profileStyle,
             profileTextStyle,
             itemStyle,
@@ -92,56 +54,69 @@ class MenuControl extends Component {
         return (
             <View style={containerStyle} >
                 <View style={profileStyle}>
-                    <Image
-                        style={imageStyle}
-                        source={
-                            require('../media/img/cat.png')
-                        }
+                    <Avatar
+                        xlarge
+                        rounded
+                        source={require('../media/img/cat.png')}
+                        onPress={() => alert('Profile Information')}
+                        activeOpacity={0.7}
                     />
                     <Text style={profileTextStyle}>Shin Seijuro</Text>
                 </View>
-                <View>
-                    <DrawerItems style={itemStyle} {...this.props} />
+
+                <View style={styles.routeManager} >
+                    <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
+                        <DrawerItems
+                            {...this.props}
+                            itemStyle={itemStyle}
+                            onItemPress={({ route, focused }) => {
+                                if (focused) {
+                                    this.props.navigation.closeDrawer();
+                                }
+                                this.props.navigation.navigate(route.routeName);
+                            }}
+
+                        />
+                    </SafeAreaView>
                 </View>
             </View>
+
+
         )
     }
 }
 
-var styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    drawerImage: {
-        height: 100,
-        width: 100,
-        borderRadius: 75,
-    }
-})
-
 const styles = StyleSheet.create({
     containerStyle: {
-        justifyContent: 'space-between',
-        alignContent: 'space-around',
-    },
-    imageStyle: {
-        height: 200,
-        width: 200,
-        borderRadius: 100,
-        margin: 10,
+        // justifyContent: 'space-between',
+        // alignContent: 'space-around',
+        backgroundColor: '#394a59',
+        flex: 1
     },
     profileStyle: {
         justifyContent: 'space-between',
         alignContent: 'space-around',
         alignItems: 'center',
-        backgroundColor: "#263238"
+        backgroundColor: "#263238",
+        padding: 20
     },
     profileTextStyle: {
         fontFamily: 'Roboto',
         fontSize: 20,
         color: "#FFF"
     },
-    itemStyle: {}
+    itemStyle: {
+        paddingBottom: 10,
+        paddingTop: 10,
+        // borderColor: '#FFF',
+        // borderBottomWidth: 2
+        borderRadius: 10,
+        backgroundColor: 'rgba(255, 255, 255, 0.6)',
+        margin: 5
+    },
+    routeManager: {
+        // backgroundColor: '#FFF',
+        padding: 5
+    },
+    // buttonText: {}
 })

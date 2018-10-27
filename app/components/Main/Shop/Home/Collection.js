@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 
 import bannerImage from '../../../../media/temp/banner.jpg'
+import cake1 from '../../../../media/temp/cake1.jpg';
 
 const { height } = Dimensions.get('window');
 
@@ -14,7 +15,7 @@ export default class Collection extends Component {
           <Text style={textStyle}>SPRING COLLECTION</Text>
         </View>
         <View style={{ flex: 4 }}>
-          <Image source={bannerImage} style={{ height: '100%', width: '100%' }} />
+          <Image source={cake1} style={{ height: '100%', width: '100%' }} />
         </View>
       </View>
     )
