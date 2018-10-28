@@ -1,62 +1,80 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
+    StyleSheet,
     View,
     Text,
-    TouchableOpacity,
+    ImageBackground,
     Dimensions,
+    LayoutAnimation,
+    UIManager,
+    KeyboardAvoidingView,
+    TextInput,
+    Keyboard
 } from 'react-native';
-import { Icon } from 'react-native-elements';
+import { FormInput, Button } from 'react-native-elements';
 
-const { height } = Dimensions.get('window');
-
-export default class Authentication extends Component {
-    render() {
-        return (
-            <View style={{ flex: 1, backgroundColor: 'blue' }}>
-                <Text>Authentication Component</Text>
-                <TouchableOpacity onPress={() => { this.props.navigation.goBack() }}>
-                    <Text>Go back to Main</Text>
-                </TouchableOpacity>
-            </View>
-        )
-    }
-}
-
-/* import React, { Component } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions } from 'react-native';
-import { Input, Button } from 'react-native-elements'
-
-// import { Font } from 'expo';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import SimpleIcon from 'react-native-vector-icons/SimpleLineIcons';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-const BG_IMAGE = require('../../media/img/bg_screen1.jpg');
+const BG_IMAGE = require('../../media/img/logo.png');
+
+// Enable LayoutAnimation on Android
+UIManager.setLayoutAnimationEnabledExperimental
+    && UIManager.setLayoutAnimationEnabledExperimental(true);
+
+const TabSelector = ({ selected }) => {
+    return (
+        <View style={styles.selectorContainer}>
+            <View style={selected && styles.selected} />
+        </View>
+    );
+};
+
+TabSelector.propTypes = {
+    selected: PropTypes.bool.isRequired,
+};
 
 export default class Authentication extends Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
-            fontLoaded: false,
             email: '',
-            email_valid: true,
             password: '',
-            login_failed: false,
-            showLoading: false
+            //fontLoaded: false,
+            selectedCategory: 0,
+            isLoading: false,
+            isEmailValid: true,
+            isPasswordValid: true,
+            isConfirmationValid: true,
         };
+
+        this.selectCategory = this.selectCategory.bind(this);
+        this.login = this.login.bind(this);
+        this.signUp = this.signUp.bind(this);
     }
 
-    async componentDidMount() {
-        // await Font.loadAsync({
-        //     'georgia': require('../../fonts/Georgia.ttf'),
-        //     'regular': require('../../fonts/Montserrat-Regular.ttf'),
-        //     'light': require('../../fonts/Montserrat-Light.ttf'),
-        //     'bold': require('../../fonts/Montserrat-Bold.ttf'),
-        // });
+    //   async componentDidMount() {
+    //     await Font.loadAsync({
+    //       'georgia': require('../../../assets/fonts/Georgia.ttf'),
+    //       'regular': require('../../../assets/fonts/Montserrat-Regular.ttf'),
+    //       'light': require('../../../assets/fonts/Montserrat-Light.ttf'),
+    //     });
 
-        this.setState({ fontLoaded: true });
+    //     this.setState({ fontLoaded: true });
+    //   }
+
+    selectCategory(selectedCategory) {
+        LayoutAnimation.easeInEaseOut();
+        this.setState({
+            selectedCategory,
+            isLoading: false,
+        });
     }
 
     validateEmail(email) {
@@ -65,116 +83,201 @@ export default class Authentication extends Component {
         return re.test(email);
     }
 
-    submitLoginCredentials() {
-        const { showLoading } = this.state;
+    login() {
+        const {
+            email,
+            password,
+        } = this.state;
+        this.setState({ isLoading: true });
+        // Simulate an API call
+        setTimeout(() => {
+            LayoutAnimation.easeInEaseOut();
+            this.setState({
+                isLoading: false,
+                isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
+                isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
+            });
+        }, 1500);
+    }
 
-        this.setState({
-            showLoading: !showLoading
-        });
+    signUp() {
+        const {
+            email,
+            password,
+            passwordConfirmation,
+        } = this.state;
+        this.setState({ isLoading: true });
+        // Simulate an API call
+        setTimeout(() => {
+            LayoutAnimation.easeInEaseOut();
+            this.setState({
+                isLoading: false,
+                isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
+                isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
+                isConfirmationValid: password == passwordConfirmation || this.confirmationInput.shake(),
+            });
+        }, 1500);
     }
 
     render() {
-        const { email, password, email_valid, showLoading } = this.state;
-
+        const {
+            selectedCategory,
+            isLoading,
+            isEmailValid,
+            isPasswordValid,
+            isConfirmationValid,
+            email,
+            password,
+            passwordConfirmation,
+        } = this.state;
+        const isLoginPage = selectedCategory === 0;
+        const isSignUpPage = selectedCategory === 1;
         return (
             <View style={styles.container}>
                 <ImageBackground
                     source={BG_IMAGE}
                     style={styles.bgImage}
                 >
-                    {this.state.fontLoaded ?
-                        <View style={styles.loginView}>
-                            <View style={styles.loginTitle}>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <Text style={styles.travelText}>TRAVEL</Text>
-                                    <Text style={styles.plusText}>+</Text>
-                                </View>
-                                <View style={{ marginTop: -10 }}>
-                                    <Text style={styles.travelText}>LEISURE</Text>
-                                </View>
+                    <View style={styles.loginContainer}>
+                        <KeyboardAvoidingView behavior='position'>
+                            <View style={styles.buttonGroup}>
+                                <Button
+                                    disabled={isLoading}
+                                    clear
+                                    activeOpacity={0.7}
+                                    onPress={() => this.selectCategory(0)}
+                                    buttonStyle={{
+                                        width: SCREEN_WIDTH * 0.4,
+                                        borderTopLeftRadius: 15,
+                                        borderBottomLeftRadius: 15
+                                    }}
+                                    titleStyle={[styles.categoryText, isLoginPage && styles.selectedCategoryText]}
+                                    title={'Login'}
+                                    backgroundColor='white'
+                                    fontWeight='bold'
+                                    fontSize={20}
+                                    color='black'
+                                />
+                                <Button
+                                    disabled={isLoading}
+                                    clear
+                                    activeOpacity={0.7}
+                                    onPress={() => this.selectCategory(1)}
+                                    buttonStyle={{
+                                        width: SCREEN_WIDTH * 0.4,
+                                        borderTopRightRadius: 15,
+                                        borderBottomRightRadius: 15
+                                    }}
+                                    titleStyle={[styles.categoryText, isSignUpPage && styles.selectedCategoryText]}
+                                    title={'Sign up'}
+                                    backgroundColor='white'
+                                    fontWeight='bold'
+                                    fontSize={20}
+                                    color='black'
+                                />
                             </View>
-                            <View style={styles.loginInput}>
-                                <Input
-                                    leftIcon={
+                            <View style={styles.rowSelector}>
+                                <TabSelector selected={isLoginPage} />
+                                <TabSelector selected={isSignUpPage} />
+                            </View>
+                            <View style={styles.formContainer}>
+                                <View style={{
+                                    flexDirection: 'row',
+                                    width: '100%',
+                                    paddingLeft: 20,
+                                    paddingRight: 20,
+                                    alignItems: 'center',
+                                }}>
+                                    <View style={{ flex: .2, justifyContent: 'center', alignItems: 'center' }}>
                                         <Icon
-                                            name='user-o'
-                                            color='rgba(171, 189, 219, 1)'
+                                            name='envelope'
+                                            color='black'
                                             size={25}
                                         />
-                                    }
-                                    containerStyle={{ marginVertical: 10 }}
-                                    onChangeText={email => this.setState({ email })}
-                                    value={email}
-                                    inputStyle={{ marginLeft: 10, color: 'white' }}
-                                    keyboardAppearance="light"
-                                    placeholder="Email"
-                                    autoFocus={false}
-                                    autoCapitalize="none"
-                                    autoCorrect={false}
-                                    keyboardType="email-address"
-                                    returnKeyType="next"
-                                    ref={input => this.emailInput = input}
-                                    onSubmitEditing={() => {
-                                        this.setState({ email_valid: this.validateEmail(email) });
-                                        this.passwordInput.focus();
-                                    }}
-                                    blurOnSubmit={false}
-                                    placeholderTextColor="white"
-                                    errorStyle={{ textAlign: 'center', fontSize: 12 }}
-                                    errorMessage={email_valid ? null : "Please enter a valid email address"}
-                                />
-                                <Input
-                                    leftIcon={
+                                    </View>
+                                    <TextInput
+                                        style={{
+                                            flex: .8,
+                                            borderRadius: 5,
+                                            paddingRight: 20,
+                                        }}
+                                        placeholder='Email'
+                                    />
+
+                                </View>
+                                <View style={{
+                                    flexDirection: 'row',
+                                    width: '100%',
+                                    paddingLeft: 20,
+                                    paddingRight: 20,
+                                    alignItems: 'center',
+                                }}>
+                                    <View style={{ flex: .2, alignItems: 'center' }}>
                                         <Icon
                                             name='lock'
-                                            color='rgba(171, 189, 219, 1)'
+                                            color='black'
                                             size={25}
                                         />
-                                    }
-                                    containerStyle={{ marginVertical: 10 }}
-                                    onChangeText={(password) => this.setState({ password })}
-                                    value={password}
-                                    inputStyle={{ marginLeft: 10, color: 'white' }}
-                                    secureTextEntry={true}
-                                    keyboardAppearance="light"
-                                    placeholder="Password"
-                                    autoCapitalize="none"
-                                    autoCorrect={false}
-                                    keyboardType="default"
-                                    returnKeyType="done"
-                                    ref={input => this.passwordInput = input}
-                                    blurOnSubmit={true}
-                                    placeholderTextColor="white"
-                                />
-                            </View>
-                            <Button
-                                title='LOG IN'
-                                activeOpacity={1}
-                                underlayColor="transparent"
-                                onPress={this.submitLoginCredentials.bind(this)}
-                                loading={showLoading}
-                                loadingProps={{ size: 'small', color: 'white' }}
-                                disabled={!email_valid && password.length < 8}
-                                buttonStyle={{ height: 50, width: 250, backgroundColor: 'transparent', borderWidth: 2, borderColor: 'white', borderRadius: 30 }}
-                                containerStyle={{ marginVertical: 10 }}
-                                titleStyle={{ fontWeight: 'bold', color: 'white' }}
-                            />
-                            <View style={styles.footerView}>
-                                <Text style={{ color: 'grey' }}>
-                                    New here?
-              </Text>
+                                    </View>
+
+                                    <TextInput
+                                        style={{
+                                            flex: .8,
+                                            borderRadius: 5,
+                                            paddingRight: 20,
+                                        }}
+                                        placeholder='Password'
+                                    />
+
+                                </View>
+                                {isSignUpPage &&
+                                    <View style={{
+                                        flexDirection: 'row',
+                                        width: '100%',
+                                        paddingLeft: 20,
+                                        paddingRight: 20,
+                                        alignItems: 'center',
+                                    }}>
+                                        <View style={{ flex: .2, justifyContent: 'center', alignItems: 'center' }}>
+                                            <Icon
+                                                name='unlock'
+                                                color='black'
+                                                size={25}
+                                            />
+                                        </View>
+
+                                        <TextInput
+                                            style={{
+                                                flex: .8,
+                                                borderRadius: 5,
+                                                paddingRight: 20,
+                                            }}
+                                            placeholder='Confirm Password'
+                                        />
+                                    </View>
+                                }
                                 <Button
-                                    title="Create an Account"
-                                    clear
-                                    activeOpacity={0.5}
-                                    titleStyle={{ color: 'white', fontSize: 15 }}
-                                    containerStyle={{ marginTop: -10 }}
-                                    onPress={() => console.log('Account created')}
+                                    buttonStyle={isLoginPage ? styles.loginButton : styles.signupButton}
+                                    containerStyle={{ marginTop: 32, flex: 0 }}
+                                    activeOpacity={0.8}
+                                    title={isLoginPage ? 'LOGIN' : 'SIGN UP'}
+                                    //onPress={isLoginPage ? this.login : this.signUp}
+                                    titleStyle={styles.loginTextButton}
+                                    loading={isLoading}
+                                    disabled={isLoading}
                                 />
                             </View>
-                        </View> :
-                        <Text>Loading...</Text>
-                    }
+                        </KeyboardAvoidingView>
+                        <View style={styles.helpContainer}>
+                            <Button
+                                title={'Need help ?'}
+                                titleStyle={{ color: 'white' }}
+                                buttonStyle={{ backgroundColor: 'transparent' }}
+                                underlayColor='transparent'
+                                onPress={() => console.log('Account created')}
+                            />
+                        </View>
+                    </View>
                 </ImageBackground>
             </View>
         );
@@ -183,7 +286,68 @@ export default class Authentication extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+    },
+    rowSelector: {
+        height: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    selectorContainer: {
+        flex: 1,
+        alignItems: 'center',
+    },
+    selected: {
+        position: 'absolute',
+        borderRadius: 50,
+        height: 0,
+        width: 0,
+        top: -5,
+        borderRightWidth: 70,
+        borderBottomWidth: 70,
+        borderColor: 'white',
+        backgroundColor: 'white',
+    },
+    loginContainer: {
+        backgroundColor: '#1F353B',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        width: '100%',
+        height: SCREEN_HEIGHT * 0.6,
+        padding: 20,
+    },
+    loginTextButton: {
+        fontSize: 20,
+        color: 'white',
+        fontWeight: 'bold',
+    },
+    loginButton: {
+        backgroundColor: '#00C853',
+        borderRadius: 10,
+        height: 50,
+        width: 200,
+    },
+    signupButton: {
+        backgroundColor: '#0091EA',
+        borderRadius: 10,
+        height: 50,
+        width: 200,
+    },
+    titleContainer: {
+        height: 150,
+        backgroundColor: 'transparent',
+        justifyContent: 'center',
+    },
+    formContainer: {
+        backgroundColor: 'white',
+        borderRadius: 10,
+        alignItems: 'center',
+        padding: 10
+    },
+    loginText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'white',
     },
     bgImage: {
         flex: 1,
@@ -191,40 +355,35 @@ const styles = StyleSheet.create({
         left: 0,
         width: SCREEN_WIDTH,
         height: SCREEN_HEIGHT,
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         alignItems: 'center'
     },
-    loginView: {
-        marginTop: 150,
+    categoryText: {
+        textAlign: 'center',
+        color: 'white',
+        fontSize: 24,
+        fontFamily: 'light',
         backgroundColor: 'transparent',
-        width: 250,
-        height: 400,
+        opacity: 0.54,
     },
-    loginTitle: {
-        flex: 1,
+    selectedCategoryText: {
+        opacity: 1,
+    },
+    titleText: {
+        color: '#32C0C8',
+        fontSize: 30,
+        fontFamily: 'regular',
+        fontWeight: 'bold'
+    },
+    helpContainer: {
+        height: 64,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    buttonGroup: {
+        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    travelText: {
-        color: 'white',
-        fontSize: 30,
-        fontFamily: 'bold'
-    },
-    plusText: {
-        color: 'white',
-        fontSize: 30,
-        fontFamily: 'regular'
-    },
-    loginInput: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    footerView: {
-        marginTop: 20,
-        flex: 0.5,
-        justifyContent: 'center',
-        alignItems: 'center',
+        padding: 10
     }
 });
- */
