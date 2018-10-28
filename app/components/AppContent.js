@@ -6,6 +6,7 @@ import {
     Image,
     StyleSheet,
     SafeAreaView,
+    TouchableOpacity,
 } from 'react-native';
 
 import { createStackNavigator, DrawerNavigator, DrawerItems, createDrawerNavigator } from 'react-navigation';
@@ -15,34 +16,77 @@ import { Avatar } from 'react-native-elements';
 import Authentication from './Authentication/Authentication';
 import ChangeInfo from './ChangeInfo/ChangeInfo';
 import OrderHistory from './OrderHistory/OrderHistory';
-import Main from './Main/Main';
+import SignOut from './Authentication/SignOut';
+// import Main from './Main/Main';
 import Shop from './Main/Shop/Shop'
 
 StatusBar.setHidden(true);
 
+let isLogin;
+
 export default class AppContent extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { isLogedIn: false };
+    }
     render() {
+        const MainJSX = this.state.isLogedIn ? LogedInNavigator : SignInNavigator;
         return (
-            <ApplicationNavigator />
+            <MainJSX isLogedIn={this.state.isLogedIn} />
+            // <ApplicationNavigator isLogin={this.state.isLogedIn} />
         )
     }
 }
 
-const ApplicationNavigator = createDrawerNavigator({
-    SHOP: { screen: Shop },
-    AUTHENICATION: { screen: Authentication },
-    CHANGE_INFO: { screen: ChangeInfo },
-    ORDER_HISTORY: { screen: OrderHistory }
-}, {
+const SignInNavigator = createDrawerNavigator(
+    {
+        SHOP: {
+            path: '/shop',
+            screen: Shop
+        },
+        SIGN_IN: {
+            path: '/signin',
+            screen: Authentication
+        }
+    },
+    {
         initialRouteName: 'SHOP',
         contentComponent: props => <MenuControl {...props} />,
         backBehavior: 'initialRoute',
         contentOptions: {
             //activeTintColor: '#FFF',
-        }
+        },
+        drawerOpenRoute: 'DrawerOpen',
+        drawerCloseRoute: 'DrawerClose',
+        drawerToggleRoute: 'DrawerToggle',
     }
 )
 
+const LogedInNavigator = createDrawerNavigator(
+    {
+        SHOP: {
+            path: '/shop',
+            screen: Shop
+        },
+        CHANGE_INFO: { screen: ChangeInfo },
+        ORDER_HISTORY: { screen: OrderHistory },
+        SIGN_OUT: { screen: SignOut },
+    },
+    {
+        initialRouteName: 'SHOP',
+        contentComponent: props => <MenuControl {...props} />,
+        backBehavior: 'initialRoute',
+        contentOptions: {
+            //activeTintColor: '#FFF',
+        },
+        drawerOpenRoute: 'DrawerOpen',
+        drawerCloseRoute: 'DrawerClose',
+        drawerToggleRoute: 'DrawerToggle',
+    }
+)
+
+/* ----------------------------- */
+/* Control Menu */
 class MenuControl extends Component {
     render() {
         const {
@@ -51,6 +95,17 @@ class MenuControl extends Component {
             profileTextStyle,
             itemStyle,
         } = styles;
+
+        const logOutJSX = (
+            <View style={{ flex: 1 }}>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.title}>Sign In</Text>
+                </TouchableOpacity>
+            </View>
+        );
+
+
+
         return (
             <View style={containerStyle} >
                 <View style={profileStyle}>
@@ -118,5 +173,17 @@ const styles = StyleSheet.create({
         // backgroundColor: '#FFF',
         padding: 5
     },
+    button: {
+        height: 50,
+        backgroundColor: '#FFF',
+        justifyContent: 'center',
+        borderRadius: 5,
+        alignItems: 'center',
+        paddingHorizontal: 70
+    },
+    title: {
+        color: '#000',
+        fontSize: 20
+    }
     // buttonText: {}
 })
