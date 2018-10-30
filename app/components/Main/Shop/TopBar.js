@@ -48,16 +48,19 @@ export default class TopBar extends Component {
 
 const styles = StyleSheet.create({
     wrapper: {
-        height: height * 0.13,
+        height: height * 0.12,
         backgroundColor: '#000a12',
-        justifyContent: 'space-around'
+        justifyContent: 'space-between',
+        alignItems: 'stretch'
     },
     rowContain: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: "center",
-        padding: 5,
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingTop: 5
     },
     textInputStyle: {
         backgroundColor: 'white'

@@ -30,9 +30,7 @@ export default class TopProduct extends Component {
         <View style={titleContainer}>
           <Text style={title}>TOP PRODUCT</Text>
         </View >
-        <View
-          style={body}
-        >
+        <View style={body} >
           <View style={productContainer}>
             <Image source={cake1} style={productImage} />
             <Text style={produceName} >PRODUCT NAME</Text>
@@ -70,31 +68,32 @@ const productImageHeight = (produceWidth / 361) * 452;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    margin: 10,
+    margin: 5,
     shadowColor: '#2E272B',
     shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.2
+    shadowOpacity: 0.2,
+    padding: 10,
+    paddingTop: 0,
   },
   titleContainer: {
-    height: 50,
+    height: 40,
     justifyContent: 'center',
-    paddingLeft: 10
   },
   title: {
     color: '#D3D3CF',
-    fontSize: 20
+    fontSize: 15
   },
   body: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     flexWrap: 'wrap',
-    paddingBottom: 10
+    paddingBottom: 5
   },
   productContainer: {
     width: produceWidth,
     shadowColor: '#2E272B',
     shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.2
+    shadowOpacity: 0.2,
   },
   productImage: {
     width: produceWidth,
