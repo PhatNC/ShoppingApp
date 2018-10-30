@@ -20,7 +20,7 @@ export default class Category extends Component {
         <View style={{ flex: 1, justifyContent: 'center' }}>
           <Text style={textStyle}>LIST OF CATEGORY</Text>
         </View >
-        <View style={{ flex: 4, justifyContent: 'flex-end' }}>
+        <View style={{ flex: 5, justifyContent: 'flex-end' }}>
           <Swiper
             //showsButtons={true}
             autoplay={true}
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     paddingTop: 0,
   },
   textStyle: {
-    fontSize: 20,
+    fontSize: 15,
     color: '#AFAEAF'
   },
   imageStyle: {

@@ -10,8 +10,8 @@ export default class Home extends Component {
     render() {
         return (
             <ScrollView style={{ backgroundColor: '#DBDBDB', padding: 5 }}>
-                <Collection />
                 <Category />
+                <Collection />
                 <TopProduct />
             </ScrollView>
         )

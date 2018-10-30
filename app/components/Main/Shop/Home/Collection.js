@@ -14,7 +14,7 @@ export default class Collection extends Component {
         <View style={{ flex: 1, justifyContent: 'center' }}>
           <Text style={textStyle}>SPRING COLLECTION</Text>
         </View>
-        <View style={{ flex: 4 }}>
+        <View style={{ flex: 5 }}>
           <Image source={cake1} style={{ height: '100%', width: '100%' }} />
         </View>
       </View>
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     paddingTop: 0,
   },
   textStyle: {
-    fontSize: 20,
+    fontSize: 15,
     color: '#AFAEAF'
   }
 })
