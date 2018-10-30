@@ -89,14 +89,16 @@ export default class Authentication extends Component {
             password,
         } = this.state;
         this.setState({ isLoading: true });
-        // Simulate an API call
+
+        //Simulate an API call
         setTimeout(() => {
             LayoutAnimation.easeInEaseOut();
             this.setState({
                 isLoading: false,
-                isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
-                isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
+                //isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
+                //isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
             });
+            this.props.navigation.navigate('SHOP');
         }, 1500);
     }
 
@@ -107,16 +109,19 @@ export default class Authentication extends Component {
             passwordConfirmation,
         } = this.state;
         this.setState({ isLoading: true });
+
         // Simulate an API call
         setTimeout(() => {
             LayoutAnimation.easeInEaseOut();
             this.setState({
                 isLoading: false,
-                isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
-                isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
-                isConfirmationValid: password == passwordConfirmation || this.confirmationInput.shake(),
+                //isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
+                //isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
+                //isConfirmationValid: password == passwordConfirmation || this.confirmationInput.shake(),
             });
+            this.props.navigation.navigate('SHOP');
         }, 1500);
+
     }
 
     render() {
@@ -189,6 +194,7 @@ export default class Authentication extends Component {
                                     paddingLeft: 20,
                                     paddingRight: 20,
                                     paddingBottom: 10,
+                                    paddingTop: 5,
                                     alignItems: 'center',
                                 }}>
                                     <View style={{ flex: .2, justifyContent: 'center', alignItems: 'center' }}>
@@ -206,6 +212,9 @@ export default class Authentication extends Component {
                                             paddingRight: 20,
                                         }}
                                         placeholder='Email'
+                                        keyboardType="email-address"
+                                        onChangeText={email => this.setState({ email })}
+                                        value={this.state.email}
                                     />
 
                                 </View>
@@ -216,6 +225,7 @@ export default class Authentication extends Component {
                                     paddingLeft: 20,
                                     paddingRight: 20,
                                     paddingBottom: 10,
+                                    paddingTop: 5,
                                     alignItems: 'center',
                                 }}>
                                     <View style={{ flex: .2, alignItems: 'center' }}>
@@ -233,6 +243,9 @@ export default class Authentication extends Component {
                                             paddingRight: 20,
                                         }}
                                         placeholder='Password'
+                                        secureTextEntry
+                                        onChangeText={password => this.setState({ password })}
+                                        value={this.state.password}
                                     />
 
                                 </View>
@@ -268,7 +281,7 @@ export default class Authentication extends Component {
                                     containerStyle={{ marginTop: 32, flex: 0 }}
                                     activeOpacity={0.8}
                                     title={isLoginPage ? 'LOGIN' : 'SIGN UP'}
-                                    //onPress={isLoginPage ? this.login : this.signUp}
+                                    onPress={isLoginPage ? this.login : this.signUp}
                                     titleStyle={styles.loginTextButton}
                                     loading={isLoading}
                                     disabled={isLoading}
