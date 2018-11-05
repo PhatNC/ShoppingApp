@@ -9,7 +9,7 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import { createStackNavigator, DrawerNavigator, DrawerItems, createDrawerNavigator } from 'react-navigation';
+import { createStackNavigator, DrawerItems, createDrawerNavigator } from 'react-navigation';
 
 import { Avatar } from 'react-native-elements';
 
@@ -92,7 +92,8 @@ class MenuControl extends Component {
         const {
             containerStyle,
             profileStyle,
-            profileTextStyle,
+            profileNameStyle,
+            profileEmailStyle,
             itemStyle,
         } = styles;
 
@@ -110,13 +111,14 @@ class MenuControl extends Component {
             <View style={containerStyle} >
                 <View style={profileStyle}>
                     <Avatar
-                        xlarge
+                        large
                         rounded
                         source={require('../media/img/cat.png')}
                         onPress={() => alert('Profile Information')}
                         activeOpacity={0.7}
                     />
-                    <Text style={profileTextStyle}>Shin Seijuro</Text>
+                    <Text style={profileNameStyle}>Shin Seijuro</Text>
+                    <Text style={profileEmailStyle}>shinseijuro123@gmail.com</Text>
                 </View>
 
                 <View style={styles.routeManager} >
@@ -135,8 +137,6 @@ class MenuControl extends Component {
                     </SafeAreaView>
                 </View>
             </View>
-
-
         )
     }
 }
@@ -149,29 +149,38 @@ const styles = StyleSheet.create({
         flex: 1
     },
     profileStyle: {
+        flex: 2,
         justifyContent: 'space-between',
         alignContent: 'space-around',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         backgroundColor: "#263238",
         padding: 20
     },
-    profileTextStyle: {
+    profileNameStyle: {
         fontFamily: 'Roboto',
-        fontSize: 20,
-        color: "#FFF"
+        fontSize: 17,
+        color: "#FFF",
+        paddingTop: 5
+    },
+    profileEmailStyle: {
+        fontFamily: 'Roboto',
+        fontSize: 16,
+        color: "#FFF",
     },
     itemStyle: {
-        paddingBottom: 10,
-        paddingTop: 10,
+        padding: 5
         // borderColor: '#FFF',
         // borderBottomWidth: 2
-        borderRadius: 10,
-        backgroundColor: 'rgba(255, 255, 255, 0.6)',
-        margin: 5
+        //borderRadius: 10,
+        //backgroundColor: 'rgba(255, 255, 255, 0.6)',
+        //margin: 5
     },
     routeManager: {
-        // backgroundColor: '#FFF',
-        padding: 5
+        flex: 9,
+        backgroundColor: '#FFF',
+        //paddingLeft: 15,
+        //paddingRight: 15,
+        //paddingTop: 5
     },
     button: {
         height: 50,

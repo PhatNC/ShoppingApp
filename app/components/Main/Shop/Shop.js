@@ -42,7 +42,7 @@ const BottomMaterialTabNavigation = createMaterialBottomTabNavigator(
                 tabBarIcon: ({ focused, tintColor }) => (
                     <Icon
                         name="home"
-                        size={20} color={tintColor}
+                        size={25} color={tintColor}
                     />
                 )
             })
@@ -54,7 +54,7 @@ const BottomMaterialTabNavigation = createMaterialBottomTabNavigator(
                 tabBarIcon: ({ focused, tintColor }) => (
                     <Icon
                         name="shopping-cart"
-                        size={20} color={tintColor}
+                        size={25} color={tintColor}
                     />
                 )
             })
@@ -66,7 +66,7 @@ const BottomMaterialTabNavigation = createMaterialBottomTabNavigator(
                 tabBarIcon: ({ focused, tintColor }) => (
                     <Icon
                         name="search"
-                        size={20} color={tintColor}
+                        size={25} color={tintColor}
                     />
                 )
             })
@@ -78,7 +78,7 @@ const BottomMaterialTabNavigation = createMaterialBottomTabNavigator(
                 tabBarIcon: ({ focused, tintColor }) => (
                     <Icon
                         name="store"
-                        size={20} color={tintColor}
+                        size={25} color={tintColor}
                     />
                 )
             })
@@ -90,7 +90,7 @@ const BottomMaterialTabNavigation = createMaterialBottomTabNavigator(
                 tabBarIcon: ({ focused, tintColor }) => (
                     <Icon
                         name="contacts"
-                        size={20} color={tintColor}
+                        size={25} color={tintColor}
                     />
                 )
             })

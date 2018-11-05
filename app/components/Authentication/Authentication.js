@@ -89,14 +89,16 @@ export default class Authentication extends Component {
             password,
         } = this.state;
         this.setState({ isLoading: true });
-        // Simulate an API call
+
+        //Simulate an API call
         setTimeout(() => {
             LayoutAnimation.easeInEaseOut();
             this.setState({
                 isLoading: false,
-                isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
-                isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
+                //isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
+                //isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
             });
+            this.props.navigation.navigate('SHOP');
         }, 1500);
     }
 
@@ -107,16 +109,19 @@ export default class Authentication extends Component {
             passwordConfirmation,
         } = this.state;
         this.setState({ isLoading: true });
+
         // Simulate an API call
         setTimeout(() => {
             LayoutAnimation.easeInEaseOut();
             this.setState({
                 isLoading: false,
-                isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
-                isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
-                isConfirmationValid: password == passwordConfirmation || this.confirmationInput.shake(),
+                //isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
+                //isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
+                //isConfirmationValid: password == passwordConfirmation || this.confirmationInput.shake(),
             });
+            this.props.navigation.navigate('SHOP');
         }, 1500);
+
     }
 
     render() {
@@ -147,7 +152,7 @@ export default class Authentication extends Component {
                                     activeOpacity={0.7}
                                     onPress={() => this.selectCategory(0)}
                                     buttonStyle={{
-                                        width: SCREEN_WIDTH * 0.4,
+                                        width: SCREEN_WIDTH * 0.455,
                                         borderTopLeftRadius: 15,
                                         borderBottomLeftRadius: 15
                                     }}
@@ -164,7 +169,7 @@ export default class Authentication extends Component {
                                     activeOpacity={0.7}
                                     onPress={() => this.selectCategory(1)}
                                     buttonStyle={{
-                                        width: SCREEN_WIDTH * 0.4,
+                                        width: SCREEN_WIDTH * 0.455,
                                         borderTopRightRadius: 15,
                                         borderBottomRightRadius: 15
                                     }}
@@ -176,25 +181,30 @@ export default class Authentication extends Component {
                                     color={isSignUpPage ? 'black' : '#D7D7D7'}
                                 />
                             </View>
+
                             <View style={styles.rowSelector}>
                                 <TabSelector selected={isLoginPage} />
                                 <TabSelector selected={isSignUpPage} />
                             </View>
+
                             <View style={styles.formContainer}>
                                 <View style={{
                                     flexDirection: 'row',
                                     width: '100%',
                                     paddingLeft: 20,
                                     paddingRight: 20,
+                                    paddingBottom: 10,
+                                    paddingTop: 5,
                                     alignItems: 'center',
                                 }}>
                                     <View style={{ flex: .2, justifyContent: 'center', alignItems: 'center' }}>
                                         <Icon
                                             name='envelope'
                                             color='black'
-                                            size={25}
+                                            size={20}
                                         />
                                     </View>
+
                                     <TextInput
                                         style={{
                                             flex: .8,
@@ -202,21 +212,27 @@ export default class Authentication extends Component {
                                             paddingRight: 20,
                                         }}
                                         placeholder='Email'
+                                        keyboardType="email-address"
+                                        onChangeText={email => this.setState({ email })}
+                                        value={this.state.email}
                                     />
 
                                 </View>
+
                                 <View style={{
                                     flexDirection: 'row',
                                     width: '100%',
                                     paddingLeft: 20,
                                     paddingRight: 20,
+                                    paddingBottom: 10,
+                                    paddingTop: 5,
                                     alignItems: 'center',
                                 }}>
                                     <View style={{ flex: .2, alignItems: 'center' }}>
                                         <Icon
                                             name='lock'
                                             color='black'
-                                            size={25}
+                                            size={20}
                                         />
                                     </View>
 
@@ -227,6 +243,9 @@ export default class Authentication extends Component {
                                             paddingRight: 20,
                                         }}
                                         placeholder='Password'
+                                        secureTextEntry
+                                        onChangeText={password => this.setState({ password })}
+                                        value={this.state.password}
                                     />
 
                                 </View>
@@ -236,13 +255,14 @@ export default class Authentication extends Component {
                                         width: '100%',
                                         paddingLeft: 20,
                                         paddingRight: 20,
+                                        paddingBottom: 10,
                                         alignItems: 'center',
                                     }}>
                                         <View style={{ flex: .2, justifyContent: 'center', alignItems: 'center' }}>
                                             <Icon
                                                 name='unlock'
                                                 color='black'
-                                                size={25}
+                                                size={20}
                                             />
                                         </View>
 
@@ -261,13 +281,14 @@ export default class Authentication extends Component {
                                     containerStyle={{ marginTop: 32, flex: 0 }}
                                     activeOpacity={0.8}
                                     title={isLoginPage ? 'LOGIN' : 'SIGN UP'}
-                                    //onPress={isLoginPage ? this.login : this.signUp}
+                                    onPress={isLoginPage ? this.login : this.signUp}
                                     titleStyle={styles.loginTextButton}
                                     loading={isLoading}
                                     disabled={isLoading}
                                 />
                             </View>
                         </KeyboardAvoidingView>
+
                         <View style={styles.helpContainer}>
                             <Button
                                 title={'Need help ?'}
@@ -310,28 +331,28 @@ const styles = StyleSheet.create({
     },
     loginContainer: {
         backgroundColor: '#1F353B',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
+        //justifyContent: 'flex-start',
+        //alignItems: 'center',
         width: '100%',
         height: SCREEN_HEIGHT * 0.6,
-        padding: 20,
+        padding: 15,
     },
     loginTextButton: {
-        fontSize: 20,
         color: 'white',
         fontWeight: 'bold',
+        fontWeight: '400'
     },
     loginButton: {
         backgroundColor: '#00C853',
         borderRadius: 10,
-        height: 50,
-        width: 200,
+        height: 45,
+        width: 150,
     },
     signupButton: {
         backgroundColor: '#0091EA',
         borderRadius: 10,
-        height: 50,
-        width: 200,
+        height: 45,
+        width: 150,
     },
     titleContainer: {
         height: 150,
@@ -390,6 +411,9 @@ const styles = StyleSheet.create({
         color: '#D7D7D7'
     },
     activeText: {
-        color: 'black'
+        color: 'black',
+        justifyContent: 'space-around',
+        //alignItems: 'center',
+        //padding: 5
     }
 });
