@@ -151,12 +151,12 @@ export default class Authentication extends Component {
                                         borderTopLeftRadius: 15,
                                         borderBottomLeftRadius: 15
                                     }}
-                                    titleStyle={[styles.categoryText, isLoginPage && styles.selectedCategoryText]}
+                                    // titleStyle={[styles.categoryText, isLoginPage && styles.selectedCategoryText]}
                                     title={'Login'}
                                     backgroundColor='white'
                                     fontWeight='bold'
                                     fontSize={20}
-                                    color='black'
+                                    color={isLoginPage ? 'black' : '#D7D7D7'}
                                 />
                                 <Button
                                     disabled={isLoading}
@@ -168,12 +168,12 @@ export default class Authentication extends Component {
                                         borderTopRightRadius: 15,
                                         borderBottomRightRadius: 15
                                     }}
-                                    titleStyle={[styles.categoryText, isSignUpPage && styles.selectedCategoryText]}
+                                    // titleStyle={[styles.categoryText, isSignUpPage && styles.selectedCategoryText]}
                                     title={'Sign up'}
                                     backgroundColor='white'
                                     fontWeight='bold'
                                     fontSize={20}
-                                    color='black'
+                                    color={isSignUpPage ? 'black' : '#D7D7D7'}
                                 />
                             </View>
                             <View style={styles.rowSelector}>
@@ -385,5 +385,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10
+    },
+    inactiveText: {
+        color: '#D7D7D7'
+    },
+    activeText: {
+        color: 'black'
     }
 });

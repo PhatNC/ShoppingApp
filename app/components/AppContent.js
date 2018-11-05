@@ -44,13 +44,13 @@ const SignInNavigator = createDrawerNavigator(
             path: '/shop',
             screen: Shop
         },
-        SIGN_IN: {
+        LOGIN: {
             path: '/signin',
             screen: Authentication
         }
     },
     {
-        initialRouteName: 'SIGN_IN',
+        initialRouteName: 'SHOP',
         contentComponent: props => <MenuControl {...props} />,
         backBehavior: 'initialRoute',
         contentOptions: {

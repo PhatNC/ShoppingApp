@@ -17,7 +17,7 @@ export default class TopBar extends Component {
                             size={25} color="white"
                         />
                     </TouchableOpacity>
-                    <Text style={titleStyle}>Pantruc</Text>
+                    <Text style={titleStyle}>PANTRUC</Text>
                     <Icon
                         name="cake"
                         size={25} color="white"
