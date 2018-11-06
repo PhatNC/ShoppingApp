@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 
-import bannerImage from '../../../../media/temp/banner.jpg'
 import cake1 from '../../../../media/temp/cake1.jpg';
 
 const { height } = Dimensions.get('window');
@@ -12,12 +11,16 @@ export default class Collection extends Component {
     return (
       <View style={wrapper}>
         <View style={{ flex: 1, justifyContent: 'center' }}>
-          <Text style={textStyle}>SPRING COLLECTION</Text>
+          <Text style={textStyle}>CAKE COLLECTION</Text>
         </View>
-        <View style={{ flex: 5 }}>
+        <TouchableOpacity
+          style={{ flex: 5 }}
+          onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}
+          activeOpacity={1}
+        >
           <Image source={cake1} style={{ height: '100%', width: '100%' }} />
-        </View>
-      </View>
+        </TouchableOpacity>
+      </View >
     )
   }
 }

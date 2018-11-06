@@ -3,12 +3,12 @@ import { View, Text, TouchableOpacity, Image, Platform } from 'react-native';
 
 import { Icon } from 'react-native-elements'
 
-import Home from './Home/Home';
-import Cart from './Cart/Cart';
-import Contact from './Contact/Contact';
-import Search from './Search/Search';
+import Home from './Home';
+import Cart from './Cart';
+import Contact from './Contact';
+import Search from './Search';
 import TopBar from './TopBar'
-import Discovery from './Discover/Discover'
+import Discovery from './Discover'
 
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
 
@@ -24,73 +24,79 @@ export default class Shop extends Component {
     }
 
     render() {
+        // console.log('=======================SHOP===============================');
+        // console.log(this.props);
+        // console.log(this.state)
+        // console.log('======================================================');
+        const ShopNavigator = BottomMaterialTabNavigation(this.props);
+
         return (
             <View style={{ flex: 1 }}>
                 <TopBar onOpen={() => this.openMenu()} />
-                <BottomMaterialTabNavigation />
+                <ShopNavigator />
             </View>
         )
     }
 }
 
-const BottomMaterialTabNavigation = createMaterialBottomTabNavigator(
+const BottomMaterialTabNavigation = value => createMaterialBottomTabNavigator(
     {
         HOME: {
-            screen: Home,
+            screen: props => <Home {...props} {...value} />,
             navigationOptions: () => ({
                 //title: 'HOME',
                 tabBarIcon: ({ focused, tintColor }) => (
                     <Icon
                         name="home"
-                        size={25} color={tintColor}
+                        size={20} color={tintColor}
                     />
                 )
             })
         },
         CART: {
-            screen: Cart,
+            screen: props => <Cart {...props} {...value} />,
             navigationOptions: () => ({
                 title: 'CART',
                 tabBarIcon: ({ focused, tintColor }) => (
                     <Icon
                         name="shopping-cart"
-                        size={25} color={tintColor}
+                        size={20} color={tintColor}
                     />
                 )
             })
         },
         SEARCH: {
-            screen: Search,
+            screen: props => <Search {...props} {...value} />,
             navigationOptions: () => ({
                 title: 'SEARCH',
                 tabBarIcon: ({ focused, tintColor }) => (
                     <Icon
                         name="search"
-                        size={25} color={tintColor}
+                        size={20} color={tintColor}
                     />
                 )
             })
         },
-        DISCOVERY: {
-            screen: Discovery,
+        DISCOVER: {
+            screen: props => <Discover {...props} {...value} />,
             navigationOptions: () => ({
-                title: 'DISCOVERY',
+                title: 'DISCOVER',
                 tabBarIcon: ({ focused, tintColor }) => (
                     <Icon
                         name="store"
-                        size={25} color={tintColor}
+                        size={20} color={tintColor}
                     />
                 )
             })
         },
         CONTACT: {
-            screen: Contact,
+            screen: props => <Contact {...props} {...value} />,
             navigationOptions: () => ({
                 title: 'CONTACT',
                 tabBarIcon: ({ focused, tintColor }) => (
                     <Icon
                         name="contacts"
-                        size={25} color={tintColor}
+                        size={20} color={tintColor}
                     />
                 )
             })

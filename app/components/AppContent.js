@@ -13,12 +13,11 @@ import { createStackNavigator, DrawerItems, createDrawerNavigator } from 'react-
 
 import { Avatar } from 'react-native-elements';
 
-import Authentication from './Authentication/Authentication';
-import ChangeInfo from './ChangeInfo/ChangeInfo';
-import OrderHistory from './OrderHistory/OrderHistory';
+import Authentication from './Authentication';
+import ChangeInfo from './ChangeInfo';
+import OrderHistory from './OrderHistory';
 import SignOut from './Authentication/SignOut';
-// import Main from './Main/Main';
-import Shop from './Main/Shop/Shop'
+import Shop from './Main/Shop'
 
 StatusBar.setHidden(true);
 
@@ -27,26 +26,26 @@ let isLogin;
 export default class AppContent extends Component {
     constructor(props) {
         super(props);
-        this.state = { isLogedIn: false };
+        this.state = { isLogedIn: true };
     }
     render() {
-        const MainJSX = this.state.isLogedIn ? LogedInNavigator : SignInNavigator;
+        const MainJSX = this.state.isLogedIn ? LogedInNavigator(this.state) : SignInNavigator(this.state);
         return (
-            <MainJSX isLogedIn={this.state.isLogedIn} />
+            <MainJSX />
             // <ApplicationNavigator isLogin={this.state.isLogedIn} />
         )
     }
 }
 
-const SignInNavigator = createDrawerNavigator(
+const SignInNavigator = value => createDrawerNavigator(
     {
         SHOP: {
             path: '/shop',
-            screen: Shop
+            screen: props => <Shop {...props} {...value} />
         },
-        LOGIN: {
+        SIGN_IN: {
             path: '/signin',
-            screen: Authentication
+            screen: props => <Authentication {...props} {...value} />
         }
     },
     {
@@ -62,15 +61,28 @@ const SignInNavigator = createDrawerNavigator(
     }
 )
 
-const LogedInNavigator = createDrawerNavigator(
+const LogedInNavigator = value => createDrawerNavigator(
     {
         SHOP: {
             path: '/shop',
-            screen: Shop
+            screen: props => <Shop {...props} {...value} />,
+            navigationOptions: {
+
+            },
+
         },
-        CHANGE_INFO: { screen: ChangeInfo },
-        ORDER_HISTORY: { screen: OrderHistory },
-        SIGN_OUT: { screen: SignOut },
+        CHANGE_INFO: {
+            path: '/changeinfo',
+            screen: props => <ChangeInfo {...props} {...value} />
+        },
+        ORDER_HISTORY: {
+            path: '/orderhistory',
+            screen: props => <OrderHistory {...props} {...value} />
+        },
+        SIGN_OUT: {
+            path: '/signout',
+            screen: props => <Authentication {...props} {...value} />
+        },
     },
     {
         initialRouteName: 'SHOP',
@@ -84,6 +96,7 @@ const LogedInNavigator = createDrawerNavigator(
         drawerToggleRoute: 'DrawerToggle',
     }
 )
+
 
 /* ----------------------------- */
 /* Control Menu */

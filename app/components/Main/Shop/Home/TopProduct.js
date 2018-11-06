@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, Dimensions, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions, ScrollView, TouchableOpacity } from 'react-native';
 
 import sp1 from '../../../../media/temp/sp1.jpeg';
 import sp2 from '../../../../media/temp/sp2.jpeg';
@@ -31,31 +31,51 @@ export default class TopProduct extends Component {
           <Text style={title}>TOP PRODUCT</Text>
         </View >
         <View style={body} >
-          <View style={productContainer}>
+          <TouchableOpacity
+            style={productContainer}
+            onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}
+            activeOpacity={1}
+          >
             <Image source={cake1} style={productImage} />
             <Text style={produceName} >PRODUCT NAME</Text>
             <Text style={producePrice}>PRODUCT COST</Text>
-          </View>
-          <View style={productContainer}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={productContainer}
+            onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}
+            activeOpacity={1}
+          >
             <Image source={cake2} style={productImage} />
             <Text style={produceName} >PRODUCT NAME</Text>
             <Text style={producePrice}>PRODUCT COST</Text>
-          </View>
-          <View style={productContainer}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={productContainer}
+            onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}
+            activeOpacity={1}
+          >
             <Image source={cake3} style={productImage} />
             <Text style={produceName} >PRODUCT NAME</Text>
             <Text style={producePrice}>PRODUCT COST</Text>
-          </View>
-          <View style={productContainer}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={productContainer}
+            onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}
+            activeOpacity={1}
+          >
             <Image source={cake4} style={productImage} />
             <Text style={produceName} >PRODUCT NAME</Text>
             <Text style={producePrice}>PRODUCT COST</Text>
-          </View>
-          <View style={productContainer}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={productContainer}
+            onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}
+            activeOpacity={1}
+          >
             <Image source={cake5} style={productImage} />
             <Text style={produceName} >PRODUCT NAME</Text>
             <Text style={producePrice}>PRODUCT COST</Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     )
@@ -74,6 +94,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     padding: 10,
     paddingTop: 0,
+    flex: 1,
+    marginBottom: 20
   },
   titleContainer: {
     height: 40,

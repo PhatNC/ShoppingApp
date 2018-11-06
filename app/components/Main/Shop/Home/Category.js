@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
-
-import littleIcon from '../../../../media/temp/little.jpg'
-import maxiIcon from '../../../../media/temp/maxi.jpg'
-import partyIcon from '../../../../media/temp/party.jpg'
 
 import cake1 from '../../../../media/temp/cake1.jpg';
 import cake2 from '../../../../media/temp/cake2.jpg';
@@ -26,9 +22,24 @@ export default class Category extends Component {
             autoplay={true}
             autoplayTimeout={5}
           >
-            <Image source={cake1} style={imageStyle} />
-            <Image source={cake2} style={imageStyle} />
-            <Image source={cake3} style={imageStyle} />
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('LIST_PRODUCT')}
+              activeOpacity={1}
+            >
+              <Image source={cake1} style={imageStyle} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('LIST_PRODUCT')}
+              activeOpacity={1}
+            >
+              <Image source={cake2} style={imageStyle} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('LIST_PRODUCT')}
+              activeOpacity={1}
+            >
+              <Image source={cake3} style={imageStyle} />
+            </TouchableOpacity>
           </Swiper>
         </View>
       </View>
