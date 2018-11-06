@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 
+import { createStackNavigator } from 'react-navigation';
 
-import { Icon, Button, Container, Header, Content, Left } from 'native-base';
+import CartView from './CartView';
+import ProductDetail from '../ProductDetail'
 
 export default class Cart extends Component {
     render() {
         return (
-            <Container style={{ backgroundColor: '#607D8B' }}>
-                <Text>
-                    Cart Component
-                </Text>
-            </Container>
+            <CartNavigator />
         )
     }
 }
+
+const CartNavigator = createStackNavigator(
+    {
+        CART_VIEW: { screen: CartView },
+        PRODUCT_DETAIL: { screen: ProductDetail }
+    },
+    {
+        initialRouteName: 'CART_VIEW',
+        headerMode: 'none'
+    }
+);

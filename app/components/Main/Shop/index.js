@@ -8,7 +8,7 @@ import Cart from './Cart';
 import Contact from './Contact';
 import Search from './Search';
 import TopBar from './TopBar'
-import Discovery from './Discover'
+import Discover from './Discover'
 
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
 

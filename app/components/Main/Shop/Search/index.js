@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 
+import { createStackNavigator } from 'react-navigation';
 
-import { Icon, Button, Container, Header, Content, Left } from 'native-base';
+import SearchView from './SearchView';
+import ProductDetail from '../ProductDetail'
 
 export default class Search extends Component {
     render() {
         return (
-            <Container style={{ backgroundColor: '#673AB7' }}>
-                <Text>
-                    Search Component
-                </Text>
-            </Container>
+            <SearchNavigator />
         )
     }
 }
+
+const SearchNavigator = createStackNavigator(
+    {
+        SEARCH_VIEW: { screen: SearchView },
+        PRODUCT_DETAIL: { screen: ProductDetail }
+    },
+    {
+        initialRouteName: 'SEARCH_VIEW',
+        headerMode: 'none'
+    }
+);

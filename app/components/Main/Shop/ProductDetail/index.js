@@ -11,9 +11,6 @@ export default class ProductDetail extends Component {
                 <Text>
                     Product Detail Component
                 </Text>
-                <TouchableOpacity onPress={() => { this.props.navigation.navigate('LIST_PRODUCT') }}>
-                    <Text>Go to List Product</Text>
-                </TouchableOpacity>
                 <TouchableOpacity onPress={() => { this.props.navigation.goBack() }}>
                     <Text>Go back to Main</Text>
                 </TouchableOpacity>
