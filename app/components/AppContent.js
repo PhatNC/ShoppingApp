@@ -118,8 +118,6 @@ class MenuControl extends Component {
             </View>
         );
 
-
-
         return (
             <View style={containerStyle} >
                 <View style={profileStyle}>
@@ -131,7 +129,7 @@ class MenuControl extends Component {
                         activeOpacity={0.7}
                     />
                     <Text style={profileNameStyle}>Shin Seijuro</Text>
-                    <Text style={profileEmailStyle}>shinseijuro123@gmail.com</Text>
+                    {/* <Text style={profileEmailStyle}>shinseijuro123@gmail.com</Text> */}
                 </View>
 
                 <View style={styles.routeManager} >
@@ -162,18 +160,19 @@ const styles = StyleSheet.create({
         flex: 1
     },
     profileStyle: {
-        flex: 2,
-        justifyContent: 'space-between',
-        alignContent: 'space-around',
-        alignItems: 'flex-start',
-        backgroundColor: "#263238",
-        padding: 20
+        // flex: 2,
+        // justifyContent: 'space-between',
+        // alignContent: 'space-around',
+        alignItems: 'center',
+        backgroundColor: "#000a12",
+        padding: 20,
+        flexDirection: 'row'
     },
     profileNameStyle: {
         fontFamily: 'Roboto',
-        fontSize: 17,
+        fontSize: 20,
         color: "#FFF",
-        paddingTop: 5
+        paddingLeft: 10
     },
     profileEmailStyle: {
         fontFamily: 'Roboto',
