@@ -35,7 +35,7 @@ export default class ListProduct extends Component {
                                     borderRadius: 10,
                                     borderWidth: 1
                                 }} />
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}>
                                     <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
                                 </TouchableOpacity>
                             </View>
@@ -55,7 +55,7 @@ export default class ListProduct extends Component {
                                     borderRadius: 10,
                                     borderWidth: 1
                                 }} />
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}>
                                     <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
                                 </TouchableOpacity>
                             </View>
@@ -75,7 +75,7 @@ export default class ListProduct extends Component {
                                     borderRadius: 10,
                                     borderWidth: 1
                                 }} />
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}>
                                     <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
                                 </TouchableOpacity>
                             </View>
@@ -95,7 +95,7 @@ export default class ListProduct extends Component {
                                     borderRadius: 10,
                                     borderWidth: 1
                                 }} />
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}>
                                     <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
                                 </TouchableOpacity>
                             </View>
@@ -115,7 +115,7 @@ export default class ListProduct extends Component {
                                     borderRadius: 10,
                                     borderWidth: 1
                                 }} />
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}>
                                     <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
                                 </TouchableOpacity>
                             </View>

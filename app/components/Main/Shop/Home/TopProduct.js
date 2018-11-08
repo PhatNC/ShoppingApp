@@ -37,8 +37,8 @@ export default class TopProduct extends Component {
             activeOpacity={1}
           >
             <Image source={cake1} style={productImage} />
-            <Text style={produceName} >PRODUCT NAME</Text>
-            <Text style={producePrice}>PRODUCT COST</Text>
+            <Text style={produceName} >Choco Cake</Text>
+            <Text style={producePrice}>50$</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={productContainer}
@@ -46,8 +46,8 @@ export default class TopProduct extends Component {
             activeOpacity={1}
           >
             <Image source={cake2} style={productImage} />
-            <Text style={produceName} >PRODUCT NAME</Text>
-            <Text style={producePrice}>PRODUCT COST</Text>
+            <Text style={produceName} >Choco Cake</Text>
+            <Text style={producePrice}>50$</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={productContainer}
@@ -55,8 +55,8 @@ export default class TopProduct extends Component {
             activeOpacity={1}
           >
             <Image source={cake3} style={productImage} />
-            <Text style={produceName} >PRODUCT NAME</Text>
-            <Text style={producePrice}>PRODUCT COST</Text>
+            <Text style={produceName} >Choco Cake</Text>
+            <Text style={producePrice}>50$</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={productContainer}
@@ -64,8 +64,8 @@ export default class TopProduct extends Component {
             activeOpacity={1}
           >
             <Image source={cake4} style={productImage} />
-            <Text style={produceName} >PRODUCT NAME</Text>
-            <Text style={producePrice}>PRODUCT COST</Text>
+            <Text style={produceName} >Choco Cake</Text>
+            <Text style={producePrice}>50$</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={productContainer}
@@ -73,8 +73,8 @@ export default class TopProduct extends Component {
             activeOpacity={1}
           >
             <Image source={cake5} style={productImage} />
-            <Text style={produceName} >PRODUCT NAME</Text>
-            <Text style={producePrice}>PRODUCT COST</Text>
+            <Text style={produceName} >Choco Cake</Text>
+            <Text style={producePrice}>50$</Text>
           </TouchableOpacity>
         </View>
       </View>
