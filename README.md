@@ -1,6 +1,6 @@
 # Bakery Store
 
-[![N|Solid](https://lh6.googleusercontent.com/o_9udV1KLVYqfn6pEJBVSg15DgvTJLy0WnUoIVu-EDZl5-EnoaAHvC-KpdbK318ujUakaKf4JTi7p5FrzSWl=w1366-h631-rw)](https://nodesource.com/products/nsolid)
+[![N|Solid](https://lh6.googleusercontent.com/o_9udV1KLVYqfn6pEJBVSg15DgvTJLy0WnUoIVu-EDZl5-EnoaAHvC-KpdbK318ujUakaKf4JTi7p5FrzSWl=w1366-h631-rw)](https://lh6.googleusercontent.com/o_9udV1KLVYqfn6pEJBVSg15DgvTJLy0WnUoIVu-EDZl5-EnoaAHvC-KpdbK318ujUakaKf4JTi7p5FrzSWl=w1366-h631-rw)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
