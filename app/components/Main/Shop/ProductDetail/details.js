@@ -42,7 +42,9 @@ export default class ProductDetail extends Component {
                             <Image source={cake3} style={styles.productImageStyle} />
                             <Image source={cake4} style={styles.productImageStyle} />
 						</ScrollView> */}
-						<Swiper></Swiper>
+						<Swiper>
+							
+						</Swiper>
                     </View>
                     <View style={styles.footer}>
                         <View style={styles.titleContainer}>
