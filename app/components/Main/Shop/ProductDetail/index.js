@@ -4,6 +4,7 @@ import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView
 import { Icon, Button } from 'react-native-elements';
 import Swiper from '../../../Swiper';
 import Details from './details'
+import Comments from './comment'
 
 import cake1 from '../../../../media/temp/cake1.jpg';
 import cake2 from '../../../../media/temp/cake2.jpg';
@@ -17,6 +18,7 @@ export default class ProductDetail extends Component {
             <View>
 				<ScrollView>
 					<Details></Details>
+					<Comments></Comments>
 				</ScrollView>
 			</View>
         );
