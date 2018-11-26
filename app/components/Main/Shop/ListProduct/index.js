@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     },
     txtName: {
         fontFamily: 'Avenir',
-		color: '#2f3033',
+        color: '#BCBCBC',
         fontSize: 20,
         fontWeight: '400'
     },
