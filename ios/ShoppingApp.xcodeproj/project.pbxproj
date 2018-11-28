@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -26,6 +25,25 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1628A39E83AB4C6286CCE95F /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 372F8AE46647498EB4EE4315 /* Feather.ttf */; };
+		1852CF5B21AECDAB00EA41BD /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF5A21AECDAB00EA41BD /* GoogleMapsBase.framework */; };
+		1852CF5E21AECDBF00EA41BD /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF5C21AECDBE00EA41BD /* GoogleMaps.framework */; };
+		1852CF5F21AECDBF00EA41BD /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF5D21AECDBF00EA41BD /* GoogleMapsCore.framework */; };
+		1852CF6121AECDFF00EA41BD /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1852CF6021AECDFF00EA41BD /* GoogleMaps.bundle */; };
+		1852CF6321AECE4F00EA41BD /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF6221AECE4F00EA41BD /* Accelerate.framework */; };
+		1852CF6521AECE5700EA41BD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF6421AECE5700EA41BD /* CoreData.framework */; };
+		1852CF6721AECE5F00EA41BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF6621AECE5F00EA41BD /* CoreGraphics.framework */; };
+		1852CF6921AECE6800EA41BD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF6821AECE6800EA41BD /* CoreImage.framework */; };
+		1852CF6B21AECE7200EA41BD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF6A21AECE7200EA41BD /* CoreLocation.framework */; };
+		1852CF6D21AECE7B00EA41BD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF6C21AECE7B00EA41BD /* CoreTelephony.framework */; };
+		1852CF6F21AECE8400EA41BD /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF6E21AECE8400EA41BD /* CoreText.framework */; };
+		1852CF7121AECE8C00EA41BD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7021AECE8C00EA41BD /* GLKit.framework */; };
+		1852CF7321AECE9300EA41BD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7221AECE9200EA41BD /* ImageIO.framework */; };
+		1852CF7521AECE9E00EA41BD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7421AECE9E00EA41BD /* libc++.tbd */; };
+		1852CF7721AECEA800EA41BD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7621AECEA800EA41BD /* libz.tbd */; };
+		1852CF7921AECEB000EA41BD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7821AECEB000EA41BD /* OpenGLES.framework */; };
+		1852CF7B21AECEB900EA41BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7A21AECEB900EA41BD /* QuartzCore.framework */; };
+		1852CF7D21AECEC100EA41BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7C21AECEC000EA41BD /* SystemConfiguration.framework */; };
+		1852CF7F21AECEC900EA41BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7E21AECEC900EA41BD /* UIKit.framework */; };
 		1E7C82BC52B94280AB017DB6 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4750170EA19B42E2BB78018D /* SimpleLineIcons.ttf */; };
 		28320F2518DC4EB2846D7904 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62811ACFEF2F41A295E00EEC /* MaterialIcons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -408,6 +426,25 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ShoppingApp/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		172721F2AB914B3CACB8EFFB /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
+		1852CF5A21AECDAB00EA41BD /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
+		1852CF5C21AECDBE00EA41BD /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		1852CF5D21AECDBF00EA41BD /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
+		1852CF6021AECDFF00EA41BD /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		1852CF6221AECE4F00EA41BD /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		1852CF6421AECE5700EA41BD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1852CF6621AECE5F00EA41BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1852CF6821AECE6800EA41BD /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		1852CF6A21AECE7200EA41BD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1852CF6C21AECE7B00EA41BD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1852CF6E21AECE8400EA41BD /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		1852CF7021AECE8C00EA41BD /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		1852CF7221AECE9200EA41BD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		1852CF7421AECE9E00EA41BD /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1852CF7621AECEA800EA41BD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1852CF7821AECEB000EA41BD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		1852CF7A21AECEB900EA41BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1852CF7C21AECEC000EA41BD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1852CF7E21AECEC900EA41BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		199DCA57B5DE45869055532C /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		1B9042B3C6BC402EB4F1A09F /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		25899BB11BED4748904EA304 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
@@ -463,15 +500,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1852CF7F21AECEC900EA41BD /* UIKit.framework in Frameworks */,
+				1852CF7D21AECEC100EA41BD /* SystemConfiguration.framework in Frameworks */,
+				1852CF7B21AECEB900EA41BD /* QuartzCore.framework in Frameworks */,
+				1852CF7921AECEB000EA41BD /* OpenGLES.framework in Frameworks */,
+				1852CF7721AECEA800EA41BD /* libz.tbd in Frameworks */,
+				1852CF7521AECE9E00EA41BD /* libc++.tbd in Frameworks */,
+				1852CF7321AECE9300EA41BD /* ImageIO.framework in Frameworks */,
+				1852CF7121AECE8C00EA41BD /* GLKit.framework in Frameworks */,
+				1852CF6F21AECE8400EA41BD /* CoreText.framework in Frameworks */,
+				1852CF6D21AECE7B00EA41BD /* CoreTelephony.framework in Frameworks */,
+				1852CF6B21AECE7200EA41BD /* CoreLocation.framework in Frameworks */,
+				1852CF6921AECE6800EA41BD /* CoreImage.framework in Frameworks */,
+				1852CF6721AECE5F00EA41BD /* CoreGraphics.framework in Frameworks */,
+				1852CF6521AECE5700EA41BD /* CoreData.framework in Frameworks */,
+				1852CF6321AECE4F00EA41BD /* Accelerate.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
+				1852CF5E21AECDBF00EA41BD /* GoogleMaps.framework in Frameworks */,
+				1852CF5B21AECDAB00EA41BD /* GoogleMapsBase.framework in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
+				1852CF5F21AECDBF00EA41BD /* GoogleMapsCore.framework in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
@@ -671,6 +726,25 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1852CF7E21AECEC900EA41BD /* UIKit.framework */,
+				1852CF7C21AECEC000EA41BD /* SystemConfiguration.framework */,
+				1852CF7A21AECEB900EA41BD /* QuartzCore.framework */,
+				1852CF7821AECEB000EA41BD /* OpenGLES.framework */,
+				1852CF7621AECEA800EA41BD /* libz.tbd */,
+				1852CF7421AECE9E00EA41BD /* libc++.tbd */,
+				1852CF7221AECE9200EA41BD /* ImageIO.framework */,
+				1852CF7021AECE8C00EA41BD /* GLKit.framework */,
+				1852CF6E21AECE8400EA41BD /* CoreText.framework */,
+				1852CF6C21AECE7B00EA41BD /* CoreTelephony.framework */,
+				1852CF6A21AECE7200EA41BD /* CoreLocation.framework */,
+				1852CF6821AECE6800EA41BD /* CoreImage.framework */,
+				1852CF6621AECE5F00EA41BD /* CoreGraphics.framework */,
+				1852CF6421AECE5700EA41BD /* CoreData.framework */,
+				1852CF6221AECE4F00EA41BD /* Accelerate.framework */,
+				1852CF6021AECDFF00EA41BD /* GoogleMaps.bundle */,
+				1852CF5C21AECDBE00EA41BD /* GoogleMaps.framework */,
+				1852CF5D21AECDBF00EA41BD /* GoogleMapsCore.framework */,
+				1852CF5A21AECDAB00EA41BD /* GoogleMapsBase.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
 			name = Frameworks;
@@ -1300,6 +1374,7 @@
 				1628A39E83AB4C6286CCE95F /* Feather.ttf in Resources */,
 				74C01CAE0953445EBAA37F2E /* FontAwesome.ttf in Resources */,
 				BE0EC703471D4FC9BA55C3A6 /* Foundation.ttf in Resources */,
+				1852CF6121AECDFF00EA41BD /* GoogleMaps.bundle in Resources */,
 				4DF72EF56E1742D098E69719 /* Ionicons.ttf in Resources */,
 				04210F32F0974B00B7102929 /* MaterialCommunityIcons.ttf in Resources */,
 				28320F2518DC4EB2846D7904 /* MaterialIcons.ttf in Resources */,
@@ -1511,6 +1586,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1536,6 +1615,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1763,6 +1846,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1808,6 +1892,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
