@@ -1,17 +1,27 @@
-import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import React, { Component } from "react";
+import { StyleSheet } from "react-native";
 
-
-import { Icon, Button, Container, Header, Content, Left } from 'native-base';
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
 export default class Contact extends Component {
-    render() {
-        return (
-            <Container style={{ backgroundColor: '#69F0AE' }}>
-                <Text>
-                    Contact Component
-                </Text>
-            </Container>
-        )
-    }
+  render() {
+    return (
+      <MapView
+        provider={PROVIDER_GOOGLE}
+        style={styles.container}
+        initialRegion={{
+          latitude: 37.78825,
+          longitude: -122.4324,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421
+        }}
+      />
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});
