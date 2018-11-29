@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, Text, Platform, TextInput, StyleSheet } from "react-native";
 import { Button } from "react-native-elements";
 
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
@@ -21,36 +21,36 @@ export default class Contact extends Component {
     };
   }
 
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(
-      position => {
-        this.setState({
-          region: {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-            latitudeDelta: LATITUDE_DELTA,
-            longitudeDelta: LONGITUDE_DELTA
-          }
-        });
-      },
-      error => console.log(error.message),
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
-    );
-    this.watchID = navigator.geolocation.watchPosition(position => {
-      this.setState({
-        region: {
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-          latitudeDelta: LATITUDE_DELTA,
-          longitudeDelta: LONGITUDE_DELTA
-        }
-      });
-    });
-  }
+  // componentDidMount() {
+  //   navigator.geolocation.getCurrentPosition(
+  //     position => {
+  //       this.setState({
+  //         region: {
+  //           latitude: position.coords.latitude,
+  //           longitude: position.coords.longitude,
+  //           latitudeDelta: LATITUDE_DELTA,
+  //           longitudeDelta: LONGITUDE_DELTA
+  //         }
+  //       });
+  //     },
+  //     error => console.log(error.message),
+  //     { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
+  //   );
+  //   this.watchID = navigator.geolocation.watchPosition(position => {
+  //     this.setState({
+  //       region: {
+  //         latitude: position.coords.latitude,
+  //         longitude: position.coords.longitude,
+  //         latitudeDelta: LATITUDE_DELTA,
+  //         longitudeDelta: LONGITUDE_DELTA
+  //       }
+  //     });
+  //   });
+  // }
 
-  componentWillUnmount() {
-    navigator.geolocation.clearWatch(this.watchID);
-  }
+  // componentWillUnmount() {
+  //   navigator.geolocation.clearWatch(this.watchID);
+  // }
 
   render() {
     return (
@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     paddingLeft: 10,
+    paddingBottom: Platform.OS === "ios" ? 0 : 6,
     fontSize: 16,
     margin: 5
   },
