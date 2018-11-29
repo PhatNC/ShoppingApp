@@ -10,6 +10,9 @@
       android:icon="@mipmap/ic_launcher"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyArNwMk0VtNN36WwfZR9Z_Uxyg0YvI64KA"/>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
@@ -22,9 +25,6 @@
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyArNwMk0VtNN36WwfZR9Z_Uxyg0YvI64KA"/>
     </application>
 
 </manifest>
