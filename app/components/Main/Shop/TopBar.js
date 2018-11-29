@@ -14,28 +14,32 @@ export default class TopBar extends Component {
                     <TouchableOpacity onPress={() => this.props.onOpen()}>
                         <Icon
                             name="menu"
-                            size={25} color="white"
+                            size={40} color="white"
                         />
                     </TouchableOpacity>
-                    <Text style={titleStyle}>PANTRUC</Text>
+                    <Text style={titleStyle}>Pantruc</Text>
                     <Icon
                         name="cake"
-                        size={25} color="white"
+                        size={40} color="white"
                     />
                 </View>
                 <View>
                     <SearchBar
                         round
                         // clearIcon={{ color: 'red' }}
-                        searchIcon={true} // You could have passed `null` too
+                        searchIcon={{ size: 30 }} // You could have passed `null` too
                         // onChangeText={someMethod}
                         // onClear={someMethod}
+                        showLoading
+                        platform="android"
                         containerStyle={{
                             backgroundColor: '#000a12',
                             borderTopWidth: 0,
-                            borderBottomWidth: 0
+                            borderBottomWidth: 0,
                         }}
                         placeholder='What do you want to buy?'
+                        cancelIcon={true}
+                        
                     />
                 </View>
 
@@ -48,7 +52,7 @@ export default class TopBar extends Component {
 
 const styles = StyleSheet.create({
     wrapper: {
-        height: height * 0.12,
+        height: height * 0.15,
         backgroundColor: '#000a12',
         justifyContent: 'space-between',
         alignItems: 'stretch'
@@ -66,5 +70,5 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     iconStyle: { height: 30, width: 30 },
-    titleStyle: { color: '#FFF', fontSize: 20, }
+    titleStyle: { color: '#FFF', fontSize: 60, fontFamily: "Medinah" }
 });

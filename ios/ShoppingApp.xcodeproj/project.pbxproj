@@ -69,6 +69,10 @@
 		E4F9F19C3331465985A9D3AD /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 059903B7615B43099F4ADFE7 /* rubicon-icon-font.ttf */; };
 		C169DC69C7BD4E288CD783D6 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1294BB26CB1F4C67986BF2A8 /* SimpleLineIcons.ttf */; };
 		461A28FE77E144CDA058FBFD /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1C400BA1EF44A89B76467CA /* Zocial.ttf */; };
+		1EA7F18EAECF4955852233CB /* Black Melody - Personal Use.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFBFE3BA1534A83B666F4EC /* Black Melody - Personal Use.otf */; };
+		4B048354963342D4BEF61CB9 /* Medinah.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8415B3030AA542D481174EBD /* Medinah.ttf */; };
+		DED39FF47F374E9397B0A52A /* Sawarabi Mincho Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FC66852AFF54B8AA30F89F5 /* Sawarabi Mincho Medium.otf */; };
+		76F4EA9B501D413292A7ACEF /* Sawarabi Gothic Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28F2C0345B904DBE841473C3 /* Sawarabi Gothic Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -409,6 +413,10 @@
 		059903B7615B43099F4ADFE7 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1294BB26CB1F4C67986BF2A8 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C1C400BA1EF44A89B76467CA /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9DFBFE3BA1534A83B666F4EC /* Black Melody - Personal Use.otf */ = {isa = PBXFileReference; name = "Black Melody - Personal Use.otf"; path = "../assets/fonts/Black Melody - Personal Use.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8415B3030AA542D481174EBD /* Medinah.ttf */ = {isa = PBXFileReference; name = "Medinah.ttf"; path = "../assets/fonts/Medinah.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4FC66852AFF54B8AA30F89F5 /* Sawarabi Mincho Medium.otf */ = {isa = PBXFileReference; name = "Sawarabi Mincho Medium.otf"; path = "../assets/fonts/Sawarabi Mincho Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		28F2C0345B904DBE841473C3 /* Sawarabi Gothic Medium.otf */ = {isa = PBXFileReference; name = "Sawarabi Gothic Medium.otf"; path = "../assets/fonts/Sawarabi Gothic Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -708,6 +716,10 @@
 				059903B7615B43099F4ADFE7 /* rubicon-icon-font.ttf */,
 				1294BB26CB1F4C67986BF2A8 /* SimpleLineIcons.ttf */,
 				C1C400BA1EF44A89B76467CA /* Zocial.ttf */,
+				9DFBFE3BA1534A83B666F4EC /* Black Melody - Personal Use.otf */,
+				8415B3030AA542D481174EBD /* Medinah.ttf */,
+				4FC66852AFF54B8AA30F89F5 /* Sawarabi Mincho Medium.otf */,
+				28F2C0345B904DBE841473C3 /* Sawarabi Gothic Medium.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1188,6 +1200,10 @@
 				E4F9F19C3331465985A9D3AD /* rubicon-icon-font.ttf in Resources */,
 				C169DC69C7BD4E288CD783D6 /* SimpleLineIcons.ttf in Resources */,
 				461A28FE77E144CDA058FBFD /* Zocial.ttf in Resources */,
+				1EA7F18EAECF4955852233CB /* Black Melody - Personal Use.otf in Resources */,
+				4B048354963342D4BEF61CB9 /* Medinah.ttf in Resources */,
+				DED39FF47F374E9397B0A52A /* Sawarabi Mincho Medium.otf in Resources */,
+				76F4EA9B501D413292A7ACEF /* Sawarabi Gothic Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
