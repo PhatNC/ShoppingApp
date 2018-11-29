@@ -8,16 +8,21 @@ import ProductDetail from '../ProductDetail'
 
 export default class Cart extends Component {
     render() {
+        const Cart = CartNavigator(this.props);
         return (
-            <CartNavigator />
+            <Cart />
         )
     }
 }
 
-const CartNavigator = createStackNavigator(
+const CartNavigator = value => createStackNavigator(
     {
-        CART_VIEW: { screen: CartView },
-        PRODUCT_DETAIL: { screen: ProductDetail }
+        CART_VIEW: {
+            screen: CartView
+        },
+        PRODUCT_DETAIL: {
+            screen: ProductDetail
+        }
     },
     {
         initialRouteName: 'CART_VIEW',
