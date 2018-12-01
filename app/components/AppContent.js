@@ -85,7 +85,7 @@ const LogedInNavigator = value => createDrawerNavigator(
         },
     },
     {
-        initialRouteName: 'SIGN_OUT',
+        initialRouteName: 'SHOP',
         contentComponent: props => <MenuControl {...props} />,
         backBehavior: 'initialRoute',
         contentOptions: {

@@ -18,7 +18,7 @@ export function* loginRequest({ params }) {
     const { data } = yield call(POST,
       { path: LOGIN_PATH, body: params, opts: {} }
     );
-    console.log('loginRequest', loginSuccess);
+    // console.log('loginRequest', loginSuccess);
     yield put(loginSuccess(data));
     // yield put(navigateAction());
     navigateAction();

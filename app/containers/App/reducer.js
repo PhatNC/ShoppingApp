@@ -9,7 +9,7 @@ const initialState = fromJS({
 function AppReducer(state = initialState, action) {
   switch (action.type) {
     case LOGIN_SUCCESS:
-      console.log('LOGIN_SUCCESS', action);
+      // console.log('LOGIN_SUCCESS', action);
       return state
         .set('authen', fromJS(action.authen))
         .set('isAuthen', true);

@@ -142,7 +142,7 @@ export default class Authentication extends Component {
     } = this.state;
     const isLoginPage = selectedCategory === 0;
     const isSignUpPage = selectedCategory === 1;
-    console.log('Is Authen: ', this.props);
+    // console.log('Is Authen: ', this.props);
     return (
       <View style={styles.container}>
         <ImageBackground
