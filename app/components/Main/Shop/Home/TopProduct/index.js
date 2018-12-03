@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, Dimensions, ScrollView, TouchableOpacity, FlatList, ListView } from 'react-native';
-
-import cake1 from '../../../../../media/temp/cake1.jpg';
-import cake2 from '../../../../../media/temp/cake2.jpg';
-import cake3 from '../../../../../media/temp/cake3.jpg';
-import cake4 from '../../../../../media/temp/cake4.jpg';
-import cake5 from '../../../../../media/temp/cake5.jpg';
-
-import TopProductItem from './TopProductItem';
-
+import { styles } from '../../../../../styles/styles'
 const { height, width } = Dimensions.get('window');
 
 export default class TopProduct extends Component {
@@ -34,21 +26,13 @@ export default class TopProduct extends Component {
       container, titleContainer, title,
       body, productContainer, productImage,
       produceName, producePrice,
-    } = styles;
+    } = topProductStyles;
     return (
 
       <View style={container}>
         <View style={titleContainer}>
-          <Text style={title}>TOP PRODUCT</Text>
+          <Text style={styles.titleText}>TOP PRODUCT</Text>
         </View >
-        {/*         
-        <FlatList
-          style={body}
-          data={this.props.products}
-          renderItem={({ item }) => <TopProductItem key={item._id} info={item} />}
-          keyExtractor={(item, index) => index.toString()}
-        /> */}
-
         <ListView
           contentContainerStyle={body}
           enableEmptySections
@@ -56,8 +40,8 @@ export default class TopProduct extends Component {
           renderRow={product => (
             <TouchableOpacity style={productContainer} onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}>
               <Image source={{ uri: `${product.image}` }} style={productImage} />
-              <Text style={produceName}>{product.name.toUpperCase()}</Text>
-              <Text style={producePrice}>{product.price}$</Text>
+              <Text style={styles.titleText}>{product.name.toUpperCase()}</Text>
+              <Text style={styles.priceText}>{product.price}$</Text>
             </TouchableOpacity>
           )}
           renderSeparator={(sectionId, rowId) => {
@@ -73,7 +57,7 @@ export default class TopProduct extends Component {
 const produceWidth = (width - 60) / 2;
 const productImageHeight = (produceWidth / 361) * 452;
 
-const styles = StyleSheet.create({
+const topProductStyles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     margin: 5,
@@ -95,7 +79,7 @@ const styles = StyleSheet.create({
   },
   body: {
     flexDirection: 'row',
-    // justifyContent: 'space-between',
+    justifyContent: 'space-between',
     flexWrap: 'wrap',
     paddingBottom: 5
   },
