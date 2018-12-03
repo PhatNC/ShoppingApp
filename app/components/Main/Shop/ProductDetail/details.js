@@ -20,6 +20,9 @@ import cake4 from "../../../../media/temp/cake4.jpg";
 import cake5 from "../../../../media/temp/cake5.jpg";
 
 export default class ProductDetail extends Component {
+	onIndexChanged(){
+
+	}
   render() {
     return (
       <View>
@@ -59,7 +62,8 @@ export default class ProductDetail extends Component {
             <Swiper
               style={styles.wrapper}
               horizontal={false}
-              autoplay
+			  autoplay
+			  onIndexChanged = {()=>this.onIndexChanged()}
             >
               <View>
                 <Image source={cake1} resizeMode='stretch' style={styles.image} />
