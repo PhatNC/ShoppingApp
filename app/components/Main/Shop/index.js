@@ -8,7 +8,7 @@ import Cart from './Cart';
 import Contact from './Contact';
 import Search from './Search';
 import TopBar from './TopBar'
-import Discover from './Discover'
+import Tinder from '../../../containers/Tinder'
 
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
 
@@ -78,7 +78,7 @@ const BottomMaterialTabNavigation = value => createMaterialBottomTabNavigator(
             })
         },
         DISCOVER: {
-            screen: props => <Discover {...props} {...value} />,
+            screen: props => <Tinder {...props} {...value} />,
             navigationOptions: () => ({
                 title: 'DISCOVER',
                 tabBarIcon: ({ focused, tintColor }) => (
