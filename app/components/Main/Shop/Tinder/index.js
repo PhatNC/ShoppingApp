@@ -22,7 +22,6 @@ export default class Tinder extends React.Component {
     super(props);
     props.getNewProductRequest();
     const cards = this.getCards();
-    cards[0].isActive = true;
     this.state = { cards };
   }
 
@@ -40,6 +39,7 @@ export default class Tinder extends React.Component {
       lastItemPosition = position;
       card.isActive = false;
     });
+    cards[0].isActive = true;
     return cards;
   }
 
