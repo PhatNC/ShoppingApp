@@ -13,7 +13,7 @@ import { createStackNavigator, DrawerItems, createDrawerNavigator } from 'react-
 
 import { Avatar } from 'react-native-elements';
 
-import Authentication from './Authentication';
+import Authentication from '../containers/LoginScreen';
 import ChangeInfo from './ChangeInfo';
 import OrderHistory from './OrderHistory';
 import SignOut from './Authentication/SignOut';

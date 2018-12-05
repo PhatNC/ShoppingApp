@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 
 import Collection from './Collection'
-import Category from './Category'
-import TopProduct from './TopProduct'
-
+import Category from '../../../../containers/Home/Category'
+import TopProduct from '../../../../containers/Home/TopProduct'
 
 export default class Home extends Component {
     render() {
