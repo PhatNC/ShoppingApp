@@ -11,119 +11,111 @@ import {
 } from "react-native";
 
 import { Icon, Button } from "react-native-elements";
-import Swiper from "react-native-swiper"
+import Swiper from "react-native-swiper";
 
 import cake1 from "../../../../media/temp/cake1.jpg";
 import cake2 from "../../../../media/temp/cake2.jpg";
 import cake3 from "../../../../media/temp/cake3.jpg";
 import cake4 from "../../../../media/temp/cake4.jpg";
 import cake5 from "../../../../media/temp/cake5.jpg";
+import { stat } from "fs";
 
 export default class ProductDetail extends Component {
-	onIndexChanged(){
+	constructor(props){
+		super(props);
 
+		this.state={
+			image: ''
+		}
 	}
+	componentWillMount(){
+		
+	}
+  onIndexChanged(index) {
+	  this.setState({image:this.props.product.image[index]})
+  }
   render() {
     return (
-      <View>
-        <ImageBackground style={styles.wrapper}>
-          <View style={styles.cardStyle}>
-            <View style={styles.header}>
-              <Icon
-                name="arrow-back"
-                size={25}
-                color="black"
-                onPress={() => this.props.navigation.goBack()}
-              />
-              <Button
-                buttonStyle={{
-                  backgroundColor: "#00C853",
-                  height: 30,
-                  borderRadius: 5
-                }}
-                iconRight={{
-                  name: "shopping-cart",
-                  size: 20,
-                  color: "white"
-                }}
-                title="ADD TO CART"
-                onPress={() => alert("ADD TO CART")}
-              />
-              <View />
-            </View>
-			{/* <Swiper></Swiper> */}
-            {/* <View style={styles.imageContainer}> */}
-            {/* <ScrollView style={{ flexDirection: 'row', height: swiperHeight }} horizontal >
-                            <Image source={cake1} style={styles.productImageStyle} />
-                            <Image source={cake2} style={styles.productImageStyle} />
-                            <Image source={cake3} style={styles.productImageStyle} />
-                            <Image source={cake4} style={styles.productImageStyle} />
-						</ScrollView> */}
-            <Swiper
-              style={styles.wrapper}
-              horizontal={false}
-			  autoplay
-			  onIndexChanged = {()=>this.onIndexChanged()}
-            >
-              <View>
-                <Image source={cake1} resizeMode='stretch' style={styles.image} />
-              </View>
-              <View>
-                <Image source={cake2} resizeMode='stretch' style={styles.image} />
-              </View>
-              <View>
-                <Image source={cake3} resizeMode='stretch' style={styles.image} />
-              </View>
-              <View>
-                <Image source={cake4} resizeMode='stretch' style={styles.image} />
-              </View>
-            </Swiper>
-            {/* </View> */}
-            <View style={styles.footer}>
-              <View style={styles.titleContainer}>
-                <Text style={styles.textMain}>
-                  <Text style={styles.textBlack}>Choco Cake</Text>
-                  <Text style={styles.textHighlight}> / </Text>
-                  <Text style={styles.textSmoke}>50$</Text>
-                </Text>
-              </View>
-              <View style={styles.descContainer}>
-                <Text style={styles.descStyle}>
-                  Description Description Description Description Description
-                  Description Description Description Description Description
-                  Description Description Description Description Description
-                  Description Description Description Description Description
-                  Description Description Description Description Description
-                  Description Description Description Description
-                </Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    paddingTop: 15
+		<ImageBackground style={styles.imageContainer}
+		source = {{uri:'${this.state.image}'}}>
+          <View style={styles.wrapper}>
+            <View style={styles.cardStyle}>
+              <View style={styles.header}>
+                <Icon
+                  name="arrow-back"
+                  size={25}
+                  color="black"
+                  onPress={() => this.props.navigation.goBack()}
+                />
+                <Button
+                  buttonStyle={{
+                    backgroundColor: "#00C853",
+                    height: 30,
+                    borderRadius: 5
                   }}
-                >
-                  <Text style={styles.txtMaterial} />
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.txtColor}>Color </Text>
-                    <View
-                      style={{
-                        height: 15,
-                        width: 15,
-                        backgroundColor: "black" /*color.toLowerCase()*/,
-                        borderRadius: 15,
-                        marginLeft: 10,
-                        borderWidth: 1,
-                        borderColor: "black"
-                      }}
-                    />
+                  iconRight={{
+                    name: "shopping-cart",
+                    size: 20,
+                    color: "white"
+                  }}
+                  title="ADD TO CART"
+                  onPress={() => alert("ADD TO CART")}
+                />
+                <View />
+              </View>
+              <View style={styles.imageContainer}>
+				<Swiper
+				source = {this.props.product.image} 
+				onIndexChanged={(index)=>this.onIndexChanged(index)}
+
+          >
+		  	
+                  <Image source={cake1} resizeMode='stretch' style={styles.image}  />
+                  <Image source={cake2} resizeMode='stretch' style={styles.image} />
+                  <Image source={cake3} resizeMode='stretch' style={styles.image} />
+                  <Image source={cake4} resizeMode='stretch' style={styles.image} />
+                </Swiper>
+              </View>
+              <View style={styles.footer}>
+                <View style={styles.titleContainer}>
+                  <Text style={styles.textMain}>
+                    <Text style={styles.textBlack}>Choco Cake</Text>
+                    <Text style={styles.textHighlight}> / </Text>
+                    <Text style={styles.textSmoke}>50$</Text>
+                  </Text>
+                </View>
+                <View style={styles.descContainer}>
+                  <Text style={styles.descStyle}>
+                    Description 
+                  </Text>
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      paddingTop: 15
+                    }}
+                  >
+                    <Text style={styles.txtMaterial} />
+                    <View style={{ flexDirection: "row" }}>
+                      <Text style={styles.txtColor}>Color </Text>
+                      <View
+                        style={{
+                          height: 15,
+                          width: 15,
+                          backgroundColor: "black" /*color.toLowerCase()*/,
+                          borderRadius: 15,
+                          marginLeft: 10,
+                          borderWidth: 1,
+                          borderColor: "black"
+                        }}
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
             </View>
           </View>
-        </ImageBackground>
-      </View>
+		</ImageBackground>
     );
   }
 }
