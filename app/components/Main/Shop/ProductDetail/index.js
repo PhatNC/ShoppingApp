@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView, Alert, ListView } from 'react-native';
 import { Icon, Button } from 'react-native-elements';
 import { styles } from '../../../../styles/styles';
 
@@ -62,18 +62,14 @@ class ProductDetail extends Component {
                         <View />
                     </View>
                     <View style={productDetailStyles.imageContainer}>
-                        <ScrollView
-                            style={{
-                                flexDirection: 'row',
-                                paddingTop: 5
-                            }}
-                            horizontal
-                        >
-                            <Image source={cake4} style={productDetailStyles.productImageStyle} />
-                            <Image source={cake4} style={productDetailStyles.productImageStyle} />
-                            <Image source={cake4} style={productDetailStyles.productImageStyle} />
-                            <Image source={cake4} style={productDetailStyles.productImageStyle} />
-                        </ScrollView>
+                        <ListView
+                            horizontal={true}
+                            enableEmptySections
+                            dataSource={new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 }).cloneWithRows(product.image)}
+                            renderRow={item => (
+                                <Image source={{ uri: `${item}` }} style={productDetailStyles.productImageStyle} />
+                            )}
+                        />
                     </View>
 
                     <View style={productDetailStyles.footer}>
@@ -110,7 +106,7 @@ export default connect(
 
 const { width } = Dimensions.get('window');
 const swiperWidth = (width / 1.8) - 30;
-const swiperHeight = (swiperWidth * 452) / 361;
+const swiperHeight = swiperWidth;
 
 const productDetailStyles = StyleSheet.create({
     wrapper: {
@@ -164,15 +160,10 @@ const productDetailStyles = StyleSheet.create({
         borderBottomWidth: 1,
         borderColor: '#F6F6F6',
         paddingLeft: 10,
-        // paddingBottom: 5
-        // backgroundColor: 'yellow'
     },
     descContainer: {
         paddingLeft: 10,
         paddingRight: 10,
-        // backgroundColor: 'red'
-        // paddingTop: 10,
-        // paddingHorizontal: 10
     },
     descStyle: {
         color: '#AFAFAF',

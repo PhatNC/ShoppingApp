@@ -15,6 +15,8 @@ import { createStackNavigator, DrawerItems, createDrawerNavigator } from 'react-
 import { Avatar } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
+import avatarIcon from '../media/img/man-user.svg';
+import catIcon from '../media/img/cat.png';
 
 import Authentication from '../containers/LoginScreen';
 import ChangeInfo from '../containers/InfomationView';
@@ -22,7 +24,7 @@ import OrderHistory from '../containers/OrderHistoryView';
 import SignOut from './Authentication/SignOut';
 import Shop from '../containers/ShopView'
 
-StatusBar.setHidden(true);
+// StatusBar.setHidden(true);
 
 export default class AppContent extends Component {
     constructor(props) {
@@ -170,14 +172,6 @@ const LogedInNavigator = value => createDrawerNavigator(
     }
 )
 
-const iconSrc = {
-    'SHOP': 'store',
-    'CHANGE_INFO': 'account',
-    'SIGN_IN': 'key',
-    'SIGN_OUT': 'key',
-    'ORDER_HISTORY': 'history'
-}
-
 /* ----------------------------- */
 /* Control Menu */
 class MenuControl extends Component {
@@ -201,7 +195,7 @@ class MenuControl extends Component {
         return (
             <View style={containerStyle} >
                 <ImageBackground
-                    source={require('../media/img/cat.png')}
+                    source={this.props.isAuthen ? avatarIcon : catIcon}
                     style={profileStyle}
                     blurRadius={5}
                     opacity={0.4}
@@ -209,18 +203,18 @@ class MenuControl extends Component {
                     <Avatar
                         large
                         rounded
-                        source={require('../media/img/cat.png')}
+                        source={this.props.isAuthen ? avatarIcon : catIcon}
                         containerStyle={{ borderWidth: 1 }}
                         activeOpacity={0.7}
                     />
-                    <Text style={profileNameStyle}>Shin Seijuro</Text>
+                    <Text style={profileNameStyle}>{this.props.isAuthen ? this.props.authen.name : 'Guest'}</Text>
                     <Text
                         style={{
                             fontFamily: "Sawarabi Mincho Medium",
                             fontSize: 13,
                             color: 'white'
                         }}>
-                        shin@outlook.com
+                        {this.props.isAuthen ? this.props.authen.email : 'unknown'}
                     </Text>
                 </ImageBackground>
 
