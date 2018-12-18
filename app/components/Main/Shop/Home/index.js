@@ -4,8 +4,8 @@ import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
 import HomeView from './HomeView';
-import ListProduct from '../ListProduct';
-import ProductDetail from '../ProductDetail'
+import ListProduct from '../../../../containers/ListProduct';
+import ProductDetail from '../../../../containers/ProductDetailView'
 
 
 export default class Home extends Component {

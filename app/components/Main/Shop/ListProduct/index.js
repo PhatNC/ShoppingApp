@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image, ListView } from 'react-native';
 
 import { Icon } from 'react-native-elements'
 
-import cake1 from '../../../../media/temp/cake1.jpg';
-import cake2 from '../../../../media/temp/cake2.jpg';
-import cake3 from '../../../../media/temp/cake3.jpg';
-import cake4 from '../../../../media/temp/cake4.jpg';
-import cake5 from '../../../../media/temp/cake5.jpg';
+import ProductItem from './ProductItem';
 
 export default class ListProduct extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentWillMount() {
+        this.props.getProductRequest();
+    }
+
     render() {
+
         return (
             <View style={styles.container}>
                 <ScrollView style={styles.wrapper}>
@@ -19,108 +24,22 @@ export default class ListProduct extends Component {
                             name="arrow-back"
                             size={25} color="black"
                             onPress={() => this.props.navigation.goBack()} />
-                        <Text style={styles.titleStyle}>SWEET CAKE</Text>
                         <View style={{ width: 25 }} />
                     </View>
-                    <View style={styles.productContainer}>
-                        <Image style={styles.productImage} source={cake1} />
-                        <View style={styles.productInfo}>
-                            <Text style={styles.txtName}>Choco Cake</Text>
-                            <Text style={styles.txtPrice}>50$</Text>
-                            <View style={styles.lastRowInfo}>
-                                <Text style={styles.txtColor}>Color</Text>
-                                <View style={{
-                                    backgroundColor: 'black',
-                                    height: 20, width: 20,
-                                    borderRadius: 10,
-                                    borderWidth: 1
-                                }} />
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}>
-                                    <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
-                                </TouchableOpacity>
+                    {(this.props.products.length > 0)
+                        ? <ListView
+                            contentContainerStyle={styles.body}
+                            enableEmptySections
+                            dataSource={new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 }).cloneWithRows(this.props.products)}
+                            renderRow={product => (
+                                <ProductItem product={product} navigation={this.props.navigation} />
+                            )}
+                        />
+                        : <View style={styles.wrapper}>
+                            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                                <Text style={{ color: '#90A4AE', fontSize: 20 }}>There is no item.</Text>
                             </View>
-                        </View>
-                    </View>
-
-                    <View style={styles.productContainer}>
-                        <Image style={styles.productImage} source={cake2} />
-                        <View style={styles.productInfo}>
-                            <Text style={styles.txtName}>Choco Cake</Text>
-                            <Text style={styles.txtPrice}>50$</Text>
-                            <View style={styles.lastRowInfo}>
-                                <Text style={styles.txtColor}>Color</Text>
-                                <View style={{
-                                    backgroundColor: 'black',
-                                    height: 20, width: 20,
-                                    borderRadius: 10,
-                                    borderWidth: 1
-                                }} />
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}>
-                                    <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styles.productContainer}>
-                        <Image style={styles.productImage} source={cake3} />
-                        <View style={styles.productInfo}>
-                            <Text style={styles.txtName}>Choco Cake</Text>
-                            <Text style={styles.txtPrice}>50$</Text>
-                            <View style={styles.lastRowInfo}>
-                                <Text style={styles.txtColor}>Color</Text>
-                                <View style={{
-                                    backgroundColor: 'black',
-                                    height: 20, width: 20,
-                                    borderRadius: 10,
-                                    borderWidth: 1
-                                }} />
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}>
-                                    <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styles.productContainer}>
-                        <Image style={styles.productImage} source={cake4} />
-                        <View style={styles.productInfo}>
-                            <Text style={styles.txtName}>Choco Cake</Text>
-                            <Text style={styles.txtPrice}>50$</Text>
-                            <View style={styles.lastRowInfo}>
-                                <Text style={styles.txtColor}>Color</Text>
-                                <View style={{
-                                    backgroundColor: 'black',
-                                    height: 20, width: 20,
-                                    borderRadius: 10,
-                                    borderWidth: 1
-                                }} />
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}>
-                                    <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styles.productContainer}>
-                        <Image style={styles.productImage} source={cake5} />
-                        <View style={styles.productInfo}>
-                            <Text style={styles.txtName}>Choco Cake</Text>
-                            <Text style={styles.txtPrice}>50$</Text>
-                            <View style={styles.lastRowInfo}>
-                                <Text style={styles.txtColor}>Color</Text>
-                                <View style={{
-                                    backgroundColor: 'black',
-                                    height: 20, width: 20,
-                                    borderRadius: 10,
-                                    borderWidth: 1
-                                }} />
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('PRODUCT_DETAIL')}>
-                                    <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
+                        </View>}
                 </ScrollView>
             </View>
         )
@@ -163,7 +82,7 @@ const styles = StyleSheet.create({
     titleStyle: {
         fontFamily: 'Avenir',
         color: '#B10D65',
-        fontSize: 20
+        fontSize: 30
     },
     productImage: {
         width: 90,
@@ -199,5 +118,11 @@ const styles = StyleSheet.create({
         fontFamily: 'Avenir',
         color: '#B10D65',
         fontSize: 15
-    }
+    },
+    body: {
+        // flexDirection: 'row',
+        // justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        // paddingBottom: 5
+    },
 });

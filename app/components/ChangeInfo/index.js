@@ -28,34 +28,34 @@ export default class ChangeInfo extends Component {
                         name="arrow-back"
                         size={25} color="white"
                         onPress={() => this.props.navigation.goBack()} />
-                    <Text style={styles.headerTitle}>Change Information</Text>
+                    <Text style={styles.headerTitle}>Account Information</Text>
                     <View />
                 </View>
                 <View style={styles.body}>
                     <TextInput
                         style={styles.textInput}
-                        placeholder="Enter your name"
+                        // placeholder="Enter your name"
                         autoCapitalize="none"
-                        value={this.state.txtName}
+                        value={this.props.authen.name}
                         onChangeText={text => this.setState({ txtName: text })}
                     />
                     <TextInput
                         style={styles.textInput}
-                        placeholder="Enter your address"
+                        // placeholder="Enter your address"
                         autoCapitalize="none"
-                        value={this.state.txtAddress}
+                        value={this.props.authen.email}
                         onChangeText={text => this.setState({ txtAddress: text })}
                     />
                     <TextInput
                         style={styles.textInput}
-                        placeholder="Enter your phone number"
+                        // placeholder="Enter your phone number"
                         autoCapitalize="none"
-                        value={this.state.txtPhone}
+                        value={this.props.authen.phone}
                         onChangeText={text => this.setState({ txtPhone: text })}
                     />
-                    <TouchableOpacity style={styles.signInContainer}>
+                    {/* <TouchableOpacity style={styles.signInContainer} onPress={() => { }}>
                         <Text style={styles.signInTextStyle}>CHANGE YOUR INFOMATION</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </View>
             </View>
         );

@@ -7,32 +7,34 @@ import {
     StyleSheet,
     SafeAreaView,
     TouchableOpacity,
+    ImageBackground,
 } from 'react-native';
 
 import { createStackNavigator, DrawerItems, createDrawerNavigator } from 'react-navigation';
 
 import { Avatar } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import Authentication from './Authentication';
-import ChangeInfo from './ChangeInfo';
-import OrderHistory from './OrderHistory';
+
+import Authentication from '../containers/LoginScreen';
+import ChangeInfo from '../containers/InfomationView';
+import OrderHistory from '../containers/OrderHistoryView';
 import SignOut from './Authentication/SignOut';
-import Shop from './Main/Shop'
+import Shop from '../containers/ShopView'
 
 StatusBar.setHidden(true);
-
-let isLogin;
 
 export default class AppContent extends Component {
     constructor(props) {
         super(props);
-        this.state = { isLogedIn: true };
     }
+
     render() {
-        const MainJSX = this.state.isLogedIn ? LogedInNavigator(this.state) : SignInNavigator(this.state);
+        const MainJSX = this.props.isAuthen
+            ? LogedInNavigator(this.props)
+            : SignInNavigator(this.props);
         return (
             <MainJSX />
-            // <ApplicationNavigator isLogin={this.state.isLogedIn} />
         )
     }
 }
@@ -41,16 +43,40 @@ const SignInNavigator = value => createDrawerNavigator(
     {
         SHOP: {
             path: '/shop',
-            screen: props => <Shop {...props} {...value} />
+            screen: props => <Shop {...props} {...value} />,
+            navigationOptions: {
+                title: 'Shop',
+                drawerIcon: ({ tintColor }) => (
+                    <Icon
+                        name="store"
+                        size={20}
+                        type="material"
+                        color={tintColor}
+                    />
+                )
+            },
         },
         SIGN_IN: {
             path: '/signin',
-            screen: props => <Authentication {...props} {...value} />
+            screen: props => <Authentication {...props} {...value} />,
+            navigationOptions: {
+                title: 'Login',
+                drawerIcon: ({ tintColor }) => (
+                    <Icon
+                        name="vpn-key"
+                        size={20}
+                        type="material"
+                        color={tintColor}
+                    />
+                )
+            },
         }
     },
     {
         initialRouteName: 'SHOP',
-        contentComponent: props => <MenuControl {...props} />,
+        contentComponent: props => {
+            return <MenuControl {...props} {...value} />
+        },
         backBehavior: 'initialRoute',
         contentOptions: {
             //activeTintColor: '#FFF',
@@ -65,31 +91,78 @@ const LogedInNavigator = value => createDrawerNavigator(
     {
         SHOP: {
             path: '/shop',
+
             screen: props => <Shop {...props} {...value} />,
             navigationOptions: {
-
+                title: 'Shop',
+                drawerIcon: ({ tintColor }) => (
+                    <Icon
+                        name="store"
+                        size={20}
+                        type="material"
+                        color={tintColor}
+                    />
+                )
             },
 
         },
         CHANGE_INFO: {
             path: '/changeinfo',
-            screen: props => <ChangeInfo {...props} {...value} />
+            screen: props => <ChangeInfo {...props} {...value} />,
+            navigationOptions: {
+                title: 'Account Information',
+                drawerIcon: ({ tintColor }) => (
+                    <Icon
+                        name="person"
+                        size={20}
+                        type="material"
+                        color={tintColor}
+                    />
+                )
+            },
         },
         ORDER_HISTORY: {
             path: '/orderhistory',
-            screen: props => <OrderHistory {...props} {...value} />
+            screen: props => <OrderHistory {...props} {...value} />,
+            navigationOptions: {
+                title: 'Order History',
+                drawerIcon: ({ tintColor }) => (
+                    <Icon
+                        name="library-books"
+                        size={20}
+                        type="material"
+                        color={tintColor}
+                    />
+                ),
+            },
         },
         SIGN_OUT: {
             path: '/signout',
-            screen: props => <Authentication {...props} {...value} />
+            screen: props => <Authentication {...props} {...value} />,
+            navigationOptions: {
+                title: 'Logout',
+                drawerIcon: ({ tintColor }) => (
+                    <Icon
+                        name="exit-to-app"
+                        size={20}
+                        type="material"
+                        color={tintColor}
+                    />
+                ),
+            },
         },
     },
     {
         initialRouteName: 'SHOP',
-        contentComponent: props => <MenuControl {...props} />,
+        contentComponent: (props) => <MenuControl {...props} {...value} />,
         backBehavior: 'initialRoute',
         contentOptions: {
             //activeTintColor: '#FFF',
+            inactiveTintColor: '#757575',
+            labelStyle: {
+                fontFamily: "Sawarabi Mincho Medium",
+                fontSize: 12
+            }
         },
         drawerOpenRoute: 'DrawerOpen',
         drawerCloseRoute: 'DrawerClose',
@@ -97,6 +170,13 @@ const LogedInNavigator = value => createDrawerNavigator(
     }
 )
 
+const iconSrc = {
+    'SHOP': 'store',
+    'CHANGE_INFO': 'account',
+    'SIGN_IN': 'key',
+    'SIGN_OUT': 'key',
+    'ORDER_HISTORY': 'history'
+}
 
 /* ----------------------------- */
 /* Control Menu */
@@ -120,17 +200,29 @@ class MenuControl extends Component {
 
         return (
             <View style={containerStyle} >
-                <View style={profileStyle}>
+                <ImageBackground
+                    source={require('../media/img/cat.png')}
+                    style={profileStyle}
+                    blurRadius={5}
+                    opacity={0.4}
+                >
                     <Avatar
                         large
                         rounded
                         source={require('../media/img/cat.png')}
-                        onPress={() => alert('Profile Information')}
+                        containerStyle={{ borderWidth: 1 }}
                         activeOpacity={0.7}
                     />
                     <Text style={profileNameStyle}>Shin Seijuro</Text>
-                    {/* <Text style={profileEmailStyle}>shinseijuro123@gmail.com</Text> */}
-                </View>
+                    <Text
+                        style={{
+                            fontFamily: "Sawarabi Mincho Medium",
+                            fontSize: 13,
+                            color: 'white'
+                        }}>
+                        shin@outlook.com
+                    </Text>
+                </ImageBackground>
 
                 <View style={styles.routeManager} >
                     <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
@@ -141,7 +233,13 @@ class MenuControl extends Component {
                                 if (focused) {
                                     this.props.navigation.closeDrawer();
                                 }
-                                this.props.navigation.navigate(route.routeName);
+                                if (route.routeName == 'SIGN_OUT') {
+                                    this.props.logout();
+                                    this.props.navigation.navigate(route.routeName);
+                                }
+                                else {
+                                    this.props.navigation.navigate(route.routeName);
+                                }
                             }}
 
                         />
@@ -163,16 +261,16 @@ const styles = StyleSheet.create({
         // flex: 2,
         // justifyContent: 'space-between',
         // alignContent: 'space-around',
-        alignItems: 'center',
+        // alignItems: 'center',
         backgroundColor: "#000a12",
+        paddingTop: 30,
         padding: 20,
-        flexDirection: 'row'
+        paddingBottom: 10
     },
     profileNameStyle: {
-        fontFamily: 'Roboto',
+        fontFamily: "Sawarabi Mincho Medium",
         fontSize: 20,
-        color: "#FFF",
-        paddingLeft: 10
+        color: 'white'
     },
     profileEmailStyle: {
         fontFamily: 'Roboto',
@@ -180,11 +278,11 @@ const styles = StyleSheet.create({
         color: "#FFF",
     },
     itemStyle: {
-        padding: 5
+        // padding: 5
         // borderColor: '#FFF',
         // borderBottomWidth: 2
         //borderRadius: 10,
-        //backgroundColor: 'rgba(255, 255, 255, 0.6)',
+        //backgroundColor: 'rgba(205, 205, 205, 0.6)',
         //margin: 5
     },
     routeManager: {

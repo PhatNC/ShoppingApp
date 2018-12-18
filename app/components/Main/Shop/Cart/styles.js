@@ -13,7 +13,8 @@ export const cartStyles = StyleSheet.create({
         height: 80,
     },
     titleView: {
-        maxWidth: 250,
+        maxWidth: 200,
+        // backgroundColor:'red'
     },
     mainRight: {
         marginLeft: 10,
@@ -34,7 +35,7 @@ export const cartStyles = StyleSheet.create({
         borderTopWidth: 1,
         borderTopColor: '#DFDFDF',
         padding: 5,
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     checkoutTextContainer: {
         flex: 1,
@@ -47,6 +48,12 @@ export const cartStyles = StyleSheet.create({
     checkoutButton: {
         height: height * 0.05,
         backgroundColor: color.warning,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    checkoutDiabledButton: {
+        height: height * 0.05,
+        backgroundColor: '#E57373',
         alignItems: 'center',
         justifyContent: 'center',
     },

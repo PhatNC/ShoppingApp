@@ -25,28 +25,28 @@ export default class SearchItem extends Component {
         })
     }
 
-    goDetail() {
-        this.props.navigation.navigate('PRODUCT_DETAIL')
+    goDetail(product) {
+        this.props.navigation.navigate('PRODUCT_DETAIL',product)
     }
 
     render() {
         return (
             <View style={styles.productContainer}>
-                <Image source={this.props.src} style={styles.productImage} />
+                <Image source={{ uri: `${this.props.item.image[0]}` }} style={styles.productImage} />
                 <View style={searchStyles.mainRight}>
                     <View style={searchStyles.firstRow}>
-                        <Text style={styles.titleText}>Darkest Forest Choco Cake</Text>
+                        <Text style={styles.titleText}>{this.props.item.name}</Text>
                     </View>
                     <View>
-                        <Text style={styles.contentText}>Delivery in 2h</Text>
+                        <Text style={styles.contentSmallText}>Delivery in 2h</Text>
                     </View>
                     <View>
-                        <Text style={styles.priceText}>100,00$</Text>
+                        <Text style={styles.priceText}>{this.props.item.price},00$</Text>
                     </View>
                     <View style={searchStyles.lastRow}>
                         <Text style={styles.txtColor}>Flavor</Text>
-                        <Text style={styles.txtColor}>Choco</Text>
-                        <TouchableOpacity onPress={() => this.goDetail()}>
+                        <Text style={styles.txtColor}>{this.props.item.flavor}</Text>
+                        <TouchableOpacity onPress={() => this.goDetail(this.props.item)}>
                             <Text style={styles.highlightText}>Show more detail</Text>
                         </TouchableOpacity>
                     </View>
