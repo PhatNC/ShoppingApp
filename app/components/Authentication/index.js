@@ -88,7 +88,8 @@ export default class Authentication extends Component {
       email,
       password,
     } = this.state;
-    this.props.loginRequest({ email, password });
+    const em = email.toLowerCase();
+    this.props.loginRequest({ em, password });
   }
 
   signUp() {
@@ -130,7 +131,7 @@ export default class Authentication extends Component {
         >
           <View style={styles.loginContainer}>
             <KeyboardAvoidingView behavior='position'>
-              <View style={styles.buttonGroup}>
+              {/* <View style={styles.buttonGroup}>
                 <Button
                   // disabled={isLoading}
                   clear
@@ -170,7 +171,7 @@ export default class Authentication extends Component {
               <View style={styles.rowSelector}>
                 <TabSelector selected={isLoginPage} />
                 <TabSelector selected={isSignUpPage} />
-              </View>
+              </View> */}
 
               <View style={styles.formContainer}>
                 <View style={{

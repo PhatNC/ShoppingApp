@@ -13,8 +13,8 @@ export default class Contact extends Component {
     super();
     this.state = {
       region: {
-        latitude: 37.78825,
-        longitude: -122.4324,
+        latitude: 10.7882565,
+        longitude: 106.6970408,
         latitudeDelta: LATITUDE_DELTA,
         longitudeDelta: LONGITUDE_DELTA
       }
@@ -55,16 +55,6 @@ export default class Contact extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.textField}>
-          <Text style={{ fontSize: 22 }}>CONTACT US</Text>
-
-          <TextInput style={styles.formInput} placeholder="Name" />
-          <TextInput style={styles.formInput} placeholder="Email" />
-          <TextInput style={styles.formInput} placeholder="Phone" />
-          <TextInput style={styles.formInput} placeholder="Type your message" />
-          <Button buttonStyle={styles.button} title="Send" />
-        </View>
-
         <MapView
           provider={PROVIDER_GOOGLE}
           style={styles.map}
@@ -74,20 +64,41 @@ export default class Contact extends Component {
           <MapView.Marker coordinate={this.state.region} />
         </MapView>
 
+        {/* <View style={styles.textField}>
+          <Text style={{ fontSize: 17, fontFamily: 'Sawarabi Mincho Medium' }}>CONTACT US</Text>
+
+          <TextInput style={styles.formInput} placeholder="Name" />
+          <TextInput style={styles.formInput} placeholder="Email" />
+          <TextInput style={styles.formInput} placeholder="Phone" />
+          <TextInput style={styles.formInput} placeholder="Type your message" />
+          <Button buttonStyle={styles.button} title="Send" />
+        </View> */}
         <View
           style={{
-            flex: 0.7,
-            justifyContent: "center",
-            alignItems: "center"
+            flex: 1,
+            justifyContent: "space-between",
+            // alignItems: "center",
+            // padding: 5,
+            backgroundColor: 'black',
           }}
         >
-          <Text style={{ fontSize: 16 }}>Phone: +84 966 999 666</Text>
-          <Text style={{ fontSize: 16 }}>Email: contact@pantruc.com</Text>
-
-          <View style={{ flexDirection: "row" }}>
-            <Icon name="facebook-with-circle" size={28} />
-            <Icon name="instagram-with-circle" size={28} />
-            <Icon name="twitter-with-circle" size={28} />
+          <View style={{ flexDirection: "row", padding: 2, paddingLeft: 25, paddingRight: 75 }}>
+            <Icon name="location-pin" size={20} color='white' />
+            <Text style={{ fontSize: 16, color: 'white', paddingLeft: 15 }}>70, Nguyễn Đình Chiểu, Da Kao, District 1, Ho Chi Minh City</Text>
+          </View>
+          <View style={{ flexDirection: "row", padding: 2, paddingLeft: 25, paddingRight: 75 }}>
+            <Icon name="phone" size={20} color='white' />
+            <Text style={{ fontSize: 16, color: 'white', paddingLeft: 15 }}>+84 966 999 666</Text>
+          </View>
+          <View style={{ flexDirection: "row", padding: 2, paddingLeft: 25, paddingRight: 75 }}>
+            <Icon name="mail" size={20} color='white' />
+            <Text style={{ fontSize: 16, color: 'white', paddingLeft: 15 }}>cmit@pantruc.com</Text>
+          </View>
+          <View style={{ flexDirection: "row", paddingLeft: 100, paddingRight: 100, justifyContent: 'space-evenly', padding: 5 }}>
+            <Icon name="facebook-with-circle" size={28} color='white' />
+            <Icon name="instagram-with-circle" size={28} color='white' />
+            <Icon name="twitter-with-circle" size={28} color='white' />
+            <Icon name="pinterest-with-circle" size={28} color='white' />
           </View>
         </View>
       </View>
@@ -102,7 +113,8 @@ const styles = StyleSheet.create({
   },
   textField: {
     flex: 2,
-    padding: 10
+    padding: 10,
+    backgroundColor: 'white'
   },
   formInput: {
     height: 32,
@@ -123,7 +135,7 @@ const styles = StyleSheet.create({
     marginTop: 4
   },
   map: {
-    flex: 1.5,
-    marginHorizontal: 15
+    flex: 3,
+    // marginHorizontal: 15
   }
 });
