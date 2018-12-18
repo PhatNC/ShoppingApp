@@ -9,14 +9,35 @@ import Contact from './Contact';
 import Search from './Search';
 import TopBar from './TopBar'
 import Tinder from '../../../containers/Tinder'
+import global from '../../global'
 
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
 
 export default class Shop extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     props.navigation.closeDrawer();
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            cartArray: []
+        };
+
+        global.addProductToCart = this.addProductToCart.bind(this);
+        global.removeProduct = this.removeProduct.bind(this);
+    }
+
+
+    addProductToCart(product) {
+        const isExist = this.state.cartArray.some(e => e.product.id === product.id);
+        if (isExist) return false;
+        this.setState(
+            { cartArray: this.state.cartArray.concat({ product, quantity: 1 }) }
+        );
+    }
+
+    removeProduct(productId) {
+        const newCart = this.state.cartArray.filter(e => e.product.id !== productId);
+        this.setState({ cartArray: newCart }
+        );
+    }
 
     openMenu() {
         const { navigation } = this.props;
@@ -24,10 +45,6 @@ export default class Shop extends Component {
     }
 
     render() {
-        // console.log('=======================SHOP===============================');
-        // console.log(this.props);
-        // console.log(this.state)
-        // console.log('======================================================');
         const ShopNavigator = BottomMaterialTabNavigation(this.props);
 
         return (
@@ -83,7 +100,7 @@ const BottomMaterialTabNavigation = value => createMaterialBottomTabNavigator(
                 title: 'DISCOVER',
                 tabBarIcon: ({ focused, tintColor }) => (
                     <Icon
-                        name="store"
+                        name="collections"
                         size={20} color={tintColor}
                     />
                 )

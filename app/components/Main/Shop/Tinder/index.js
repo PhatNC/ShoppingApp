@@ -10,8 +10,12 @@ import {
 import Image from 'react-native-remote-svg';
 import checkIcon from './assets/checked.svg';
 import cancelIcon from './assets/cancel.svg';
+import zzzIcon from './assets/zzz.svg';
+
 import Card from "./Card";
 import EmptyState from './EmptyState';
+
+import { Icon } from 'react-native-elements';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -39,7 +43,8 @@ export default class Tinder extends React.Component {
       lastItemPosition = position;
       card.isActive = false;
     });
-    cards[0].isActive = true;
+    if (cards.length > 0)
+      cards[0].isActive = true;
     return cards;
   }
 
@@ -99,21 +104,32 @@ export default class Tinder extends React.Component {
   }
 
   render() {
+    if (this.props.newProducts.length > 0)
+      return (
+        <View style={styles.container} >
+          <View style={styles.cardArea} >
+            {this.renderCards(this.state.cards)}
+          </View>
+          <View style={styles.btnContainer}>
+            <TouchableOpacity style={styles.btn} onPress={() => this.handleLikeSelect()} >
+              <Image source={checkIcon} style={styles.btnIcon} />
+
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.btn} onPress={() => this.handleNopeSelect()} >
+              <Image source={cancelIcon} style={styles.btnIcon} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
     return (
-      <View style={styles.container} >
-        <View style={styles.cardArea} >
-          {this.renderCards(this.state.cards)}
+      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }} >
+        <View style={styles.zzzContainer} >
+          <Image source={zzzIcon} style={styles.zzz} />
         </View>
-        <View style={styles.btnContainer}>
-          <TouchableOpacity style={styles.btn} onPress={() => this.handleLikeSelect()} >
-            <Image source={checkIcon} style={styles.btnIcon} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.btn} onPress={() => this.handleNopeSelect()} >
-            <Image source={cancelIcon} style={styles.btnIcon} />
-          </TouchableOpacity>
-        </View>
+        <Text style={styles.heading} >That's all folks...</Text>
+        <Text style={styles.caption} >No cards to display.</Text>
       </View>
-    );
+    )
   }
 }
 
@@ -137,8 +153,8 @@ const styles = StyleSheet.create({
     zIndex: -1,
   },
   btn: {
-    height: 70,
-    width: 70,
+    height: 50,
+    width: 50,
     borderRadius: 35,
     alignItems: 'center',
     justifyContent: 'center',
@@ -146,7 +162,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#efefef',
   },
   btnIcon: {
-    height: 25,
-    width: 25,
+    height: 20,
+    width: 20,
+  },
+  zzzContainer: { padding: 20 },
+  zzz: {
+    height: 75,
+    width: 75,
   },
 });

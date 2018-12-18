@@ -1,20 +1,47 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView } from 'react-native';
-
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, ScrollView, Alert } from 'react-native';
 import { Icon, Button } from 'react-native-elements';
+import { styles } from '../../../../styles/styles';
 
-import cake1 from '../../../../media/temp/cake1.jpg';
-import cake2 from '../../../../media/temp/cake2.jpg';
-import cake3 from '../../../../media/temp/cake3.jpg';
 import cake4 from '../../../../media/temp/cake4.jpg';
-import cake5 from '../../../../media/temp/cake5.jpg';
 
-export default class ProductDetail extends Component {
+
+import { addProductToCart } from '../../../../containers/CartScreen/action';
+
+class ProductDetail extends Component {
+    addToCart = (product) => {
+        if (!this.props.authen._id) {
+            Alert.alert(
+                'Notification!',
+                'Please login to use this feature!',
+                [
+                    { text: 'OK', onPress: () => console.log('OK Pressed') },
+                ],
+                { cancelable: false }
+            )
+        }
+        else {
+            this.props.addProductToCart(product);
+            Alert.alert(
+                'Successfully!',
+                'This product has been added to cart.',
+                [
+                    { text: 'OK', onPress: () => console.log('OK Pressed') },
+                ],
+                { cancelable: false }
+            )
+        }
+
+    }
+
     render() {
+        const { navigation: { state: { params: product } } } = this.props;
         return (
             <View style={styles.wrapper}>
-                <View style={styles.cardStyle}>
-                    <View style={styles.header}>
+                <View style={productDetailStyles.cardStyle}>
+                    <View style={productDetailStyles.header}>
                         <Icon
                             name="arrow-back"
                             size={25} color="black"
@@ -30,36 +57,36 @@ export default class ProductDetail extends Component {
                                 size: 20, color: "white"
                             }}
                             title="ADD TO CART"
-                            onPress={()=>alert('ADD TO CART')}
+                            onPress={() => this.addToCart(product)}
                         />
                         <View />
                     </View>
-                    <View style={styles.imageContainer}>
-                        <ScrollView style={{ flexDirection: 'row', height: swiperHeight }} horizontal >
-                            <Image source={cake1} style={styles.productImageStyle} />
-                            <Image source={cake2} style={styles.productImageStyle} />
-                            <Image source={cake3} style={styles.productImageStyle} />
-                            <Image source={cake4} style={styles.productImageStyle} />
+                    <View style={productDetailStyles.imageContainer}>
+                        <ScrollView
+                            style={{
+                                flexDirection: 'row',
+                                paddingTop: 5
+                            }}
+                            horizontal
+                        >
+                            <Image source={cake4} style={productDetailStyles.productImageStyle} />
+                            <Image source={cake4} style={productDetailStyles.productImageStyle} />
+                            <Image source={cake4} style={productDetailStyles.productImageStyle} />
+                            <Image source={cake4} style={productDetailStyles.productImageStyle} />
                         </ScrollView>
                     </View>
-                    <View style={styles.footer}>
-                        <View style={styles.titleContainer}>
-                            <Text style={styles.textMain}>
-                                <Text style={styles.textBlack}>Choco Cake</Text>
-                                <Text style={styles.textHighlight}> / </Text>
-                                <Text style={styles.textSmoke}>50$</Text>
+
+                    <View style={productDetailStyles.footer}>
+                        <View style={productDetailStyles.titleContainer}>
+                            <Text>
+                                <Text style={styles.titleText}>{product.name}</Text>
+                                <Text style={productDetailStyles.textHighlight}> / </Text>
+                                <Text style={styles.priceText}>{product.price},00$</Text>
                             </Text>
                         </View>
-                        <View style={styles.descContainer}>
-                            <Text style={styles.descStyle}>Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description</Text>
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: 15 }}>
-                                <Text style={styles.txtMaterial}></Text>
-                                <View style={{ flexDirection: 'row' }} >
-                                    <Text style={styles.txtColor}>Color </Text>
-                                    <View style={{ height: 15, width: 15, backgroundColor: 'black' /*color.toLowerCase()*/, borderRadius: 15, marginLeft: 10, borderWidth: 1, borderColor: 'black' }} />
-                                </View>
-                            </View>
-                        </View>
+                        <ScrollView style={productDetailStyles.descContainer}>
+                            <Text style={styles.contentSmallText}>{product.description}</Text>
+                        </ScrollView>
                     </View>
                 </View>
             </View>
@@ -67,21 +94,37 @@ export default class ProductDetail extends Component {
     }
 }
 
+const mapStateToProps = createStructuredSelector({
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    addProductToCart: (product) => dispatch(addProductToCart(product)),
+});
+
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ProductDetail);
+
+
 const { width } = Dimensions.get('window');
 const swiperWidth = (width / 1.8) - 30;
 const swiperHeight = (swiperWidth * 452) / 361;
 
-const styles = StyleSheet.create({
+const productDetailStyles = StyleSheet.create({
     wrapper: {
         flex: 1,
         backgroundColor: '#D6D6D6',
     },
     cardStyle: {
         flex: 1,
-        backgroundColor: '#FFFFFF',
-        borderRadius: 5,
-        marginHorizontal: 10,
-        marginVertical: 10
+        backgroundColor: '#FFF',
+        shadowColor: '#2E272B',
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.2,
+        margin: 10,
+        elevation: 3,
     },
     header: {
         height: 40,
@@ -89,18 +132,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingLeft: 10,
-    },
-    cartStyle: {
-        width: 25,
-        height: 25
-    },
-    backStyle: {
-        width: 25,
-        height: 25
-    },
-    productStyle: {
-        width: width / 2,
-        height: width / 2
     },
     footer: {
         flex: 6
@@ -111,11 +142,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginHorizontal: 10,
         borderTopWidth: 2,
-        borderTopColor: '#F0F0F0'
-    },
-    textMain: {
-        paddingLeft: 20,
-        marginVertical: 10
+        borderTopColor: '#F0F0F0',
     },
     textBlack: {
         fontFamily: 'Avenir',
@@ -136,16 +163,21 @@ const styles = StyleSheet.create({
     titleContainer: {
         borderBottomWidth: 1,
         borderColor: '#F6F6F6',
-        marginHorizontal: 20,
-        paddingBottom: 5
+        paddingLeft: 10,
+        // paddingBottom: 5
+        // backgroundColor: 'yellow'
     },
     descContainer: {
-        margin: 10,
-        paddingTop: 10,
-        paddingHorizontal: 10
+        paddingLeft: 10,
+        paddingRight: 10,
+        // backgroundColor: 'red'
+        // paddingTop: 10,
+        // paddingHorizontal: 10
     },
     descStyle: {
-        color: '#AFAFAF'
+        color: '#AFAFAF',
+        textAlign: 'justify',
+        fontSize: 15
     },
     linkStyle: {
         color: '#7D59C8'
@@ -153,7 +185,7 @@ const styles = StyleSheet.create({
     productImageStyle: {
         width: swiperWidth,
         height: swiperHeight,
-        marginHorizontal: 5,
+        marginRight: 5,
     },
     mainRight: {
         justifyContent: 'space-between',

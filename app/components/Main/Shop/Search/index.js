@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 
 import { createStackNavigator } from 'react-navigation';
 
-import SearchView from './SearchView';
+import SearchView from '../../../../containers/SeachView';
 import ProductDetail from '../ProductDetail'
 
 export default class Search extends Component {

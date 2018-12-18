@@ -9,7 +9,7 @@ const setHeader = (opts) => ({ ...DEFAULT_OPTS, ...opts });
 export const GET = (params) => {
   const { path, opts = {}, body = {} } = params;
   const url = API_URL + path;
-  console.log('url ', url);
+  console.log('url ', url, 'GET');
   return axios({
     method: 'get',
     headers: setHeader(opts),

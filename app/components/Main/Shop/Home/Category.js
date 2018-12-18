@@ -6,15 +6,17 @@ import cake1 from '../../../../media/temp/cake1.jpg';
 import cake2 from '../../../../media/temp/cake2.jpg';
 import cake3 from '../../../../media/temp/cake3.jpg';
 
+import { styles } from '../../../../styles/styles';
+
 const { height, width } = Dimensions.get('window');
 
 export default class Category extends Component {
   render() {
-    const { wrapper, textStyle, imageStyle, titleStyle } = styles;
+    const { wrapper, imageStyle } = categoryStyles;
     return (
       <View style={wrapper}>
         <View style={{ flex: 1, justifyContent: 'center' }}>
-          <Text style={textStyle}>LIST OF CATEGORY</Text>
+          <Text style={styles.titleText}>List Of Categories</Text>
         </View >
         <View style={{ flex: 5, justifyContent: 'flex-end' }}>
           <Swiper
@@ -47,20 +49,17 @@ export default class Category extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+const categoryStyles = StyleSheet.create({
   wrapper: {
     height: height * 0.38,
     backgroundColor: '#FFF',
-    margin: 5,
     shadowColor: '#2E272B',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.2,
     padding: 10,
     paddingTop: 0,
-  },
-  textStyle: {
-    fontSize: 15,
-    color: '#AFAEAF'
+    elevation: 3,
+    marginBottom: 10,
   },
   imageStyle: {
     height: '100%',
@@ -68,7 +67,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  titleStyle: {
-    fontSize: 15
-  }
 })

@@ -6,39 +6,43 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 import { styles } from '../../../../styles/styles';
 import { cartStyles } from './styles';
+import cake4 from '../../../../media/temp/cake4.jpg';
+
 
 export default class CartItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { count: 2 }
+    incQuantity = () => {
+        const { item } = this.props;
+        this.props.updateCount({ product: item, count: item.count + 1 });
     }
 
-    incQuantity() {
-        this.setState({
-            count: this.state.count + 1
-        })
-    }
+    desQuantity = () => {
+        const { item } = this.props;
+        const count = (item.count > 1) ? item.count - 1 : 1;
 
-    desQuantity() {
-        this.setState({
-            count: this.state.count - 1
-        })
+        this.props.updateCount({ product: item, count });
     }
 
     goDetail() {
         this.props.navigation.navigate('PRODUCT_DETAIL')
     }
 
+    removeproduct = () => {
+        this.props.removeItem(this.props.item._id);
+    }
+
     render() {
+        const { item } = this.props;
+        
         return (
             <View style={styles.productContainer}>
-                <Image source={this.props.src} style={styles.productImage} />
+                <Image source={{uri: `${item.image[0]}`}} style={styles.productImage} />
+                {/* <Image source={cake4} style={styles.productImage} /> */}
                 <View style={cartStyles.mainRight}>
                     <View style={cartStyles.firstRow}>
                         <View style={cartStyles.titleView}>
-                            <Text style={styles.titleText}>Darkest Forest Choco Cake</Text>
+                            <Text style={styles.titleText}>{item.name}</Text>
                         </View>
-                        <TouchableOpacity onPress={() => alert('Remove Item')}>
+                        <TouchableOpacity onPress={this.removeproduct}>
                             <Icon
                                 name='close'
                                 size={25} color='#969696'
@@ -47,18 +51,18 @@ export default class CartItem extends Component {
 
                     </View>
                     <View>
-                        <Text style={styles.contentText}>Delivery in 2h</Text>
+                        <Text style={styles.contentSmallText}>Delivery in 2h</Text>
                     </View>
                     <View>
-                        <Text style={styles.priceText}>100,00$</Text>
+                        <Text style={styles.priceText}>{item.price},00$</Text>
                     </View>
                     <View style={cartStyles.lastRow}>
                         <View style={cartStyles.quantityContainer}>
                             <TouchableOpacity
-                                disabled={this.state.count <= 1}
+                                disabled={item.count <= 1}
                                 style={cartStyles.quantityButton}
                                 activeOpacity={1}
-                                onPress={() => this.desQuantity()}
+                                onPress={this.desQuantity}
                             >
                                 <Icon
                                     name='minus'
@@ -67,13 +71,13 @@ export default class CartItem extends Component {
                             </TouchableOpacity>
                             <View style={cartStyles.quantityText}>
                                 <Text>
-                                    {this.state.count}
+                                    {item.count}
                                 </Text>
                             </View>
                             <TouchableOpacity
                                 activeOpacity={1}
                                 style={cartStyles.quantityButton}
-                                onPress={() => this.incQuantity()}
+                                onPress={this.incQuantity}
                             >
                                 <Icon
                                     name='plus'

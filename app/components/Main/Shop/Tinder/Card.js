@@ -94,7 +94,7 @@ export default class App extends React.Component {
           <Text style={[styles.cardText, styles.cardTextNope]} >NOPE</Text>
         </Animated.View>
 
-        <RNImage style={styles.cardImg} source={{ uri: `${this.props.image}` }} />
+        <RNImage style={styles.cardImg} source={{ uri: `${this.props.image[0]}` }} />
       </Animated.View>
     );
   }

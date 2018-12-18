@@ -5,15 +5,21 @@ import {
 import { color } from './color';
 
 const { width, height } = Dimensions.get('window');
+const produceWidth = (width - 60) / 2;
+
 
 export const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
-        backgroundColor: '#FFF',
+        backgroundColor: '#D6D6D6',
     },
     contentText: {
         fontFamily: "Sawarabi Mincho Medium",
         fontSize: 15
+    },
+    contentSmallText: {
+        fontFamily: "Sawarabi Mincho Medium",
+        fontSize: 12
     },
     titleText: {
         fontFamily: "Sawarabi Mincho Medium",
@@ -21,17 +27,18 @@ export const styles = StyleSheet.create({
         color: '#263238',
     },
     priceText: {
-        fontSize: 20,
+        fontSize: 15,
         color: color.warning,
         fontWeight: 'bold'
     },
     priceTotal: {
-        fontSize: 30,
+        fontSize: 20,
         color: color.warning,
         fontWeight: 'bold'
     },
     highlightText: {
-        fontSize: 15,
+        fontSize: 13,
+        fontFamily: "Sawarabi Mincho Medium",
         color: color.highlight,
     },
     productContainer: {
@@ -39,10 +46,23 @@ export const styles = StyleSheet.create({
         padding: 10,
         borderBottomWidth: 2,
         borderColor: '#DFDFDF',
+        backgroundColor:'#FFF'
     },
     productImage: {
         width: width / 4.236,
         height: width / 2.618,
         resizeMode: 'cover',
+    },
+    tabContainer: {
+        backgroundColor: '#DBDBDB',
+        padding: 10,
+        flex: 1,
+    },
+    productSmall: {
+        width: produceWidth,
+        shadowColor: '#2E272B',
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.2,
+        elevation: 3,
     },
 })

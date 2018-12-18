@@ -88,23 +88,7 @@ export default class Authentication extends Component {
       email,
       password,
     } = this.state;
-    // this.setState({ isLoading: true });
     this.props.loginRequest({ email, password });
-
-    
-    //Simulate an API call
-    // setTimeout(() => {
-    //   LayoutAnimation.easeInEaseOut();
-    //   this.setState({
-    //     isLoading: false,
-    //     //isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
-    //     //isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
-    //   });
-    //   this.props.navigation.navigate('SHOP');
-    // }, 1500);
-    // if (this.props.isAuthen) {
-
-    // }
   }
 
   signUp() {
@@ -119,10 +103,6 @@ export default class Authentication extends Component {
     setTimeout(() => {
       LayoutAnimation.easeInEaseOut();
       this.setState({
-        // isLoading: false,
-        //isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
-        //isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
-        //isConfirmationValid: password == passwordConfirmation || this.confirmationInput.shake(),
       });
       this.props.navigation.navigate('SHOP');
     }, 1500);
@@ -142,7 +122,6 @@ export default class Authentication extends Component {
     } = this.state;
     const isLoginPage = selectedCategory === 0;
     const isSignUpPage = selectedCategory === 1;
-    // console.log('Is Authen: ', this.props);
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -289,8 +268,8 @@ export default class Authentication extends Component {
                   title={isLoginPage ? 'LOGIN' : 'SIGN UP'}
                   onPress={isLoginPage ? () => this.login() : () => this.signUp()}
                   titleStyle={styles.loginTextButton}
-                  // loading={isLoading}
-                  // disabled={isLoading}
+                // loading={isLoading}
+                // disabled={isLoading}
                 />
               </View>
             </KeyboardAvoidingView>

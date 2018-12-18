@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { selectIsAuthen, selectAuthen } from './selector';
 
-import AppContent from '../../components/AppContent'
+import AppContent from '../../containers/AppContentView'
 import SplashScreen from '../../components/SplashScreen'
 
 class App extends Component {
@@ -13,16 +14,11 @@ class App extends Component {
     }
   }
   componentWillMount() {
-    // this.state = {
-    //   view: <SplashScreen />
-    // };
-
-
     setTimeout(() => {
       //IF FALSE NAVIGATE TO ERROR
       if (true) {
         this.setState({
-          view: <AppContent />
+          view: <AppContent isAuthen={this.props.isAuthen} authen={this.props.authen} />
         })
       } else {
         // this.setState({
@@ -41,10 +37,16 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+  isAuthen: selectIsAuthen(),
+  authen: selectAuthen(),
+});
 
 const mapDispatchToProps = (dispatch) => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

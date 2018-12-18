@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { LOGIN_SUCCESS, LOGIN_FAILURE } from './constants';
+import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from './constants';
 
 const initialState = fromJS({
   authen: {},
@@ -9,12 +9,12 @@ const initialState = fromJS({
 function AppReducer(state = initialState, action) {
   switch (action.type) {
     case LOGIN_SUCCESS:
-      // console.log('LOGIN_SUCCESS', action);
       return state
         .set('authen', fromJS(action.authen))
         .set('isAuthen', true);
 
     case LOGIN_FAILURE:
+    case LOGOUT:
       return state
         .set('authen', fromJS({}))
         .set('isAuthen', false);

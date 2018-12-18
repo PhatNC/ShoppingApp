@@ -3,8 +3,8 @@ import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 
 import { createStackNavigator } from 'react-navigation';
 
-import CartView from './CartView';
-import ProductDetail from '../ProductDetail'
+import CartView from '../../../../containers/CartScreen';
+import ProductDetail from '../../../../containers/ProductDetailView'
 
 export default class Cart extends Component {
     render() {

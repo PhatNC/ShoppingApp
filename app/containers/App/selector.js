@@ -2,9 +2,6 @@ import { createSelector } from 'reselect';
 
 
 const appReducer = (state) => state.get('AppReducer');
-// const appReducer = (state) => state.AppReducer;
-
-// console.log('appReducer', appReducer);
 
 const selectAuthen = () => createSelector(
   appReducer,
