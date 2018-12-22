@@ -4,6 +4,7 @@ import topProductSaga from './containers/Home/TopProduct/saga';
 import cartSaga from './containers/CartScreen/saga';
 import searchProductSaga from './containers/SeachView/saga';
 import orderHistorySaga from './containers/OrderHistoryView/saga';
+import tinderSaga from './containers/Tinder/saga';
 
 export default function* sagas() {
   yield all([
@@ -12,5 +13,6 @@ export default function* sagas() {
     ...cartSaga,
     ...searchProductSaga,
     ...orderHistorySaga,
+    ...tinderSaga,
   ]);
 }

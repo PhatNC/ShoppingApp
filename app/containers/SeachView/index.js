@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import SearchView from '../../components/Main/Shop/Search/SearchView';
+import SearchView from '../../components/Shop/Search/SearchView';
 import { getProductRequest } from './action';
 import { selectProducts } from './selector';
 

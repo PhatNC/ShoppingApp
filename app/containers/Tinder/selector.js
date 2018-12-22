@@ -1,19 +1,27 @@
 import { createSelector } from 'reselect';
 
 
-const topProductReducer = (state) => {
+const tinderReducer = (state) => {
   // console.log(state)
-  return state.get('TopProductReducer');
+  return state.get('TinderReducer');
 };
 // const appReducer = (state) => state.AppReducer;
 
 const selectProducts = () => createSelector(
-  topProductReducer,
+  tinderReducer,
   (substate) => substate.get('products').toJS()
 );
 
+const selectFavoriteProducts = () => createSelector(
+  tinderReducer,
+  (substate) => {
+    console.log(substate)
+    return substate.get('favoriteProducts').toJS()
+  }
+);
 
 export {
-  topProductReducer,
+  tinderReducer,
   selectProducts,
+  selectFavoriteProducts,
 };

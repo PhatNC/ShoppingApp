@@ -1,9 +1,9 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { NavigationActions } from 'react-navigation';
 
-import { GET } from '../../service';
-import { LOGIN_PATH, LOGIN_REQUEST } from './constants';
-import { loginSuccess, loginFailure } from './action';
+import { GET, POST } from '../../service';
+import { LOGIN_PATH, LOGIN_REQUEST, SIGN_UP_PATH, SIGN_UP_REQUEST } from './constants';
+import { loginSuccess, loginFailure, signUpSuccess, signUpFailure } from './action';
 import { Alert } from 'react-native'
 
 const navigateAction = () => {
@@ -38,10 +38,24 @@ export function* loginRequest({ params }) {
   }
 }
 
+export function* signUpRequest({ params }) {
+  try {
+    const { data } = yield call(POST,
+      { path: SIGN_UP_PATH, body: params, opts: {} }
+    );
+    yield put(signUpSuccess(data));
+    yield call(navigateAction);
+  } catch (error) {
+    const errors = (error && error.response) ? error.response.data : [];
+    yield put(signUpFailure(errors));
+    yield call(nofifyFail);
+  }
+}
 // =================================
 // Saga default for App
 // =================================
 
 export default [
   takeLatest(LOGIN_REQUEST, loginRequest),
+  takeLatest(SIGN_UP_REQUEST, signUpRequest),
 ];

@@ -46,34 +46,18 @@ export default class Authentication extends Component {
     this.state = {
       email: '',
       password: '',
-      //fontLoaded: false,
       selectedCategory: 0,
-      // isLoading: false,
+      isLoading: false,
       isEmailValid: true,
       isPasswordValid: true,
       isConfirmationValid: true,
     };
-
-    // this.selectCategory = this.selectCategory.bind(this);
-    // this.login = this.login.bind(this);
-    // this.signUp = this.signUp.bind(this);
   }
-
-  //   async componentDidMount() {
-  //     await Font.loadAsync({
-  //       'georgia': require('../../../assets/fonts/Georgia.ttf'),
-  //       'regular': require('../../../assets/fonts/Montserrat-Regular.ttf'),
-  //       'light': require('../../../assets/fonts/Montserrat-Light.ttf'),
-  //     });
-
-  //     this.setState({ fontLoaded: true });
-  //   }
-
   selectCategory(selectedCategory) {
     LayoutAnimation.easeInEaseOut();
     this.setState({
       selectedCategory,
-      // isLoading: false,
+      isLoading: false,
     });
   }
 
@@ -88,8 +72,15 @@ export default class Authentication extends Component {
       email,
       password,
     } = this.state;
-    const em = email.toLowerCase();
-    this.props.loginRequest({ em, password });
+    this.setState({ isLoading: true });
+    setTimeout(() => {
+      LayoutAnimation.easeInEaseOut();
+      this.setState({
+        isLoading: false
+      });
+      this.props.loginRequest({ email, password });
+    }, 1500);
+
   }
 
   signUp() {
@@ -98,14 +89,14 @@ export default class Authentication extends Component {
       password,
       passwordConfirmation,
     } = this.state;
-    // this.setState({ isLoading: true });
+    this.setState({ isLoading: true });
 
     // Simulate an API call
     setTimeout(() => {
       LayoutAnimation.easeInEaseOut();
       this.setState({
       });
-      this.props.navigation.navigate('SHOP');
+      this.props.signUpRequest({ email, password });
     }, 1500);
 
   }
@@ -113,7 +104,7 @@ export default class Authentication extends Component {
   render() {
     const {
       selectedCategory,
-      // isLoading,
+      isLoading,
       isEmailValid,
       isPasswordValid,
       isConfirmationValid,
@@ -131,7 +122,7 @@ export default class Authentication extends Component {
         >
           <View style={styles.loginContainer}>
             <KeyboardAvoidingView behavior='position'>
-              {/* <View style={styles.buttonGroup}>
+              <View style={styles.buttonGroup}>
                 <Button
                   // disabled={isLoading}
                   clear
@@ -150,7 +141,7 @@ export default class Authentication extends Component {
                   color={isLoginPage ? 'black' : '#D7D7D7'}
                 />
                 <Button
-                  // disabled={isLoading}
+                  disabled={isLoading}
                   clear
                   activeOpacity={0.7}
                   onPress={() => this.selectCategory(1)}
@@ -171,7 +162,7 @@ export default class Authentication extends Component {
               <View style={styles.rowSelector}>
                 <TabSelector selected={isLoginPage} />
                 <TabSelector selected={isSignUpPage} />
-              </View> */}
+              </View>
 
               <View style={styles.formContainer}>
                 <View style={{
@@ -269,15 +260,15 @@ export default class Authentication extends Component {
                   title={isLoginPage ? 'LOGIN' : 'SIGN UP'}
                   onPress={isLoginPage ? () => this.login() : () => this.signUp()}
                   titleStyle={styles.loginTextButton}
-                // loading={isLoading}
-                // disabled={isLoading}
+                  loading={isLoading}
+                  disabled={isLoading}
                 />
               </View>
             </KeyboardAvoidingView>
 
             <View style={styles.helpContainer}>
               <Button
-                title={'Need help ?'}
+                title={'Forgot password?'}
                 titleStyle={{ color: 'white' }}
                 buttonStyle={{ backgroundColor: 'transparent' }}
                 underlayColor='transparent'
@@ -326,7 +317,6 @@ const styles = StyleSheet.create({
   loginTextButton: {
     color: 'white',
     fontWeight: 'bold',
-    fontWeight: '400'
   },
   loginButton: {
     backgroundColor: '#00C853',

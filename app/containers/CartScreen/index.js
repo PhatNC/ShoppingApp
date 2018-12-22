@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import CartView from '../../components/Main/Shop/Cart/CartView';
+import CartView from '../../components/Shop/Cart/CartView';
 import { selectCart } from './selector';
 import { selectAuthen } from '../App/selector';
 import { removeProductFromCart, updateCountNumberProduct, checkoutRequest, removeAllProductFromCart } from './action';

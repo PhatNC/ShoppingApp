@@ -5,6 +5,8 @@ import TopProductReducer from './containers/Home/TopProduct/reducer';
 import CartReducer from './containers/CartScreen/reducer';
 import SearchReducer from './containers/SeachView/reducer';
 import ListOrderReducer from './containers/OrderHistoryView/reducer';
+import TinderReducer from './containers/Tinder/reducer';
+
 
 export default combineReducers({
   AppReducer: AppReducer,
@@ -12,4 +14,5 @@ export default combineReducers({
   CartReducer: CartReducer,
   SearchReducer: SearchReducer,
   ListOrderReducer: ListOrderReducer,
+  TinderReducer: TinderReducer,
 });

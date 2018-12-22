@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import ProductDetail from '../../components/Main/Shop/ProductDetail';
+import ProductDetail from '../../components/Shop/ProductDetail';
 import { selectAuthen, selectIsAuthen } from '../App/selector';
 
 const mapStateToProps = createStructuredSelector({

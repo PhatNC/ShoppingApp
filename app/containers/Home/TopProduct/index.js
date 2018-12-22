@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import TopProduct from '../../../components/Main/Shop/Home/TopProduct';
+import TopProduct from '../../../components/Shop/Home/TopProduct';
 import { getProductRequest } from './action';
 import { selectProducts } from './selector';
 
