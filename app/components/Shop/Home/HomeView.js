@@ -11,7 +11,7 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.wrapper}>
-        <TopBar />
+        <TopBar navigation={this.props.parentNavigation} />
         <ScrollView style={styles.tabContainer}>
           {/* <Collection navigation={this.props.navigation} /> */}
           <Category navigation={this.props.navigation} />

@@ -7,7 +7,6 @@ import Home from './Home';
 import Cart from '../../containers/CartScreen';
 import Contact from './Contact';
 import Search from '../../containers/SeachView';
-import TopBar from './TopBar'
 import Tinder from '../../containers/Tinder'
 
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
@@ -18,11 +17,6 @@ export default class Shop extends Component {
         this.state = {
             cartArray: []
         };
-    }
-
-    openMenu() {
-        const { navigation } = this.props;
-        navigation.openDrawer();
     }
 
     render() {

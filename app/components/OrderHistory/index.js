@@ -124,7 +124,7 @@ export default class OrderHistory extends Component {
                         fontSize: 25
                       }}
                     >
-                      #52672
+                      #{order.orderID}
                     </Text>
                     <Text style={{ fontSize: 15 }}>{order.createDate}</Text>
                   </View>
@@ -143,9 +143,9 @@ export default class OrderHistory extends Component {
                     <View
                       style={{ justifyContent: "center", alignItems: "center" }}
                     >
-                      <Text style={{ fontSize: 13 }}>Quantity</Text>
+                      <Text style={{ fontSize: 13 }}>No. Kinds</Text>
                       <Text style={{ fontSize: 15, fontWeight: "bold" }}>
-                        3
+                        {order.quantity}
                       </Text>
                     </View>
                     <View
