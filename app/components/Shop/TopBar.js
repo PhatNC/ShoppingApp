@@ -9,12 +9,12 @@ export default class TopBar extends Component {
             query: "",
         };
     }
-
+    // this.props.onOpen()
     render() {
         const { rowContainer, logo } = topBarStyles;
         return (
             <View style={rowContainer}>
-                <TouchableOpacity onPress={() => this.props.onOpen()}>
+                <TouchableOpacity onPress={() => {}}>
                     <Icon
                         name="menu"
                         size={40} color="white"

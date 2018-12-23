@@ -39,7 +39,7 @@ export default class TrackOrder extends Component {
     return (
       <View style={styles.wrapper}>
         <View style={styles.header}>
-          <Icon name="arrow-back" size={30} color="white" onPress={() => {}} />
+          <Icon name="arrow-back" size={30} color="white" onPress={() => {this.props.navigation.goBack()}} />
           <Text style={styles.titleStyle}>TRACK ORDER</Text>
           <Badge
             containerStyle={{
@@ -339,7 +339,7 @@ export default class TrackOrder extends Component {
               </View>
             </ScrollView>
           </View>
-          <View containerStyle={{ padding: 10, margin: 10 }}>
+          {/* <View containerStyle={{ padding: 10, margin: 10 }}>
             <Button
               buttonStyle={{
                 height: 50,
@@ -351,7 +351,7 @@ export default class TrackOrder extends Component {
               title="OK"
               onPress={() => {}}
             />
-          </View>
+          </View> */}
         </View>
       </View>
     );
