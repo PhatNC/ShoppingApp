@@ -13,11 +13,11 @@ import Payment from "./app/components/Payment";
 const store = configureStore();
 
 const MyApp = () => (
-  // <Provider store={store}>
-  //   <App />
-  // </Provider>
+  <Provider store={store}>
+    <App />
+  </Provider>
   // <CakeDetail />
-  <Payment />
+  // <Payment />
 );
 
 AppRegistry.registerComponent(appName, () => MyApp);

@@ -30,7 +30,7 @@ export default class Shop extends Component {
 
         return (
             <View style={{ flex: 1 }}>
-                <TopBar onOpen={() => this.openMenu()} />
+                {/* <TopBar onOpen={() => this.openMenu()} /> */}
                 <ShopNavigator />
             </View>
         )
