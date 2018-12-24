@@ -29,7 +29,7 @@ export default class TopBar extends Component {
         >
           <Icon name="menu" size={40} color="white" />
         </TouchableOpacity>
-        <Text style={logo}>Pantruc</Text>
+        <Text style={logo}>-Sweetie-</Text>
         <Icon name="donut-small" size={40} color="white" />
       </View>
     );

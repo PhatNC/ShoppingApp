@@ -33,14 +33,25 @@ export default class TrackOrder extends Component {
     console.log("Rating is: " + rating);
   }
 
-  componentWillMount() {}
+  componentWillMount() {
+    this.props.getBillDetailRequest({
+      id: this.props.navigation.state.params._id
+    });
+  }
 
   render() {
     return (
       <View style={styles.wrapper}>
         <View style={styles.header}>
-          <Icon name="arrow-back" size={30} color="white" onPress={() => {this.props.navigation.goBack()}} />
-          <Text style={styles.titleStyle}>TRACK ORDER</Text>
+          <Icon
+            name="arrow-back"
+            size={30}
+            color="white"
+            onPress={() => {
+              this.props.navigation.goBack();
+            }}
+          />
+          <Text style={styles.titleStyle}>Track Order</Text>
           <Badge
             containerStyle={{
               backgroundColor: "white",
@@ -54,14 +65,15 @@ export default class TrackOrder extends Component {
             <Text
               style={{ color: "#000a12", fontWeight: "bold", fontSize: 20 }}
             >
-              $27.42
+              ${this.props.navigation.state.params.totalPrice}.00
             </Text>
           </Badge>
         </View>
         <View
           style={{
             justifyContent: "space-between",
-            flex: 1
+            flex: 1,
+            backgroundColor:'white'
           }}
         >
           <View
@@ -71,7 +83,7 @@ export default class TrackOrder extends Component {
               padding: 10,
               borderBottomColor: "#000a12",
               borderBottomWidth: 4,
-              flex: 1,
+              flex: 1
             }}
           >
             <View>
@@ -176,7 +188,7 @@ export default class TrackOrder extends Component {
                 </View>
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                   <Icon
-                    name="panorama-fish-eye"
+                    name="check-circle"
                     size={30}
                     color="#40C4FF"
                     containerStyle={{ marginLeft: 15, marginRight: 15 }}
@@ -227,116 +239,45 @@ export default class TrackOrder extends Component {
               </Text>
             </View>
             <ScrollView style={{ flex: 4, margin: 10 }}>
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center"
-                }}
-              >
-                <Image
-                  source={cake8}
+              {this.props.billDetail.map(item => (
+                <View
                   style={{
-                    height: 50,
-                    width: 50,
-                    borderRadius: 25,
-                    margin: 5,
-                    marginRight: 15
+                    flexDirection: "row",
+                    alignItems: "center"
                   }}
-                />
-                <Text
-                  style={{ fontSize: 18, color: "#305266", fontWeight: "bold" }}
                 >
-                  Cake Name x 1 products
-                </Text>
-              </View>
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center"
-                }}
-              >
-                <Image
-                  source={cake9}
-                  style={{
-                    height: 50,
-                    width: 50,
-                    borderRadius: 25,
-                    margin: 5,
-                    marginRight: 15
-                  }}
-                />
-                <Text
-                  style={{ fontSize: 18, color: "#305266", fontWeight: "bold" }}
-                >
-                  Cake Name x 1 products
-                </Text>
-              </View>
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center"
-                }}
-              >
-                <Image
-                  source={cake10}
-                  style={{
-                    height: 50,
-                    width: 50,
-                    borderRadius: 25,
-                    margin: 5,
-                    marginRight: 15
-                  }}
-                />
-                <Text
-                  style={{ fontSize: 18, color: "#305266", fontWeight: "bold" }}
-                >
-                  Cake Name x 1 products
-                </Text>
-              </View>
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center"
-                }}
-              >
-                <Image
-                  source={cake10}
-                  style={{
-                    height: 50,
-                    width: 50,
-                    borderRadius: 25,
-                    margin: 5,
-                    marginRight: 15
-                  }}
-                />
-                <Text
-                  style={{ fontSize: 18, color: "#305266", fontWeight: "bold" }}
-                >
-                  Cake Name x 1 products
-                </Text>
-              </View>
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center"
-                }}
-              >
-                <Image
-                  source={cake10}
-                  style={{
-                    height: 50,
-                    width: 50,
-                    borderRadius: 25,
-                    margin: 5,
-                    marginRight: 15
-                  }}
-                />
-                <Text
-                  style={{ fontSize: 18, color: "#305266", fontWeight: "bold" }}
-                >
-                  Cake Name x 1 products
-                </Text>
-              </View>
+                  <Image
+                    source={{ uri: `${item.product.image[0]}` }}
+                    style={{
+                      height: 50,
+                      width: 50,
+                      borderRadius: 25,
+                      margin: 5,
+                      marginRight: 15
+                    }}
+                  />
+                  <View>
+                    <Text
+                      style={{
+                        fontSize: 18,
+                        color: "#305266",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      {item.product.name}
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: 15,
+                        color: "#305266",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      x{item.quantity} products
+                    </Text>
+                  </View>
+                </View>
+              ))}
             </ScrollView>
           </View>
           {/* <View containerStyle={{ padding: 10, margin: 10 }}>
@@ -388,9 +329,9 @@ const styles = StyleSheet.create({
     borderWidth: 2
   },
   titleStyle: {
-    fontFamily: "Avenir",
+    fontFamily: "Medinah",
     color: "#B10D65",
-    fontSize: 25,
+    fontSize: 30,
     color: "white"
   },
   productImage: {

@@ -29,7 +29,7 @@ export default class TopProduct extends Component {
 
       <View style={container}>
         <View style={titleContainer}>
-          <Text style={styles.titleText}>Top Products</Text>
+          <Text style={styles.titleText}>Top Cakes</Text>
         </View >
         {(this.props.products.length) ?
           <ListView

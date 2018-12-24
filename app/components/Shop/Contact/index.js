@@ -55,6 +55,27 @@ export default class Contact extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <View
+          style={{
+            height: 80,
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: 20,
+            backgroundColor: "#000a12"
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: "Medinah",
+              color: "#B10D65",
+              fontSize: 40,
+              color: "white"
+            }}
+          >
+            Contacts Us
+          </Text>
+        </View>
         <MapView
           provider={PROVIDER_GOOGLE}
           style={styles.map}
@@ -79,26 +100,62 @@ export default class Contact extends Component {
             justifyContent: "space-between",
             // alignItems: "center",
             // padding: 5,
-            backgroundColor: 'black',
+            backgroundColor: "black"
           }}
         >
-          <View style={{ flexDirection: "row", padding: 2, paddingLeft: 25, paddingRight: 75 }}>
-            <Icon name="location-pin" size={20} color='white' />
-            <Text style={{ fontSize: 16, color: 'white', paddingLeft: 15 }}>70, Nguyễn Đình Chiểu, Da Kao, District 1, Ho Chi Minh City</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              padding: 10,
+              paddingLeft: 25,
+              paddingRight: 25
+            }}
+          >
+            <Icon name="location-pin" size={20} color="white" />
+            <Text style={{ fontSize: 18, color: "white", paddingLeft: 15 }}>
+              70, Nguyễn Đình Chiểu, Da Kao, District 1, Ho Chi Minh City
+            </Text>
           </View>
-          <View style={{ flexDirection: "row", padding: 2, paddingLeft: 25, paddingRight: 75 }}>
-            <Icon name="phone" size={20} color='white' />
-            <Text style={{ fontSize: 16, color: 'white', paddingLeft: 15 }}>+84 966 999 666</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              padding: 2,
+              paddingLeft: 25,
+              paddingRight: 75
+            }}
+          >
+            <Icon name="phone" size={20} color="white" />
+            <Text style={{ fontSize: 18, color: "white", paddingLeft: 15 }}>
+              +84 966 999 666
+            </Text>
           </View>
-          <View style={{ flexDirection: "row", padding: 2, paddingLeft: 25, paddingRight: 75 }}>
-            <Icon name="mail" size={20} color='white' />
-            <Text style={{ fontSize: 16, color: 'white', paddingLeft: 15 }}>cmit@pantruc.com</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              padding: 2,
+              paddingLeft: 25,
+              paddingRight: 75
+            }}
+          >
+            <Icon name="mail" size={20} color="white" />
+            <Text style={{ fontSize: 18, color: "white", paddingLeft: 15 }}>
+              cmit@pantruc.com
+            </Text>
           </View>
-          <View style={{ flexDirection: "row", paddingLeft: 100, paddingRight: 100, justifyContent: 'space-evenly', padding: 5 }}>
-            <Icon name="facebook-with-circle" size={28} color='white' />
-            <Icon name="instagram-with-circle" size={28} color='white' />
-            <Icon name="twitter-with-circle" size={28} color='white' />
-            <Icon name="pinterest-with-circle" size={28} color='white' />
+          <View
+            style={{
+              flexDirection: "row",
+              paddingLeft: 50,
+              paddingRight: 50,
+              paddingBottom: 10,
+              justifyContent: "space-evenly",
+              padding: 5
+            }}
+          >
+            <Icon name="facebook-with-circle" size={40} color="white" />
+            <Icon name="instagram-with-circle" size={40} color="white" />
+            <Icon name="twitter-with-circle" size={40} color="white" />
+            <Icon name="pinterest-with-circle" size={40} color="white" />
           </View>
         </View>
       </View>
@@ -114,7 +171,7 @@ const styles = StyleSheet.create({
   textField: {
     flex: 2,
     padding: 10,
-    backgroundColor: 'white'
+    backgroundColor: "white"
   },
   formInput: {
     height: 32,
@@ -135,7 +192,7 @@ const styles = StyleSheet.create({
     marginTop: 4
   },
   map: {
-    flex: 3,
+    flex: 2
     // marginHorizontal: 15
   }
 });

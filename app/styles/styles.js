@@ -19,8 +19,8 @@ export const styles = StyleSheet.create({
     fontSize: 12
   },
   titleText: {
-    fontFamily: "Sawarabi Mincho Medium",
-    fontSize: 20,
+    fontFamily: "Medinah",
+    fontSize: 30,
     color: "#263238"
   },
   priceText: {
@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   highlightText: {
-    fontSize: 13,
+    fontSize: 15,
     fontFamily: "Sawarabi Mincho Medium",
     color: color.highlight
   },
@@ -75,7 +75,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   titleStyle: {
-    fontFamily: "Avenir",
+    fontFamily: "Medinah",
     color: "#B10D65",
     fontSize: 30,
     color: "white"

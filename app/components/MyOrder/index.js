@@ -29,10 +29,6 @@ export default class MyOrder extends Component {
     super(props);
   }
 
-  ratingCompleted(rating) {
-    console.log("Rating is: " + rating);
-  }
-
   componentWillMount() {}
 
   render() {

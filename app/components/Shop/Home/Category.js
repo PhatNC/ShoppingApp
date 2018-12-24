@@ -16,7 +16,7 @@ export default class Category extends Component {
     return (
       <View style={wrapper}>
         <View style={{ flex: 1, justifyContent: 'center' }}>
-          <Text style={styles.titleText}>List Of Categories</Text>
+          <Text style={styles.titleText}>Sweetie Cakes</Text>
         </View >
         <View style={{ flex: 5, justifyContent: 'flex-end' }}>
           <Swiper

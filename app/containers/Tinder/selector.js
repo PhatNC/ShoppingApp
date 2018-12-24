@@ -1,27 +1,24 @@
-import { createSelector } from 'reselect';
+import { createSelector } from "reselect";
 
-
-const tinderReducer = (state) => {
+const tinderReducer = state => {
   // console.log(state)
-  return state.get('TinderReducer');
+  return state.get("TinderReducer");
 };
 // const appReducer = (state) => state.AppReducer;
 
-const selectProducts = () => createSelector(
-  tinderReducer,
-  (substate) => substate.get('products').toJS()
-);
+const selectProducts = () =>
+  createSelector(
+    tinderReducer,
+    substate => substate.get("products").toJS()
+  );
 
-const selectFavoriteProducts = () => createSelector(
-  tinderReducer,
-  (substate) => {
-    console.log(substate)
-    return substate.get('favoriteProducts').toJS()
-  }
-);
+const selectFavoriteProducts = () =>
+  createSelector(
+    tinderReducer,
+    substate => {
+      // console.log("Sub", substate, "==================================");
+      return substate.get("favoriteProducts").toJS();
+    }
+  );
 
-export {
-  tinderReducer,
-  selectProducts,
-  selectFavoriteProducts,
-};
+export { tinderReducer, selectProducts, selectFavoriteProducts };

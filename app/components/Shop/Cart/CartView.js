@@ -52,6 +52,27 @@ export default class CartView extends Component {
       return (
         <View style={styles.wrapper}>
           <View
+            style={{
+              height: 80,
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: 20,
+              backgroundColor: "#000a12"
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: "Medinah",
+                color: "#B10D65",
+                fontSize: 40,
+                color: "white"
+              }}
+            >
+              Shopping Cart
+            </Text>
+          </View>
+          <View
             style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
           >
             <Icon name="security" size={150} color="#90A4AE" />
@@ -64,6 +85,27 @@ export default class CartView extends Component {
     }
     return (
       <View style={styles.wrapper}>
+        <View
+          style={{
+            height: 80,
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: 20,
+            backgroundColor: "#000a12"
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: "Medinah",
+              color: "#B10D65",
+              fontSize: 40,
+              color: "white"
+            }}
+          >
+            Shopping Cart
+          </Text>
+        </View>
         <ScrollView>
           {cart.map(item => (
             <CartItem

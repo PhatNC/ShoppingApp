@@ -3,10 +3,10 @@ import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 
 import { createStackNavigator } from "react-navigation";
 
-import OrderHistory from "../../containers/OrderHistoryView";
-import TrackOrder from "../../containers/TrackOrderView";
+import FavorProduct from "../../containers/FavoriteProductView";
+import ProductDetail from "../../containers/ProductDetailView";
 
-export default class Order extends Component {
+export default class FavoriteProduct extends Component {
   render() {
     const MAINJSX = OrderNavigator({
       parentNavigation: this.props.navigation,
@@ -19,15 +19,15 @@ export default class Order extends Component {
 const OrderNavigator = value =>
   createStackNavigator(
     {
-      MY_ORDER: {
-        screen: props => <OrderHistory {...props} {...value} />
+      FAVORITE: {
+        screen: props => <FavorProduct {...props} {...value} />
       },
-      TRACK_ORDER: {
-        screen: props => <TrackOrder {...props} {...value} />
+      PRODUCT_DETAIL: {
+        screen: props => <ProductDetail {...props} {...value} />
       }
     },
     {
-      initialRouteName: "MY_ORDER",
+      initialRouteName: "FAVORITE",
       headerMode: "none"
     }
   );

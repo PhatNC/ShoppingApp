@@ -57,9 +57,9 @@ class ProductDetail extends Component {
               this.props.navigation.goBack();
             }}
           />
-          <Text style={styles.titleStyle}>DETAIL</Text>
+          <Text style={styles.titleStyle}>Cake Detail</Text>
           <Icon
-            name="shopping-cart"
+            name="add-shopping-cart"
             size={30}
             color="white"
             onPress={() => this.addToCart(product)}
@@ -88,7 +88,7 @@ class ProductDetail extends Component {
                 alignItems: "center"
               }}
             >
-              <Text style={styles.txtName}>${product.price}</Text>
+              <Text style={styles.txtName}>${product.price}.00</Text>
             </View>
           </View>
           <View style={{ padding: 10, flex: 1 }}>
@@ -117,8 +117,8 @@ class ProductDetail extends Component {
             <View style={{ padding: 5, flex: 1 }}>
               <Text
                 style={{
-                  fontFamily: "Sawarabi Mincho Medium",
-                  fontSize: 20,
+                  fontFamily: "Medinah",
+                  fontSize: 35,
                   color: "#263238"
                 }}
               >

@@ -11,7 +11,7 @@ import {
   Image
 } from "react-native";
 
-import { Icon, Button } from "react-native-elements";
+import { Icon, Button, Badge } from "react-native-elements";
 import cake6 from "../../media/temp/cake6.jpg";
 import cake7 from "../../media/temp/cake7.jpg";
 import cake8 from "../../media/temp/cake8.jpg";
@@ -19,9 +19,9 @@ import cake9 from "../../media/temp/cake9.jpg";
 import cake10 from "../../media/temp/cake10.jpg";
 import cake11 from "../../media/temp/cake11.jpg";
 
-export default class OrderHistory extends Component {
+export default class FavorProduct extends Component {
   componentWillMount() {
-    this.props.getOrderRequest(this.props.authen._id);
+    this.props.getFavoriteRequest({ id: this.props.authen._id });
   }
 
   render() {
@@ -38,13 +38,13 @@ export default class OrderHistory extends Component {
           />
           <Text
             style={{
-              fontFamily: "Avenir",
+              fontFamily: "Medinah",
               color: "#B10D65",
-              fontSize: 25,
+              fontSize: 35,
               color: "white"
             }}
           >
-            MY ORDER
+            My Favorite
           </Text>
           <View />
         </View>
@@ -60,47 +60,28 @@ export default class OrderHistory extends Component {
             enableEmptySections
             dataSource={new ListView.DataSource({
               rowHasChanged: (r1, r2) => r1 !== r2
-            }).cloneWithRows(this.props.orders)}
-            renderRow={order => (
-              <View
+            }).cloneWithRows(this.props.favoriteProducts)}
+            renderRow={favorItem => (
+              <TouchableOpacity
                 style={{
                   flexDirection: "row",
                   padding: 5,
                   margin: 10,
                   backgroundColor: "white",
-                  elevation: 5
+                  elevation: 5,
                 }}
+                activeOpacity={1}
+                onPress={()=>{this.props.navigation.navigate('PRODUCT_DETAIL', favorItem.product)}}
               >
                 <View style={{ margin: 5 }}>
                   <Image
-                    source={cake6}
+                    source={{ uri: `${favorItem.product.image[0]}` }}
                     style={{
                       width: width * 0.3,
-                      height: width * 0.3,
+                      height: width * 0.4,
                       marginBottom: 10
                     }}
                   />
-                  <TouchableOpacity
-                    style={{
-                      backgroundColor: "#112b39",
-                      marginTop: 10,
-                      height: 40,
-                      justifyContent: "center",
-                      alignItems: "center"
-                    }}
-                    onPress={() => {
-                      this.props.navigation.navigate("TRACK_ORDER", order);
-                    }}
-                  >
-                    <Text
-                      style={{
-                        textAlign: "center",
-                        color: "white"
-                      }}
-                    >
-                      TRACK ORDER
-                    </Text>
-                  </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1, margin: 5 }}>
                   {/* <Icon
@@ -111,96 +92,84 @@ export default class OrderHistory extends Component {
                   /> */}
                   <View
                     style={{
-                      borderBottomColor: "#282C34",
-                      borderBottomWidth: 1,
                       paddingBottom: 10
                     }}
                   >
                     <Text
                       style={{
-                        color: "#35A94F",
+                        color: "#000a12",
                         fontWeight: "bold",
-                        fontSize: 25
+                        fontSize: 20
                       }}
                     >
-                      #02134{order.orderID}
+                      {favorItem.product.name}
                     </Text>
-                    <Text style={{ fontSize: 15 }}>{order.createDate}</Text>
+                    <Text
+                      style={{
+                        fontSize: 13,
+                        paddingTop: 10,
+                        textAlign: "justify"
+                      }}
+                      numberOfLines={3}
+                    >
+                      {favorItem.product.description}
+                    </Text>
                   </View>
 
                   <View
                     style={{
-                      borderBottomColor: "#282C34",
-                      borderBottomWidth: 1,
                       paddingBottom: 10,
-                      paddingTop: 10,
-                      paddingRight: 40,
+                      paddingRight: 5,
                       flexDirection: "row",
-                      justifyContent: "space-between"
+                      justifyContent: "space-between",
+                      alignItems: "center"
                     }}
                   >
                     <View
-                      style={{ justifyContent: "center", alignItems: "center" }}
+                      style={{
+                        justifyContent: "space-between",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        flex: 1
+                      }}
                     >
-                      <Text style={{ fontSize: 13 }}>No. Kinds</Text>
-                      <Text style={{ fontSize: 15, fontWeight: "bold" }}>
-                        {order.quantity}
-                      </Text>
+                      <Badge
+                        containerStyle={{
+                          backgroundColor: "#FF8F00",
+                          height: 30,
+                          margin: 5,
+                          elevation: 5
+                        }}
+                      >
+                        <Text style={{ color: "black" }}>
+                          {favorItem.product.flavor}
+                        </Text>
+                      </Badge>
                     </View>
                     <View
-                      style={{ justifyContent: "center", alignItems: "center" }}
+                      style={{
+                        backgroundColor: "#000A12",
+                        height: 70,
+                        width: 70,
+                        borderRadius: 35,
+                        opacity: 0.9,
+                        justifyContent: "center",
+                        alignItems: "center"
+                      }}
                     >
-                      <Text style={{ fontSize: 13 }}>Total</Text>
-                      <Text style={{ fontSize: 15, fontWeight: "bold" }}>
-                        ${order.totalPrice}
-                      </Text>
-                    </View>
-                  </View>
-
-                  <View
-                    style={{
-                      paddingBottom: 5,
-                      paddingTop: 15,
-                      paddingRight: 40,
-                      flexDirection: "row",
-                      justifyContent: "space-between"
-                    }}
-                  >
-                    <View>
                       <Text
                         style={{
                           fontSize: 15,
                           fontWeight: "bold",
-                          color: "#000a12"
+                          color: "white"
                         }}
                       >
-                        Shipping type
-                      </Text>
-                      <Text
-                        style={{
-                          fontSize: 15,
-                          fontWeight: "bold",
-                          color: "#000a12"
-                        }}
-                      >
-                        Tracking status
-                      </Text>
-                    </View>
-                    <View>
-                      <Text style={{ fontSize: 15 }}>Standard</Text>
-                      <Text
-                        style={{
-                          fontSize: 15,
-                          color: "#35A94F",
-                          fontWeight: "bold"
-                        }}
-                      >
-                        {order.status}
+                        ${favorItem.product.price}.00
                       </Text>
                     </View>
                   </View>
                 </View>
-              </View>
+              </TouchableOpacity>
             )}
           />
         </ScrollView>

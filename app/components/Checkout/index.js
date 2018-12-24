@@ -30,10 +30,6 @@ export default class Checkout extends Component {
     super(props);
   }
 
-  ratingCompleted(rating) {
-    console.log("Rating is: " + rating);
-  }
-
   componentWillMount() {}
 
   render() {
@@ -49,10 +45,11 @@ export default class Checkout extends Component {
             backgroundColor: "white",
             flex: 1,
             padding: 20,
+            paddingTop: 10,
             justifyContent: "space-between"
           }}
         >
-          <View style={{ marginBottom: 10 }}>
+          <View style={{ marginBottom: 5 }}>
             <ScrollView style={{ paddingTop: 5, paddingBottom: 5 }} horizontal>
               <Image
                 source={cake8}
@@ -283,7 +280,7 @@ export default class Checkout extends Component {
               borderColor: "#000A12",
               borderTopWidth: 2,
               padding: 10,
-              marginTop: 20,
+              marginTop: 10,
               flex: 1
             }}
           >
@@ -317,6 +314,20 @@ export default class Checkout extends Component {
                 States
               </Text>
             </View>
+          </View>
+          <View
+            style={{
+              backgroundColor: "#000A12",
+              // marginLeft: 10,
+              // marginRight: 10,
+              height: 50,
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+              CHECK OUT
+            </Text>
           </View>
         </View>
       </View>

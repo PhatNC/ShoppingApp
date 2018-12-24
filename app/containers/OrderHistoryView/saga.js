@@ -12,7 +12,6 @@ export function* getOrderRequest({ params }) {
     const { data } = yield call(GET,
       { path: `${GET_ORDER_PATH}/${params}`, body: params, opts: {} }
     );
-    // console.log('AAAAAAAAAAADDDDDDDDDDDDDDDDDDD',data)
     yield put(getOrderSuccess(data));
   } catch (error) {
     // console.log('Error', error)

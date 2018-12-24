@@ -32,9 +32,9 @@ export const getFavoriteRequest = (params) => {
   return ({ type: GET_FAVORITE_REQUEST, params })
 };
 
-export const getFavoriteSuccess = (products) => {
+export const getFavoriteSuccess = (favoriteProducts) => {
   // console.log('getFavoriteSuccess');
-  return ({ type: GET_FAVORITE_SUCCESS, products })
+  return ({ type: GET_FAVORITE_SUCCESS, favoriteProducts })
 };
 
 export const getFavoriteFailure = (errors) => {

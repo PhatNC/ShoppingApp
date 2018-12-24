@@ -25,6 +25,7 @@ import catIcon from "../media/img/cat.png";
 import Authentication from "../containers/LoginScreen";
 import ChangeInfo from "../containers/InfomationView";
 import Order from "../components/Order";
+import FavoriteProduct from "./FavoriteProduct";
 import Shop from "../containers/ShopView";
 
 // StatusBar.setHidden(true);
@@ -105,6 +106,16 @@ const LogedInNavigator = value =>
           )
         }
       },
+      FAVOR: {
+        path: "/favor",
+        screen: props => <FavoriteProduct {...props} {...value} />,
+        navigationOptions: {
+          title: "MY FAVORITE",
+          drawerIcon: ({ tintColor }) => (
+            <Icon name="favorite-border" size={27} type="material" color={tintColor} />
+          )
+        }
+      },
       ORDER_HISTORY: {
         path: "/orderhistory",
         screen: props => <Order {...props} {...value} />,
@@ -144,7 +155,7 @@ const LogedInNavigator = value =>
         //activeTintColor: '#FFF',
         inactiveTintColor: "#757575",
         labelStyle: {
-          fontFamily: "Sawarabi Mincho Medium",
+          fontFamily: "Medinah",
           fontSize: 15
         }
       },
