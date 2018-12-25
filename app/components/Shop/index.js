@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, Image, Platform } from 'react-native';
 import { Icon } from 'react-native-elements'
 
 import Home from './Home';
-import Cart from '../../containers/CartScreen';
+import Cart from './Cart';
 import Contact from './Contact';
 import Search from '../../containers/SeachView';
 import Tinder from '../../containers/Tinder'

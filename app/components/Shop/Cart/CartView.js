@@ -16,9 +16,10 @@ import { cartStyles } from "./styles";
 import CartItem from "./CartItem";
 
 export default class CartView extends Component {
-  onCheckOut = cart => {
-    if (cart.cart.length > 0) {
-      this.props.checkoutRequest(cart);
+  onCheckOut(cart) {
+    console.log("AAAAAAAAAAAAAAAAA", cart.cart.cart.length);
+    if (cart.cart.cart.length > 0) {
+      this.props.checkoutRequest(cart.cart);
       Alert.alert(
         "Successfully!",
         "Successful transaction.",
@@ -33,7 +34,7 @@ export default class CartView extends Component {
         { cancelable: false }
       );
     }
-  };
+  }
 
   render() {
     const {
@@ -130,11 +131,20 @@ export default class CartView extends Component {
             title="CHECKOUT"
             disabledStyle={cartStyles.checkoutDiabledButton}
             onPress={() =>
-              this.onCheckOut({
-                cart: this.props.cart,
-                totalPrice,
-                authen: this.props.authen,
-                quantity: this.props.cart.length
+              this.props.navigation.navigate("CHECK_OUT", {
+                onCheckout: (cart, totalPrice, authen, quantity) =>
+                  this.onCheckOut({
+                    cart: cart,
+                    totalPrice: totalPrice,
+                    authen: authen,
+                    quantity: quantity
+                  }),
+                cart: {
+                  cart: this.props.cart,
+                  totalPrice: totalPrice,
+                  authen: this.props.authen,
+                  quantity: this.props.cart.length
+                }
               })
             }
           />
