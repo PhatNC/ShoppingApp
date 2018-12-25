@@ -8,7 +8,7 @@ import {
   StyleSheet,
   Dimensions,
   ScrollView,
-  Alert,
+  Alert
 } from "react-native";
 import { Icon, Button, Badge } from "react-native-elements";
 import { styles } from "../../../styles/styles";
@@ -117,7 +117,7 @@ class ProductDetail extends Component {
             <View style={{ padding: 5, flex: 1 }}>
               <Text
                 style={{
-                  fontFamily: "Sawarabi Mincho Medium",
+                  fontFamily: "Sawarabi Mincho",
                   fontSize: 20,
                   color: "#263238"
                 }}
@@ -126,8 +126,8 @@ class ProductDetail extends Component {
               </Text>
               <Text
                 style={{
-                  fontFamily: "Sawarabi Mincho Medium",
-                  fontSize: 15,
+                  fontFamily: "Sawarabi Mincho",
+                  fontSize: 15
                 }}
               >
                 {product.description}

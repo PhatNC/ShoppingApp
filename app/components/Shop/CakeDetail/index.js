@@ -98,7 +98,7 @@ export default class CakeDetail extends Component {
           <View style={{ padding: 5, flex: 1 }}>
             <Text
               style={{
-                fontFamily: "Sawarabi Mincho Medium",
+                fontFamily: "Sawarabi Mincho",
                 fontSize: 20,
                 color: "#263238"
               }}
@@ -107,12 +107,12 @@ export default class CakeDetail extends Component {
             </Text>
             <Text
               style={{
-                fontFamily: "Sawarabi Mincho Medium",
+                fontFamily: "Sawarabi Mincho",
                 fontSize: 15,
                 maxHeight: 80
               }}
             >
-              Description 
+              Description
             </Text>
           </View>
           <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>

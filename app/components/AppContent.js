@@ -144,7 +144,7 @@ const LogedInNavigator = value =>
         //activeTintColor: '#FFF',
         inactiveTintColor: "#757575",
         labelStyle: {
-          fontFamily: "Sawarabi Mincho Medium",
+          fontFamily: "Sawarabi Mincho",
           fontSize: 15
         }
       },
@@ -194,11 +194,11 @@ class MenuControl extends Component {
           </Text>
           <Text
             style={{
-              fontFamily: "Sawarabi Mincho Medium",
+              fontFamily: "Sawarabi Mincho",
               fontSize: 13,
               color: "white"
             }}
-          >                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+          >
             {this.props.isAuthen ? this.props.authen.email : "unknown"}
           </Text>
         </ImageBackground>
@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10
   },
   profileNameStyle: {
-    fontFamily: "Sawarabi Mincho Medium",
+    fontFamily: "Sawarabi Mincho",
     fontSize: 20,
     color: "white"
   },
