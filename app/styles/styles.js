@@ -11,11 +11,11 @@ export const styles = StyleSheet.create({
     backgroundColor: "#D6D6D6"
   },
   contentText: {
-    fontFamily: "Sawarabi Mincho Medium",
+    fontFamily: "Sawarabi Mincho",
     fontSize: 15
   },
   contentSmallText: {
-    fontFamily: "Sawarabi Mincho Medium",
+    fontFamily: "Sawarabi Mincho",
     fontSize: 12
   },
   titleText: {
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
   },
   highlightText: {
     fontSize: 15,
-    fontFamily: "Sawarabi Mincho Medium",
+    fontFamily: "Sawarabi Mincho",
     color: color.highlight
   },
   productContainer: {

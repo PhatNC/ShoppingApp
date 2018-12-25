@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {
-  StatusBar,
   View,
   Platform,
+  StatusBar,
   ActivityIndicator,
   ImageBackground,
   StyleSheet,
@@ -12,6 +12,11 @@ import {
 import BG_IMAGE from "../media/img/logo.png";
 
 export default class SplashScreen extends Component {
+  componentDidMount() {
+    if (Platform.OS === "ios") StatusBar.setHidden(true);
+    else StatusBar.setHidden(false);
+  }
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
