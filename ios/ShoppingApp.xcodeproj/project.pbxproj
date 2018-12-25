@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		009A5A693F2C40FB9881FA4A /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B97A27014ADD4B66B8A994FA /* SimpleLineIcons.ttf */; };
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
 		00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
@@ -44,7 +45,6 @@
 		1852CF7B21AECEB900EA41BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7A21AECEB900EA41BD /* QuartzCore.framework */; };
 		1852CF7D21AECEC100EA41BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7C21AECEC000EA41BD /* SystemConfiguration.framework */; };
 		1852CF7F21AECEC900EA41BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7E21AECEC900EA41BD /* UIKit.framework */; };
-		1E7C82BC52B94280AB017DB6 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4750170EA19B42E2BB78018D /* SimpleLineIcons.ttf */; };
 		1EA7F18EAECF4955852233CB /* Black Melody - Personal Use.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFBFE3BA1534A83B666F4EC /* Black Melody - Personal Use.otf */; };
 		28320F2518DC4EB2846D7904 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62811ACFEF2F41A295E00EEC /* MaterialIcons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -64,21 +64,24 @@
 		4DF72EF56E1742D098E69719 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C79847F7080940DFA18D7E7F /* Ionicons.ttf */; };
 		5076D67428B246C59283B748 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76BDAACC6FC24A1D9A5451E4 /* Octicons.ttf */; };
 		54E4C2248C6D477185D2C35D /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40E8FBCC1A584F419C55FF85 /* AntDesign.ttf */; };
+		59BC26F8B678B58F5E946614 /* libPods-ShoppingApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E843214D6037F003B8222FFF /* libPods-ShoppingApp.a */; };
 		6F5C62AF787B47D0BE78D3A2 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C725F0C7D5844C8B454FFDA /* FontAwesome5_Regular.ttf */; };
 		7197F48D0AE74D6BAB1847FB /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8E30B7B40F6496B993EE024 /* FontAwesome5_Brands.ttf */; };
 		74C01CAE0953445EBAA37F2E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4B4647EB5634FEFAB33C75A /* FontAwesome.ttf */; };
 		76F4EA9B501D413292A7ACEF /* Sawarabi Gothic Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28F2C0345B904DBE841473C3 /* Sawarabi Gothic Medium.otf */; };
 		824BAF31E7E949B8AB7CC58B /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 199DCA57B5DE45869055532C /* FontAwesome5_Solid.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		904FEBA5A0D5404D8AC888FF /* DroidSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B24461FAC4194651BC5A903E /* DroidSans.ttf */; };
 		99575D9C3E88428799508F06 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2C2C3B234A142328F6A7242 /* Roboto.ttf */; };
 		9D76C896F7084404A7DBB380 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C4895E6B13648E8863F409A /* Roboto_medium.ttf */; };
+		AA8FCAAEC65F4D2BA7B8FDE1 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB1263C3A4AB4670AB58E51D /* Zocial.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		BE0EC703471D4FC9BA55C3A6 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25899BB11BED4748904EA304 /* Foundation.ttf */; };
 		DED39FF47F374E9397B0A52A /* Sawarabi Mincho Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FC66852AFF54B8AA30F89F5 /* Sawarabi Mincho Medium.otf */; };
 		DF0145045BA94DFAB9CA8DFD /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BC8C33AD2AD48AC8B46ABF8 /* EvilIcons.ttf */; };
 		E4F9F19C3331465985A9D3AD /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 059903B7615B43099F4ADFE7 /* rubicon-icon-font.ttf */; };
 		E5AF377291CA449F9B6BE55F /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4331C2C3F4534C8CAC19DAFD /* Entypo.ttf */; };
-		F3935C8DAA3B4514A2053808 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E742ACAC37E4629B052F2BF /* Zocial.ttf */; };
+		FB14BE466E824919949A8217 /* DroidSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8B885E282D84BABA7BCF747 /* DroidSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -440,10 +443,8 @@
 		2D02E4901E0B4A5D006451C7 /* ShoppingApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ShoppingApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		372F8AE46647498EB4EE4315 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		3E742ACAC37E4629B052F2BF /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		40E8FBCC1A584F419C55FF85 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		4331C2C3F4534C8CAC19DAFD /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		4750170EA19B42E2BB78018D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		4FC66852AFF54B8AA30F89F5 /* Sawarabi Mincho Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sawarabi Mincho Medium.otf"; path = "../assets/fonts/Sawarabi Mincho Medium.otf"; sourceTree = "<group>"; };
 		5C725F0C7D5844C8B454FFDA /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -452,18 +453,25 @@
 		76BDAACC6FC24A1D9A5451E4 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7C4895E6B13648E8863F409A /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
+		82A364CDAB6A4DB84235CA82 /* Pods-ShoppingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp.release.xcconfig"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8415B3030AA542D481174EBD /* Medinah.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Medinah.ttf; path = ../assets/fonts/Medinah.ttf; sourceTree = "<group>"; };
 		865121939462464CA89B6A65 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		8BC8C33AD2AD48AC8B46ABF8 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		9DFBFE3BA1534A83B666F4EC /* Black Melody - Personal Use.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Black Melody - Personal Use.otf"; path = "../assets/fonts/Black Melody - Personal Use.otf"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		B24461FAC4194651BC5A903E /* DroidSans.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = DroidSans.ttf; path = ../assets/fonts/DroidSans.ttf; sourceTree = "<group>"; };
+		B4C75C024F45814593CD99BA /* Pods-ShoppingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B97A27014ADD4B66B8A994FA /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		BB1263C3A4AB4670AB58E51D /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		C79847F7080940DFA18D7E7F /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		C8B885E282D84BABA7BCF747 /* DroidSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSans-Bold.ttf"; path = "../assets/fonts/DroidSans-Bold.ttf"; sourceTree = "<group>"; };
 		C8E30B7B40F6496B993EE024 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		CA0EC86D22EB4DE6BC0E1EC9 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		D1D3FE62EB92485596B03DD2 /* RNSearchBar.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSearchBar.xcodeproj; path = "../node_modules/react-native-search-bar/ios/RNSearchBar.xcodeproj"; sourceTree = "<group>"; };
 		D2C2C3B234A142328F6A7242 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 		E4B4647EB5634FEFAB33C75A /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		E843214D6037F003B8222FFF /* libPods-ShoppingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -509,6 +517,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				59BC26F8B678B58F5E946614 /* libPods-ShoppingApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +726,7 @@
 				1852CF5D21AECDBF00EA41BD /* GoogleMapsCore.framework */,
 				1852CF5A21AECDAB00EA41BD /* GoogleMapsBase.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
+				E843214D6037F003B8222FFF /* libPods-ShoppingApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -781,6 +791,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				843E198EE280404D95BB8AB6 /* Resources */,
 				1852CF1721AEC09600EA41BD /* Recovered References */,
+				D80C9291F2172CE1840E10E9 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -803,6 +814,8 @@
 			children = (
 				40E8FBCC1A584F419C55FF85 /* AntDesign.ttf */,
 				9DFBFE3BA1534A83B666F4EC /* Black Melody - Personal Use.otf */,
+				C8B885E282D84BABA7BCF747 /* DroidSans-Bold.ttf */,
+				B24461FAC4194651BC5A903E /* DroidSans.ttf */,
 				4331C2C3F4534C8CAC19DAFD /* Entypo.ttf */,
 				8BC8C33AD2AD48AC8B46ABF8 /* EvilIcons.ttf */,
 				372F8AE46647498EB4EE4315 /* Feather.ttf */,
@@ -821,8 +834,8 @@
 				059903B7615B43099F4ADFE7 /* rubicon-icon-font.ttf */,
 				28F2C0345B904DBE841473C3 /* Sawarabi Gothic Medium.otf */,
 				4FC66852AFF54B8AA30F89F5 /* Sawarabi Mincho Medium.otf */,
-				4750170EA19B42E2BB78018D /* SimpleLineIcons.ttf */,
-				3E742ACAC37E4629B052F2BF /* Zocial.ttf */,
+				B97A27014ADD4B66B8A994FA /* SimpleLineIcons.ttf */,
+				BB1263C3A4AB4670AB58E51D /* Zocial.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -834,6 +847,15 @@
 				2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D80C9291F2172CE1840E10E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4C75C024F45814593CD99BA /* Pods-ShoppingApp.debug.xcconfig */,
+				82A364CDAB6A4DB84235CA82 /* Pods-ShoppingApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -861,10 +883,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ShoppingApp" */;
 			buildPhases = (
+				8B85C3BEACDD6087F69F3CB7 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				7D56BFDBE4AB28B1D56CEF4A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1343,8 +1367,6 @@
 				04210F32F0974B00B7102929 /* MaterialCommunityIcons.ttf in Resources */,
 				28320F2518DC4EB2846D7904 /* MaterialIcons.ttf in Resources */,
 				5076D67428B246C59283B748 /* Octicons.ttf in Resources */,
-				1E7C82BC52B94280AB017DB6 /* SimpleLineIcons.ttf in Resources */,
-				F3935C8DAA3B4514A2053808 /* Zocial.ttf in Resources */,
 				54E4C2248C6D477185D2C35D /* AntDesign.ttf in Resources */,
 				7197F48D0AE74D6BAB1847FB /* FontAwesome5_Brands.ttf in Resources */,
 				6F5C62AF787B47D0BE78D3A2 /* FontAwesome5_Regular.ttf in Resources */,
@@ -1356,6 +1378,10 @@
 				4B048354963342D4BEF61CB9 /* Medinah.ttf in Resources */,
 				DED39FF47F374E9397B0A52A /* Sawarabi Mincho Medium.otf in Resources */,
 				76F4EA9B501D413292A7ACEF /* Sawarabi Gothic Medium.otf in Resources */,
+				FB14BE466E824919949A8217 /* DroidSans-Bold.ttf in Resources */,
+				904FEBA5A0D5404D8AC888FF /* DroidSans.ttf in Resources */,
+				009A5A693F2C40FB9881FA4A /* SimpleLineIcons.ttf in Resources */,
+				AA8FCAAEC65F4D2BA7B8FDE1 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1404,6 +1430,50 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		7D56BFDBE4AB28B1D56CEF4A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B85C3BEACDD6087F69F3CB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShoppingApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1539,6 +1609,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4C75C024F45814593CD99BA /* Pods-ShoppingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1569,6 +1640,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82A364CDAB6A4DB84235CA82 /* Pods-ShoppingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
