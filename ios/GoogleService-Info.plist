@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>968878716690-ep7rb0mkfq9tpg8im6b4uog8v927slsb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.968878716690-ep7rb0mkfq9tpg8im6b4uog8v927slsb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCH7WgQoSWUrGehtPv0ELt9cnf3DEAr0nw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>968878716690</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.ShoppingApp</string>
+	<key>PROJECT_ID</key>
+	<string>shoppingappmap</string>
+	<key>STORAGE_BUCKET</key>
+	<string>shoppingappmap.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:968878716690:ios:4b81893ff9b81aac</string>
+	<key>DATABASE_URL</key>
+	<string>https://shoppingappmap.firebaseio.com</string>
+</dict>
+</plist>

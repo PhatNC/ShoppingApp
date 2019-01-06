@@ -45,6 +45,7 @@
 		1852CF7B21AECEB900EA41BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7A21AECEB900EA41BD /* QuartzCore.framework */; };
 		1852CF7D21AECEC100EA41BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7C21AECEC000EA41BD /* SystemConfiguration.framework */; };
 		1852CF7F21AECEC900EA41BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1852CF7E21AECEC900EA41BD /* UIKit.framework */; };
+		188ED2D821E1DE0400CEE94F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188ED2AD21E1DE0400CEE94F /* GoogleService-Info.plist */; };
 		1EA7F18EAECF4955852233CB /* Black Melody - Personal Use.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFBFE3BA1534A83B666F4EC /* Black Melody - Personal Use.otf */; };
 		28320F2518DC4EB2846D7904 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62811ACFEF2F41A295E00EEC /* MaterialIcons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -67,6 +68,7 @@
 		59BC26F8B678B58F5E946614 /* libPods-ShoppingApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E843214D6037F003B8222FFF /* libPods-ShoppingApp.a */; };
 		6F5C62AF787B47D0BE78D3A2 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C725F0C7D5844C8B454FFDA /* FontAwesome5_Regular.ttf */; };
 		7197F48D0AE74D6BAB1847FB /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8E30B7B40F6496B993EE024 /* FontAwesome5_Brands.ttf */; };
+		71B0AFF9A34348D7A1A0E3DF /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE51D73B0F1341F6903CADF8 /* libRNFirebase.a */; };
 		74C01CAE0953445EBAA37F2E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4B4647EB5634FEFAB33C75A /* FontAwesome.ttf */; };
 		76F4EA9B501D413292A7ACEF /* Sawarabi Gothic Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28F2C0345B904DBE841473C3 /* Sawarabi Gothic Medium.otf */; };
 		824BAF31E7E949B8AB7CC58B /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 199DCA57B5DE45869055532C /* FontAwesome5_Solid.ttf */; };
@@ -182,6 +184,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = A39873CE1EA65EE60051E01A;
 			remoteInfo = "RNVectorIcons-tvOS";
+		};
+		188ED31621E1DF1900CEE94F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 163447BDF69244D79BC9773F /* RNFirebase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNFirebase;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -416,6 +425,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ShoppingApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ShoppingApp/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		163447BDF69244D79BC9773F /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		172721F2AB914B3CACB8EFFB /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		1852CF5A21AECDAB00EA41BD /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
 		1852CF5C21AECDBE00EA41BD /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
@@ -436,6 +446,7 @@
 		1852CF7A21AECEB900EA41BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1852CF7C21AECEC000EA41BD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1852CF7E21AECEC900EA41BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		188ED2AD21E1DE0400CEE94F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		199DCA57B5DE45869055532C /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		25899BB11BED4748904EA304 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		28F2C0345B904DBE841473C3 /* Sawarabi Gothic Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Sawarabi Gothic Medium.otf"; path = "../assets/fonts/Sawarabi Gothic Medium.otf"; sourceTree = "<group>"; };
@@ -470,6 +481,7 @@
 		CA0EC86D22EB4DE6BC0E1EC9 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		D1D3FE62EB92485596B03DD2 /* RNSearchBar.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSearchBar.xcodeproj; path = "../node_modules/react-native-search-bar/ios/RNSearchBar.xcodeproj"; sourceTree = "<group>"; };
 		D2C2C3B234A142328F6A7242 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
+		DE51D73B0F1341F6903CADF8 /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFirebase.a; sourceTree = "<group>"; };
 		E4B4647EB5634FEFAB33C75A /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		E843214D6037F003B8222FFF /* libPods-ShoppingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -518,6 +530,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				59BC26F8B678B58F5E946614 /* libPods-ShoppingApp.a in Frameworks */,
+				71B0AFF9A34348D7A1A0E3DF /* libRNFirebase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +642,7 @@
 		13B07FAE1A68108700A75B9A /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				188ED2AD21E1DE0400CEE94F /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -666,6 +680,7 @@
 		1852CF1721AEC09600EA41BD /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
+				DE51D73B0F1341F6903CADF8 /* libRNFirebase.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -699,6 +714,14 @@
 			children = (
 				1852CF5121AEC09800EA41BD /* libRNVectorIcons.a */,
 				1852CF5321AEC09800EA41BD /* libRNVectorIcons-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		188ED31321E1DF1900CEE94F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				188ED31721E1DF1900CEE94F /* libRNFirebase.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -768,6 +791,7 @@
 				D1D3FE62EB92485596B03DD2 /* RNSearchBar.xcodeproj */,
 				172721F2AB914B3CACB8EFFB /* ReactNativeNavigation.xcodeproj */,
 				6CE7A71D43D140AE9CD7316D /* AirMaps.xcodeproj */,
+				163447BDF69244D79BC9773F /* RNFirebase.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1028,6 +1052,10 @@
 					ProjectRef = 172721F2AB914B3CACB8EFFB /* ReactNativeNavigation.xcodeproj */;
 				},
 				{
+					ProductGroup = 188ED31321E1DF1900CEE94F /* Products */;
+					ProjectRef = 163447BDF69244D79BC9773F /* RNFirebase.xcodeproj */;
+				},
+				{
 					ProductGroup = 1852CF4721AEC09800EA41BD /* Products */;
 					ProjectRef = D1D3FE62EB92485596B03DD2 /* RNSearchBar.xcodeproj */;
 				},
@@ -1136,6 +1164,13 @@
 			fileType = archive.ar;
 			path = "libRNVectorIcons-tvOS.a";
 			remoteRef = 1852CF5221AEC09800EA41BD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		188ED31721E1DF1900CEE94F /* libRNFirebase.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFirebase.a;
+			remoteRef = 188ED31621E1DF1900CEE94F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */ = {
@@ -1368,6 +1403,7 @@
 				28320F2518DC4EB2846D7904 /* MaterialIcons.ttf in Resources */,
 				5076D67428B246C59283B748 /* Octicons.ttf in Resources */,
 				54E4C2248C6D477185D2C35D /* AntDesign.ttf in Resources */,
+				188ED2D821E1DE0400CEE94F /* GoogleService-Info.plist in Resources */,
 				7197F48D0AE74D6BAB1847FB /* FontAwesome5_Brands.ttf in Resources */,
 				6F5C62AF787B47D0BE78D3A2 /* FontAwesome5_Regular.ttf in Resources */,
 				824BAF31E7E949B8AB7CC58B /* FontAwesome5_Solid.ttf in Resources */,
@@ -1554,12 +1590,14 @@
 					"$(SRCROOT)..\node_modules\neact-native-search-barios",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 				);
 				INFOPLIST_FILE = ShoppingAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1586,12 +1624,14 @@
 					"$(SRCROOT)..\node_modules\neact-native-search-barios",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 				);
 				INFOPLIST_FILE = ShoppingAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1624,6 +1664,7 @@
 					"$(SRCROOT)..\node_modules\neact-native-search-barios",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 				);
 				INFOPLIST_FILE = ShoppingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1654,6 +1695,7 @@
 					"$(SRCROOT)..\node_modules\neact-native-search-barios",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 				);
 				INFOPLIST_FILE = ShoppingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1686,11 +1728,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-search-barios",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 				);
 				INFOPLIST_FILE = "ShoppingApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1726,11 +1770,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-search-barios",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 				);
 				INFOPLIST_FILE = "ShoppingApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1765,11 +1811,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-search-barios",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 				);
 				INFOPLIST_FILE = "ShoppingApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1804,11 +1852,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-search-barios",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 				);
 				INFOPLIST_FILE = "ShoppingApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

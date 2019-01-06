@@ -65,7 +65,7 @@ export default class SearchView extends Component {
           searchIcon // You could have passed `null` too
           // onChangeText={someMethod}
           // onClear={someMethod}
-          icon={{ color: "#86939e", style: { fontSize: 20 } }}
+          icon={{ color: "#86939e", style: { fontSize: 17 } }}
           showLoading
           platform="android"
           containerStyle={{
