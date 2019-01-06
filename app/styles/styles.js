@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
   },
   tabContainer: {
     backgroundColor: "#DBDBDB",
-    padding: 10,
+    margin: 10,
     flex: 1
   },
   productSmall: {

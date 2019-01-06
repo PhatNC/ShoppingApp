@@ -35,8 +35,6 @@ export default class Home extends Component {
             />
           }
         >
-          {/* <Collection navigation={this.props.navigation} /> */}
-
           {this.state.refreshing ? (
             <View />
           ) : (

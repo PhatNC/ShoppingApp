@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 
 import { createStackNavigator } from "react-navigation";
 
-import FavorProduct from "../../containers/FavoriteProductView";
+import FavorProduct from "./FavorProduct";
 import ProductDetail from "../../containers/ProductDetailView";
 
 export default class FavoriteProduct extends Component {

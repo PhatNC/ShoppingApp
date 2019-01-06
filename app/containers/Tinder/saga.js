@@ -38,7 +38,7 @@ export function* getProductRequest({ params }) {
 export function* getFavoriteRequest({ params }) {
   try {
     const { data } = yield call(GET, {
-      path: GET_FAVORITE_PATH,
+      path: `${GET_FAVORITE_PATH}/${params}`,
       body: params,
       opts: {}
     });
