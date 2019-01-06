@@ -22,6 +22,7 @@ import cake11 from "../../media/temp/cake11.jpg";
 
 import { Icon, Badge, Rating, Button, CheckBox } from "react-native-elements";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
+import { cartReducer } from "../../containers/CartScreen/selector";
 // import { styles } from "../../../styles/styles";
 const { width, height } = Dimensions.get("window");
 
@@ -37,7 +38,7 @@ export default class Checkout extends Component {
       <View style={styles.wrapper}>
         <View style={styles.header}>
           <Icon name="arrow-back" size={30} color="white" onPress={() => {}} />
-          <Text style={styles.titleStyle}>CHECK OUT</Text>
+          <Text style={styles.titleStyle}>Check Out </Text>
           <View />
         </View>
         <View
@@ -51,51 +52,17 @@ export default class Checkout extends Component {
         >
           <View style={{ marginBottom: 5 }}>
             <ScrollView style={{ paddingTop: 5, paddingBottom: 5 }} horizontal>
-              <Image
-                source={cake8}
-                style={{
-                  height: 60,
-                  width: 60,
-                  borderRadius: 30,
-                  marginRight: 10
-                }}
-              />
-              <Image
-                source={cake9}
-                style={{
-                  height: 60,
-                  width: 60,
-                  borderRadius: 30,
-                  marginRight: 10
-                }}
-              />
-              <Image
-                source={cake10}
-                style={{
-                  height: 60,
-                  width: 60,
-                  borderRadius: 30,
-                  marginRight: 10
-                }}
-              />
-              <Image
-                source={cake11}
-                style={{
-                  height: 60,
-                  width: 60,
-                  borderRadius: 30,
-                  marginRight: 10
-                }}
-              />
-              <Image
-                source={cake6}
-                style={{
-                  height: 60,
-                  width: 60,
-                  borderRadius: 30,
-                  marginRight: 10
-                }}
-              />
+              {this.props.navigation.state.params.cart.cart.map(item => (
+                <Image
+                  source={{ uri: item.image[0] }}
+                  style={{
+                    height: 50,
+                    width: 50,
+                    borderRadius: 25,
+                    marginRight: 10
+                  }}
+                />
+              ))}
             </ScrollView>
           </View>
           <View
@@ -113,22 +80,20 @@ export default class Checkout extends Component {
             />
             <View
               style={{
-                flex: 1
+                flex: 1,
+                marginBottom: 5
               }}
             >
               <Text
                 style={{
                   color: "#43AF5C",
                   fontSize: 20,
-                  fontWeight: "bold",
-                  padding: 2
+                  fontWeight: "bold"
                 }}
               >
                 Applied to object coupons
               </Text>
-              <Text style={{ color: "#0091EA", fontSize: 18, padding: 2 }}>
-                PROMOCODE
-              </Text>
+              <Text style={{ color: "#0091EA", fontSize: 18 }}>PROMOCODE</Text>
             </View>
             <View
               style={{
@@ -170,7 +135,7 @@ export default class Checkout extends Component {
               />
             </View>
           </View>
-
+          {/* 
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Icon
               name="check-circle"
@@ -187,16 +152,17 @@ export default class Checkout extends Component {
             >
               You recieve a discount of 5%
             </Text>
-          </View>
+          </View> */}
 
           <View
             style={{
               borderColor: "#0091EA",
               borderWidth: 2,
-              padding: 40,
-              paddingBottom: 15,
-              paddingTop: 15,
-              flex: 1
+              padding: 50,
+              paddingBottom: 5,
+              paddingTop: 5,
+              flex: 1,
+              marginTop: 10
             }}
           >
             <View
@@ -207,11 +173,13 @@ export default class Checkout extends Component {
               }}
             >
               <Text
-                style={{ fontSize: 20, fontWeight: "bold", color: "#233f51" }}
+                style={{ fontSize: 15, fontWeight: "bold", color: "#233f51" }}
               >
                 Subtotal
               </Text>
-              <Text style={{ fontSize: 20 }}>$28.92</Text>
+              <Text style={{ fontSize: 15 }}>
+                ${this.props.navigation.state.params.cart.totalPrice}.00
+              </Text>
             </View>
             <View
               style={{
@@ -221,11 +189,11 @@ export default class Checkout extends Component {
               }}
             >
               <Text
-                style={{ fontSize: 20, fontWeight: "bold", color: "#233f51" }}
+                style={{ fontSize: 15, fontWeight: "bold", color: "#233f51" }}
               >
                 Tax
               </Text>
-              <Text style={{ fontSize: 20 }}>$0.0</Text>
+              <Text style={{ fontSize: 15 }}>$0.0</Text>
             </View>
             <View
               style={{
@@ -235,11 +203,11 @@ export default class Checkout extends Component {
               }}
             >
               <Text
-                style={{ fontSize: 20, fontWeight: "bold", color: "#233f51" }}
+                style={{ fontSize: 15, fontWeight: "bold", color: "#233f51" }}
               >
                 Shipping
               </Text>
-              <Text style={{ fontSize: 20 }}>Free</Text>
+              <Text style={{ fontSize: 15 }}>Free</Text>
             </View>
             <View
               style={{
@@ -249,11 +217,11 @@ export default class Checkout extends Component {
               }}
             >
               <Text
-                style={{ fontSize: 20, fontWeight: "bold", color: "#233f51" }}
+                style={{ fontSize: 15, fontWeight: "bold", color: "#233f51" }}
               >
                 Coupons
               </Text>
-              <Text style={{ fontSize: 20, color: "#0091EA" }}>-$1.5</Text>
+              <Text style={{ fontSize: 15, color: "#0091EA" }}>-$0.0</Text>
             </View>
           </View>
           <View
@@ -272,7 +240,7 @@ export default class Checkout extends Component {
               TOTAL
             </Text>
             <Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>
-              $27.42
+              ${this.props.navigation.state.params.cart.totalPrice}.00
             </Text>
           </View>
           <View
@@ -307,15 +275,14 @@ export default class Checkout extends Component {
               }}
             >
               <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-                John Hanson
+                {this.props.navigation.state.params.cart.authen.name}
               </Text>
               <Text style={{ fontSize: 18 }}>
-                2391 Rosecran Ave, Suite 200 E Segundo, California, United
-                States
+                {this.props.navigation.state.params.cart.authen.address}
               </Text>
             </View>
           </View>
-          <View
+          <TouchableOpacity
             style={{
               backgroundColor: "#000A12",
               // marginLeft: 10,
@@ -324,11 +291,18 @@ export default class Checkout extends Component {
               justifyContent: "center",
               alignItems: "center"
             }}
+            onPress={() =>
+              this.props.navigation.navigate("PAYMENT", {
+                onCheckout: checkoutInfo =>
+                  this.props.navigation.state.params.onCheckout(checkoutInfo),
+                checkoutInfo: this.props.navigation.state.params.cart
+              })
+            }
           >
             <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
               CHECK OUT
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -366,9 +340,9 @@ const styles = StyleSheet.create({
     borderWidth: 2
   },
   titleStyle: {
-    fontFamily: "Avenir",
+    fontFamily: "Medinah",
     color: "#B10D65",
-    fontSize: 30,
+    fontSize: 40,
     color: "white"
   },
   productImage: {

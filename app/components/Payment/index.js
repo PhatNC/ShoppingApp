@@ -84,7 +84,7 @@ export default class Payment extends Component {
       <View style={styles.wrapper}>
         <View style={styles.header}>
           <Icon name="arrow-back" size={30} color="white" onPress={() => {}} />
-          <Text style={styles.titleStyle}>PAYMENT</Text>
+          <Text style={styles.titleStyle}>Payment </Text>
           <View />
         </View>
         <View
@@ -104,7 +104,8 @@ export default class Payment extends Component {
               marginTop: 20
             }}
           >
-            Your Payable Amount $27.42
+            Your Payable Amount $
+            {this.props.navigation.state.params.checkoutInfo.totalPrice}.00
           </Text>
           <View
             style={{
@@ -130,7 +131,7 @@ export default class Payment extends Component {
                     height: 30,
                     width: 60,
                     marginRight: 10,
-                    resizeMode:'contain'
+                    resizeMode: "contain"
                   }}
                 />
                 <Image
@@ -139,7 +140,7 @@ export default class Payment extends Component {
                     height: 30,
                     width: 60,
                     marginRight: 10,
-                    resizeMode:'contain'
+                    resizeMode: "contain"
                   }}
                 />
                 <Image
@@ -147,7 +148,7 @@ export default class Payment extends Component {
                   style={{
                     height: 30,
                     width: 60,
-                    marginRight: 10,
+                    marginRight: 10
                   }}
                 />
                 <Image
@@ -155,7 +156,7 @@ export default class Payment extends Component {
                   style={{
                     height: 30,
                     width: 60,
-                    marginRight: 10,
+                    marginRight: 10
                   }}
                 />
               </View>
@@ -259,7 +260,7 @@ export default class Payment extends Component {
                 editable={this.state.isCredit ? true : false}
               />
             </View>
-            <View
+            <TouchableOpacity
               style={{
                 backgroundColor: "#0091EA",
                 marginLeft: 10,
@@ -270,13 +271,19 @@ export default class Payment extends Component {
                 paddingRight: 40,
                 alignItems: "center"
               }}
+              onPress={() => {
+                this.props.navigation.state.params.onCheckout(
+                  this.props.navigation.state.params.checkoutInfo
+                );
+                this.props.navigation.popToTop();
+              }}
             >
               <Text
                 style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
               >
                 PAY NOW
               </Text>
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -315,9 +322,9 @@ const styles = StyleSheet.create({
     borderWidth: 2
   },
   titleStyle: {
-    fontFamily: "Avenir",
+    fontFamily: "Medinah",
     color: "#B10D65",
-    fontSize: 30,
+    fontSize: 40,
     color: "white"
   },
   productImage: {

@@ -68,10 +68,15 @@ export default class FavorProduct extends Component {
                   padding: 5,
                   margin: 10,
                   backgroundColor: "white",
-                  elevation: 5,
+                  elevation: 5
                 }}
                 activeOpacity={1}
-                onPress={()=>{this.props.navigation.navigate('PRODUCT_DETAIL', favorItem.product)}}
+                onPress={() => {
+                  this.props.navigation.navigate(
+                    "PRODUCT_DETAIL",
+                    favorItem.product
+                  );
+                }}
               >
                 <View style={{ margin: 5 }}>
                   <Image

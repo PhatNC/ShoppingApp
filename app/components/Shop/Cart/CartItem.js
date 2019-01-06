@@ -21,7 +21,7 @@ export default class CartItem extends Component {
   };
 
   goDetail() {
-    this.props.navigation.navigate("PRODUCT_DETAIL");
+    this.props.navigation.navigate("PRODUCT_DETAIL", this.props.item);
   }
 
   removeproduct = () => {
