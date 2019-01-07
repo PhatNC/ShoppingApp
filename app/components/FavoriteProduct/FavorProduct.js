@@ -65,9 +65,9 @@ export default class FavorProduct extends Component {
           }
         >
           {this.state.refreshing ? (
-            <View />
+            <View style={{ flex: 1 }} />
           ) : (
-            <View>
+            <View style={{ flex: 1 }}>
               <List
                 id={this.props.authen._id}
                 navigation={this.props.navigation}

@@ -25,6 +25,7 @@ export default class Tinder extends React.Component {
     super(props);
     props.getNewProductRequest();
     const cards = this.getCards();
+    console.log(cards.length);
     this.state = { cards };
   }
 
@@ -65,6 +66,8 @@ export default class Tinder extends React.Component {
   handleNopeSelect = (dy = 0, position = false) => {
     const activeIndex = this.state.cards.findIndex(card => card.isActive);
 
+    if (activeIndex < 0) return;
+
     if (this.props.authen._id) {
       this.props.addUpdateFavoriteRequest({
         product: this.state.cards[activeIndex],
@@ -74,7 +77,6 @@ export default class Tinder extends React.Component {
       });
     }
 
-    if (activeIndex < 0) return;
     if (!position) {
       position = this.state.cards[activeIndex].position;
     }
@@ -86,6 +88,8 @@ export default class Tinder extends React.Component {
   handleLikeSelect = (dy = 0, position = false) => {
     const activeIndex = this.state.cards.findIndex(card => card.isActive);
 
+    if (activeIndex < 0) return;
+
     if (this.props.authen._id) {
       this.props.addUpdateFavoriteRequest({
         product: this.state.cards[activeIndex],
@@ -94,8 +98,6 @@ export default class Tinder extends React.Component {
         productID: this.state.cards[activeIndex].productID
       });
     }
-
-    if (activeIndex < 0) return;
     if (!position) {
       position = this.state.cards[activeIndex].position;
     }

@@ -1,4 +1,4 @@
-export const API_URL = "http://192.168.1.13:8080";
+export const API_URL = "http://192.168.1.101:8080";
 
 export const DEFAULT_OPTS = {
   "Content-Type": "application/json; charset=utf-8"

@@ -170,7 +170,8 @@ export default class FavorProduct extends Component {
               style={{
                 flex: 1,
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
+                paddingVertical: 20
               }}
             >
               <Text style={{ color: "#90A4AE", fontSize: 20 }}>

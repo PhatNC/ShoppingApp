@@ -52,14 +52,16 @@ export function* getFavoriteRequest({ params }) {
 
 export function* addUpdateFavoriteRequest({ params }) {
   try {
+    console.log("Params", params.productID);
     const { data } = yield call(POST, {
       path: GET_FAVORITE_PATH,
       body: params,
       opts: {}
     });
+    console.log(data);
     yield put(addUpdateFavoriteSuccess(data));
   } catch (error) {
-    // console.log('Error', error)
+    console.log('Error', error)
     const errors = error && error.response ? error.response.data : [];
     yield put(addUpdateFavoriteFailure(errors));
   }
